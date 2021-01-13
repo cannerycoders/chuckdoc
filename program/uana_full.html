@@ -94,7 +94,6 @@
 <li>float[] <b>.hamming( </b>int lenght<b> )</b> - <span class="comment">generate a Hamming window</span></li>
 <li>float[] <b>.blackmanHarris( </b>int lenght<b> )</b> - <span class="comment">generate a blackmanHarris window</span></li>
 </ul>
-<li>examples: <a href="../examples/analysis/win.ck">win.ck</a></li>
 </div></div>
 
 </div>
@@ -136,9 +135,6 @@
 <li><b>input</b>: audio samples from an incoming UGen</li>
 <li><b>output</b>: spectrum in complex array; magnitude spectrum in float array</li>
 </ul>
-<li>examples: 
-<a href="../examples/analysis/fft.ck">fft.ck</a>, <a href="../examples/analysis/fft2.ck">fft2.ck</a>,
-<a href="../examples/analysis/fft3.ck">fft3.ck</a>, <a href="../examples/analysis/win.ck">win.ck</a>
 </div></div>
 
 <div class="ugen">
@@ -169,9 +165,6 @@
 <li><b>input</b>: complex spectral frames (either via UAnae connected via =^, or manullay via .transform())</li>
 <li><b>output</b>: audio samples (overlap-added and streamed out to UGens connected via =&gt;)</li>
 </ul>
-<li>examples: 
-<a href="../examples/analysis/ifft.ck">ifft.ck</a>, <a href="../examples/analysis/ifft2.ck">fft2.ck</a>,
-<a href="../examples/analysis/fft3.ck">ifft3.ck</a>
 </div></div>
 
 <div class="ugen">
@@ -206,8 +199,6 @@
 <li><b>input</b>: audio samples (either via UAnae connected via =^, or manullay via .transform())</li>
 <li><b>output</b>: discrete cosine spectrum</li>
 </ul>
-<li>examples: 
-<a href="../examples/analysis/dct.ck">dct.ck</a>
 </div></div>
 
 <div class="ugen">
@@ -238,8 +229,6 @@
 <li><b>input</b>: real-valued spectral frames (either via UAnae connected via =^, or manullay via .transform())</li>
 <li><b>output</b>: audio samples (overlap-added and streamed out to UGens connected via =&gt;)</li>
 </ul>
-<li>examples: 
-<a href="../examples/analysis/fft.ck">idct.ck</a>
 </div></div>
 
 </div>
@@ -270,8 +259,6 @@
 <li><b>output</b>: the computed Centroid value is stored in the blob's floating point vector, accessible via .fval(0).  This is a normalized value in the 
 range [0,1), mapped to the frequency range 0Hz to Nyquist</li>
 </ul>
-<li>examples: 
-<a href="../examples/analysis/features/centroid.ck">centroid.ck</a>
 </div></div>
 
 <div class="ugen">
@@ -298,8 +285,6 @@ frames, and stores the difference in a third array</span></li>
 <li><b>input</b>: complex spectral frames (e.g., via UAnae connected via =^)</li>
 <li><b>output</b>: the computed Flux value is stored in the blob's floating point vector, accessible via .fval(0)</li>
 </ul>
-<li>examples: 
-<a href="../examples/analysis/features/flux.ck">flux.ck</a>, <a href="../examples/analysis/features/flux0.ck">flux0.ck</a>
 </div></div>
 
 <div class="ugen">
@@ -323,8 +308,6 @@ frames, and stores the difference in a third array</span></li>
 <li><b>input</b>: complex spectral frames (e.g., via UAnae connected via =^)</li>
 <li><b>output</b>: the computed RMS value is stored in the blob's floating point vector, accessible via .fval(0)</li>
 </ul>
-<li>examples: 
-<a href="../examples/analysis/features/rms.ck">rms.ck</a>
 </div></div>
 
 <div class="ugen">
@@ -351,8 +334,6 @@ frames, and stores the difference in a third array</span></li>
 <li><b>output</b>: the computed rolloff value is stored in the blob's floating point vector, accessible via .fval(0). This is a normalized
 value in the range [0,1), mapped to the frequency range 0 to nyquist frequency.</li>
 </ul>
-<li>examples: 
-<a href="../examples/analysis/features/rolloff.ck">rolloff.ck</a>
 </div></div>
 
 </div>
