@@ -34,7 +34,7 @@ __FilterBasic__ is the base class for several simple filters.
 
 | FilterBasic.functions               | Filter base class.                                   |
 | :---------------------------------- | :--------------------------------------------------- |
-| _see [UGen]("./ugen_basic.md#ugen)_ |                                                      |
+| _see [UGen](./ugen_basic.md#ugen)_ |                                                      |
 | __`float Q(), Q(float val)`__       | Get/set filter resonance                             |
 | __`float freq(), freq(float val)`__ | Get/set filter cutoff/center frequency.              |
 | __`void set(float freq, float Q)`__ | Set filter frequency and resonance at the same time. |

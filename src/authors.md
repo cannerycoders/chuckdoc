@@ -13,7 +13,7 @@ ${PAGEHEADER}
 
 ### core developers
 
-[Ge Wang]("http://ccrma.stanford.edu/~ge/)  
+[Ge Wang](http://ccrma.stanford.edu/~ge/)  
 [Spencer Salazar](http://ccrma.stanford.edu/~spencer/)  
 [Jack Atherton](http://ccrma.stanford.edu/~lja/)  
 [Perry Cook](http://www.cs.princeton.edu/~prc/)  
@@ -42,7 +42,7 @@ ${PAGEHEADER}
 ### sporksperson
 
 [Kassen](http://bottomfeeder.ca/top/) (also moderator of 
-[ChucK Forum](href="http://electro-music.com/forum/forum-140.html) and 
+[ChucK Forum](href=http://electro-music.com/forum/forum-140.html) and 
 chuckian sherpa.
 
 </center>
