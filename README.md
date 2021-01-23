@@ -7,8 +7,17 @@ and will remain a work-in-progress.
 
 `showdownjs` was used in default mode validate the conversion to html.
 
-A small amount of work remains to automate the offline creation of a static
-html website.  Currently, css styling tends toward the _dark_. There
-are substitution 'macros' at the top and bottom of each page that must
-be applied.
+To run your own build (requires recent node+npm install):
 
+```sh
+#git clone this repo
+% git clone https://github.com/cannerycoders/chuckdoc
+% cd chuckdoc 
+# install node support (showdown, klaw)
+% npm init
+% node build.js # (writes results to `output/`)
+# validate the docs
+% cd output
+# launch your favorite browser on index.html (via `open` on mac, `explorer on windows`)
+
+```
