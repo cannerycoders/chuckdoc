@@ -5,19 +5,24 @@ documentation including standard `chugins` and `classes`.  As of 1/23/21, this i
 version  and complete of ChucK docs that I've found. The updates are the result of ample code spelunking
 and will remain a work-in-progress.
 
-`showdownjs` was used in default mode validate the conversion to html.
+You can view the docs directly on github or you can convert them to html for other applications and improved styling.
 
-To run your own build (requires recent node+npm install):
+To build html requires recent node+npm install:
 
 ```sh
-#git clone this repo
+# git clone this repo
 % git clone https://github.com/cannerycoders/chuckdoc
-% cd chuckdoc 
+
 # install node support (showdown, klaw)
+% cd chuckdoc 
 % npm init
+
+# run the conversion
 % node build.js # (writes results to `output/`)
+
 # validate the docs
 % cd output
 # launch your favorite browser on index.html (via `open` on mac, `explorer on windows`)
-
 ```
+
+Enjoy!
