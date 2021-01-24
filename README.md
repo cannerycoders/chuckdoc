@@ -5,7 +5,8 @@ documentation including standard `chugins` and `classes`.  As of 1/23/21, this i
 version  and complete of ChucK docs that I've found. The updates are the result of ample code spelunking
 and will remain a work-in-progress.
 
-You can view the docs directly on github or you can convert them to html for other applications and improved styling.
+You can view the docs directly on github [here](src/index.md) or you can convert them to html for 
+other applications and improved styling.
 
 To build html requires recent node+npm install:
 
