@@ -15,14 +15,14 @@ let root = process.cwd();
 let OutputDir = path.join(root, "output");
 let InputDir = path.join(root, "src");
 
+main();
+
 // Then, use it with a simple async for loop
 function main()
 {
     initChucKDocs();
     klaw(InputDir).on("data", processKlawItem);
 }
-
-main();
 
 function processKlawItem(item)
 {
