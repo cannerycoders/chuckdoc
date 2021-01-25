@@ -50,7 +50,8 @@ double-precision)
 * __`dur`__: ChucKian duration
 * __`void`__: (no type)
 * __`complex`__: complex number in _rectangular_ form _`a + bi`_ (see [below](#complex))
-* __`polar`__: complex number in _polar_ form (see [below](#complex))
+* __`polar`__: complex number in _polar_ form (see [below](#complextypes))
+* __`vec3`__, __`vec4`__: vector types of length 3, 4 (see [below](#vectortypes))
 
 ### values (literals)
 
@@ -147,6 +148,12 @@ reference types include:
 
 New classes can be created. All classes are reference types. We will
 leave the full discussion to the [objects and classes section](./class.md).
+
+
+### vector types
+
+* `vec3` - access .x .y .z OR .r .g .b OR .value .goal .slew
+* `vec4` - access .x .y .z .w OR .r .g .b .a
 
 ### complex types
 
