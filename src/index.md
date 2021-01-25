@@ -10,7 +10,7 @@
 
 ## First Steps
 
-[tutorial](tutorial.md)
+[tutorial](tutorial.md) | [examples](examples/index.md)
 
 ## Language Documentation
 
