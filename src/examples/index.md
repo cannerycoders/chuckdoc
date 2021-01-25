@@ -26,7 +26,7 @@ or perhaps:
 | :---------------------------------------- | :------------------------------------------------------------------------------------------------------- |
 | time and duration                         | [demo0.ck](basic/demo0.ck)                                                                               |
 | variable assignment and use               | [demo1.ck](basic/demo1.ck)                                                                               |
-| chucking & unchucking ugens               | [demo1.ck](basic/demo2.ck)                                                                               |
+| chucking & unchucking ugens               | [demo2.ck](basic/demo2.ck)                                                                               |
 | modulating ugen parameters                | [demo3.ck](basic/demo3.ck)                                                                               |
 | using command line arguments              | [args.ck](basic/args.ck)                                                                                 |
 | mic input                                 | [adc.ck](basic/adc.ck)                                                                                   |
@@ -50,7 +50,7 @@ or perhaps:
 | clocks (useful when recording and other)  | [tick.ck](basic/tick.ck), [tick2.ck](basic/tick2.ck)                                                     |
 | basic ring-mod (demonstrate ugen input)   | [ring.ck](basic/ring.ck)                                                                                 |
 | sndbuf (file read/write/playback)         | [sndbuf.ck](basic/sndbuf.ck)                                                                             |
-| sndbuf.valueat() - random access samples  | [valueat.ck](basic/valuat.ck)                                                                            |
+| sndbuf.valueat() - random access samples  | [valueat.ck](basic/valueat.ck)                                                                            |
 | step ugen                                 | [step.ck](basic/step.ck)                                                                                 |
 | unchuck                                   | [unchuck.ck](basic/unchuck.ck)                                                                           |
 | whirl                                     | [whirl.ck](basic/whirl.ck)                                                                               |
