@@ -2,7 +2,7 @@
 
 Here you'll find a markdown representation of the [ChucK](https://chuck.cs.princeton.edu)
 documentation including standard `chugins` and `classes`.  As of 1/23/21, this is the most up-to-date 
-version  and complete of ChucK docs that I've found. The updates are the result of ample code spelunking
+and complete set of ChucK docs that I've been able to find. The updates are the result of ample code spelunking
 and will remain a work-in-progress.
 
 You can view the docs directly on github [here](src/index.md) or you can convert them to html for 
