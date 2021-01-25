@@ -22,7 +22,7 @@ function main()
     klaw(InputDir).on("data", processKlawItem);
 }
 
-main()
+main();
 
 function processKlawItem(item)
 {
