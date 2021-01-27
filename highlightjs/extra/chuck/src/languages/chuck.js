@@ -52,7 +52,7 @@ export default function(hljs)
         keyword: "for while until|10 repeat continue break if else do return " +
         "function fun|10 new class extends public protected " +
         "private static pure const spork|10 global " +
-        "default try this float void int dur|10",
+        "default try this float void int dur|10 complex polar vec3 vec4",
 
         literal: "true false null NULL",
 
@@ -86,7 +86,7 @@ export default function(hljs)
         "WPDiodeLadder WPKorg35 " +
 
         "IO FileIO StdOut StdErr OscIn OscOut OscMsg Hid HidMsg " +
-        "SerialIO Midi(:?In|Out|Msg|FileIn) " +
+        "SerialIO MidiIn MidiOut MidiMsg MidiFileIn " +
 
         "FFT IFFT DCT IDCT Centroid Flux RMS RollOff ZeroX Flip " +
         "pilF FeatureCollector",
