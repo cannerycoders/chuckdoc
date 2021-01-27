@@ -102,29 +102,6 @@ Compiler, and Virtual Machine for a ChucK programmer.
 [CurveTable](ugen_advanced.md#curvetable) |
 [WarpTable](ugen_advanced.md#warptable)
 
-#### chugins - plugin unit generators
-
-[ABSaturator](ugen_chugins.md#absat) |
-[AmbPan3](ugen_chugins.md#ambpan3) |
-[Bitcrusher](ugen_chugins.md#bitcrusher) |
-[MagicSine](ugen_chugins.md#magicsine) |
-[KasFilter](ugen_chugins.md#kasfilter) |
-[FIR](ugen_chugins.md#fir) |
-[Pan4](ugen_chugins.md#pan4) |
-[Pan8](ugen_chugins.md#pan8) |
-[Pan16](ugen_chugins.md#pan16) |
-[Perlin](ugen_chugins.md#perlin) |
-[PitchTrack](ugen_chugins.md#pitchtrack) |
-[GVerb](ugen_chugins.md#gverb) |
-[Mesh2D](ugen_chugins.md#mesh2d) |
-[Spectacle](ugen_chugins.md#spectacle) |
-[Elliptic](ugen_chugins.md#elliptic) |
-[WinFuncEnv](ugen_chugins.md#winfuncenv) |
-[PowerADSR](ugen_chugins.md#poweradsr) |
-[FoldbackSaturator](ugen_chugins.md#foldbacksaturator) |
-[WPDiodeLadder](ugen_chugins.md#wpdiodeladder) |
-[WPKorg35](ugen_chugins.md#wpkorg35)
-
 #### synthesis toolkit (stk)
 
 [ADSR](ugen_stk.md#adsr) | [Envelope](ugen_stk.md#envelope) |
@@ -150,6 +127,37 @@ Compiler, and Virtual Machine for a ChucK programmer.
 [HevyMetl](ugen_stk.md#hevymetl) | [PercFlut](ugen_stk.md#prcflut) |
 [Rhodey](ugen_stk.md#rhodey) | [TubeBell](ugen_stk.md#tubebell) |
 [Wurley](ugen_stk.md#wurley)
+
+#### chugins - plugin unit generators
+
+[ABSaturator](ugen_chugins.md#absat) |
+[AmbPan3](ugen_chugins.md#ambpan3) |
+[Bitcrusher](ugen_chugins.md#bitcrusher) |
+[ExpDelay](ugen_chugins.md#expdelay) |
+[ExpEnv](ugen_chugins.md#expenv) |
+[Elliptic](ugen_chugins.md#elliptic) |
+Faust |
+[FIR](ugen_chugins.md#fir) |
+[FluidSynth](ugen_chugins.md#fluidsynth) |
+[FoldbackSaturator](ugen_chugins.md#foldbacksaturator) |
+[GVerb](ugen_chugins.md#gverb) |
+[KasFilter](ugen_chugins.md#kasfilter) |
+Ladspa |
+[MagicSine](ugen_chugins.md#magicsine) |
+[Mesh2D](ugen_chugins.md#mesh2d) |
+MIAP |
+[NHHall](ugen_chugins.md#nhhall) |
+[PanN](ugen_chugins.md#pann) |
+[Perlin](ugen_chugins.md#perlin) |
+[PitchTrack](ugen_chugins.md#pitchtrack) |
+[PowerADSR](ugen_chugins.md#poweradsr) |
+[Random](ugen_chugins.md#random) |
+[Sigmund](ugen_chugins.md#sigmund) |
+[Spectacle](ugen_chugins.md#spectacle) |
+[Wavetable](ugen_chugins.md#wavetable) |
+[WinFuncEnv](ugen_chugins.md#winfuncenv) |
+[WPDiodeLadder](ugen_chugins.md#wpdiodeladder) |
+[WPKorg35](ugen_chugins.md#wpkorg35)
 
 #### input / output
 
