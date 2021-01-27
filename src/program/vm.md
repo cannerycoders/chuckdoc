@@ -21,7 +21,7 @@ Additionally, see the [language specification](../language/index.md).
 
 `usage`:
 
-```sh
+```bash
 chuck --[options|commands] [+-=^] file1 file2 file3 ...
 
 [options] = halt|loop|audio|silent|dump|nodump|server|about|probe|
@@ -65,7 +65,7 @@ __`--loop`__ / `-l`
 > later on-the-fly.  Furthermore, it is legal to specify this 
 > option without any input files.  For example: <br /><br />
 
-```sh
+```bash
 % chuck --loop
 ```
 > the above will 'infinite time-loop' the VM, waiting for incoming shreds. 
@@ -85,7 +85,7 @@ __`--dump`__ / `+d`
 > dump the virtual instructions emitted to stderr, for all the 
 > files after this flag on the command line, until a 'nodump' is 
 > encountered (see below).  For example: <br /><br />
-```sh
+```bash
 % chuck foo.ck +d bar.ck
 ```
 > will dump the virtual ChucK instructions for bar.ck (only), with 
@@ -96,7 +96,7 @@ __`--nodump`__ / `-d`
 > (default state) cease the dumping of virtual instructions for 
 > files that comes after this flag on the command line, until a 
 > 'dump' is encountered (see above).  For example:
-```sh
+```bash
 % chuck +d foo.ck -d bar.ck +d doo.ck
 ```
 > will dump foo.ck, then doo.ck - but not bar.ck.
@@ -117,7 +117,7 @@ __`--bufsize(N)`__
 > timing.  smaller buffers reduce audio latency.  The default is 
 > 512.  If (N) is not a power of 2, the next power of 2 larger than 
 > (N) is used.  For example:
-```sh
+```bash
 % chuck --bufsize950
 ```
 > sets the buffer size to 1024.

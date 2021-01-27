@@ -38,7 +38,7 @@ ime and duration are native types in ChucK.  __`time`__ represents an absolute
 point in time (from the beginning of ChucK time).  __`dur`__ represents a 
 duration (with the same logical units as `time`).
 
-```ck
+```chuck
 // a duration of one second
 1::second => dur foo;
 
@@ -52,7 +52,7 @@ on time and duration.
 Durations can be used to construct new durations, which then be used to 
 inductively construct yet other durations. For example:
 
-```ck
+```chuck
 // .5 second is a quarter
 .5::second => dur quarter;
 
@@ -72,7 +72,7 @@ By default, ChucK provides these preset duration values:
 
 Use these to represent any duration.
 
-```ck
+```chuck
 // the duration of half a sample
 .5::samp => dur foo;
 
@@ -93,7 +93,7 @@ Use these to represent any duration.
 In ChucK, there are well-defined arithmetic operations on values of type 
 `time` and `dur`.
 
-```ck
+```chuck
 // example 1 (time offset):
 // time + dur yields time
 now + 10::second => time later;
@@ -153,7 +153,7 @@ See also next section on advancing time.
 
 Example:
 
-```ck
+```chuck
 // compute value that represents "5 seconds from now"
 now + 5::second => time later;
 
@@ -185,7 +185,7 @@ in ChucK:
 
 ### advancing time by duration
 
-```ck
+```chuck
 // advance time by 1 second
 1::second => now;
 
@@ -201,7 +201,7 @@ in ChucK:
 
 ### advancing time by absolute time
 
-```ck
+```chuck
 // figure out when
 now + 4::hour => time later;
 
@@ -215,7 +215,7 @@ to now must be greater than or equal to now, otherwise an exception is thrown.
 
 ### advancing time by event
 
-```ck
+```chuck
 // wait on event
 e => now;
 ```
@@ -224,7 +224,7 @@ See [events](./event.md)> for a more complete discussion of using events!
 
 The advancement of time can occur at any point in your code.
 
-```ck
+```chuck
 // our patch: sine oscillator -> dac
 SinOsc s => dac;
 

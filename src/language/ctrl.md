@@ -30,7 +30,7 @@ either by semicolons or by curly brackets `{}`.
 
 The if statement executes a block if the condition is evaluated as non-zero.
 
-```ck
+```chuck
 if( condition )
 {
     // insert code here
@@ -42,7 +42,7 @@ In the above code, _condition_ is any expression that evaluates to an `int`.
 An `else` statement can be put after the `if` block to handle the case where 
 the condition evaluates to 0.
 
-```ck
+```chuck
 if( condition )
 {
     // your code here
@@ -63,7 +63,7 @@ If statements can be nested.
 The while statement is a loop that repeatedly executes the body as long as 
 the condition evaluates as non-zero.
 
-```ck
+```chuck
 // here is an infinite loop
 while( true )
 {
@@ -80,7 +80,7 @@ as long as the condition evaluates as non-zero. To execute the body of the
 loop before checking the condition, you can use a `do` / `while`
 loop.  This guarantees that the body gets executed as least once.
 
-```ck
+```chuck
 do {
     // your code executes here at least once
 } while( condition );
@@ -97,7 +97,7 @@ A few more points:
 The until statement is the opposite of while, semantically. A until loop 
 repeatedly executes the body __until__ the condition evaluates as non-zero.
 
-```ck
+```chuck
 // an infinite loop
 until( false )
 {
@@ -110,7 +110,7 @@ as the condition evaluates as zero. To execute the body of the loop before
 checking the condition, you can use a `do` / `until` loop.  This guarantees that
 the body gets executed as least once.
 
-```ck
+```chuck
 do {
     // your code executes here at least once
 } until( condition );
@@ -129,7 +129,7 @@ A loop that iterates a given number of times. A temporary variable is declared
 that keeps track of the current index and is evaluated and incremented at each 
 iteration.
 
-```ck
+```chuck
 // for loop
 for( 0 => int foo; foo < 4 ; foo++ )
 {
@@ -144,7 +144,7 @@ for( 0 => int foo; foo < 4 ; foo++ )
 
 `break` allows the program flow to jump out of a loop.
 
-```ck
+```chuck
 // infinite loop
 while( 1 )
 {
@@ -156,7 +156,7 @@ while( 1 )
 `continue` allows a loop to continue looping but not to execute the rest of 
 the block for the iteration where continue was executed.
 
-```ck
+```chuck
 // another infinite loop
 while( 1 )
 {

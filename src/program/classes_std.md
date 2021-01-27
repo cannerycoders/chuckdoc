@@ -94,7 +94,7 @@ The Std class is a subclass of [Object](#object) and is comprised of several
 _static_ utility functions, legacy random number generation, unit conversions, 
 and absolute value.
 
-```ck
+```chuck
 // infinite time-loop
 while( true )
 {
@@ -143,7 +143,7 @@ random number generators. Expresses angles in radians. There is some overlap
 with static functions of the [Std](#std) class. Generally the Math variant
 should be preferred.
 
-```ck
+```chuck
 // print sine of pi/2
 <<<< Math.sin( Math.PI / 2.0 ) >>>;
 

@@ -30,7 +30,7 @@ followed by the return type and then the name of the function. After the
 name of the function parentheses must be opened to declare the types of the 
 input arguments.
 
-```ck
+```chuck
 // define function call 'funk'
 fun void funk( int arg )
 {
@@ -42,7 +42,7 @@ The above function returns no values (the return type is `void`).
 If the function is declared to return any other type of values, the 
 function body must return a value of the appropriate type.
 
-```ck
+```chuck
 // define function 'addOne'
 fun int addOne(int x)
 {
@@ -57,7 +57,7 @@ fun int addOne(int x)
 
 To call a function use the name of the function with appropriate arugments.
 
-```ck
+```chuck
 // define 'hey'
 fun int hey( int a, int b )
 {
@@ -71,7 +71,7 @@ hey( 1, 2 ) => int result;
 
 You can also use the ChucK operator to call functions!
 
-```ck
+```chuck
 // call hey
 ( 1, 2 ) => hey => int result;
 
@@ -94,7 +94,7 @@ defined with different arguments. The function must be written in
 separate instances to handle the input, and the return type must 
 agree.
 
-```ck
+```chuck
 // funk( int )
 fun int add(int x)
 {

@@ -35,7 +35,7 @@ shreds on its waiting list is shreduled to run immediately.  This
 trigger may originate from another ChucK shred, or from activities 
 taking place outside the Virtual Machine (MIDI, OSC, or IPC). 
 
-```ck
+```chuck
 // declare event
 Event e;
 
@@ -85,7 +85,7 @@ while ( true )
 
 Chucking an event to now suspends the current shred, letting time advance:
 
-```ck
+```chuck
 // declare Event
 Event e;
 
@@ -104,7 +104,7 @@ As shown above, events can be triggered in two ways.
 it to run at the current time, respecting the order in which shreds were 
 added to the queue.
 
-```ck
+```chuck
 // signal one shred waiting on the event e
 e.signal();
 ```
@@ -112,7 +112,7 @@ e.signal();
 2. `broadcast()` releases _all_ shreds queued by that event, in the order 
 they were added, and at the same instant in time. 
 
-```ck
+```chuck
 // wake up all shreds waiting on the event e
 e.broadcast();
 ```
@@ -130,7 +130,7 @@ without advancing time. (see `me.yield()` in [concurrency](spork.md#me)).
 ChucK contains built-in MIDI classes to allow for interaction with MIDI 
 based software or devices.
 
-```ck
+```chuck
 MidiIn min;
 MidiMsg msg;
 
@@ -163,7 +163,7 @@ As a default, MidiIn events trigger the `broadcast()` event behavior.
 
 In addition to MIDI, ChucK has OSC communication classes as well:<
 
-```ck
+```chuck
 // create our OSC receiver listening to port 6449
 OscRecv orec;
 6449 => orec.port;
@@ -209,7 +209,7 @@ to fetch message data.
 Events, like any other class, can be subclassed to add functionality 
 and transmit data:
 
-```ck
+```chuck
 // extended event
 class TheEvent extends Event
 {

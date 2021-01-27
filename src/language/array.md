@@ -32,7 +32,7 @@ specifies how arrays are declared and used in ChucK.  Some quick notes:
 
 Arrays can be declared in the following way:
 
-```ck
+```chuck
 // declare 10 element array of int, called foo
 int foo[10];
 
@@ -42,7 +42,7 @@ int foo[10];
 
 Arrays can also be initialized:
 
-```ck
+```chuck
 // chuck intializer to array reference
 [ 1, 1, 2, 3, 5, 8 ] @=> int foo[];
 ```
@@ -63,7 +63,7 @@ In the above code, there are several things to note.
 When declaring an array of objects, the objects inside the array are 
 automatically instantiated.
 
-```ck
+```chuck
 // objects in arrays are automatically instantiated
 Object group[10];
 
@@ -81,7 +81,7 @@ are multi-dimensional arrays!
 
 It is possible (and equally easy) to declare multi-dimensional arrays:
 
-```ck
+```chuck
 // declare 4 by 6 by 8 array of float
 float foo3D[4][6][8];
 
@@ -96,7 +96,7 @@ In the above code, note the two `[][]` since we're contructing a 2x2 matrix.
 
 Elements in an array can be accessed using `[]` (in the appropriate quantities).
 
-```ck
+```chuck
 // declare an array of floats
 [ 3.2, 5.0, 7 ] @=> float foo[];
 
@@ -109,7 +109,7 @@ Elements in an array can be accessed using `[]` (in the appropriate quantities).
 
 Looping over the elements of an array:
 
-```ck
+```chuck
 // array of floats again
 [ 1, 2, 3, 4, 5, 6 ] @=> float foo[];
 
@@ -123,7 +123,7 @@ for( 0 => int i; i < foo.cap(); i++ )
 
 Accessing multi-dimensional array:
 
-```ck
+```chuck
 // 2D array
 int foo[4][4];
 
@@ -134,7 +134,7 @@ int foo[4][4];
 If the index exceeds the bounds of the array in any dimension, an exception 
 is issued and the current shred is halted.
 
-```ck
+```chuck
 // array capacity is 5
 int foo[5];
 
@@ -145,7 +145,7 @@ int foo[5];
 
 A longer program: otf_06.ck from [examples](../examples/index.md"):
 
-```ck
+```chuck
 // the period
 .5::second => dur T;
 // synchronize to period (for on-the-fly synchronization)
@@ -182,7 +182,7 @@ Any array can be used also as an associative array, indexed on strings.
 Once the regular array is instantiated, no further work has to be done
 to make it associative as well - just start using it as such.
 
-```ck
+```chuck
 // declare regular array (capacity doesn't matter so much)
 float foo[4];
 
@@ -202,7 +202,7 @@ float foo[4];
 It is important to note (again), that the address space of the integer portion 
 and the associative portion of the array are _completely separate_.  For example:
 
-```ck
+```chuck
 // declare array
 int foo[2];
 
@@ -220,7 +220,7 @@ The capacity of an array relates only to the integer portion of it. An array
 with an integer portion of capacity 0, for example, can still have any number 
 of associative indexes.
 
-```ck
+```chuck
 // declare array of 0 capacity
 int foo[0];
 
@@ -244,7 +244,7 @@ return a __`null`__ reference.  Please check the
 [class documentation section](./class.md) for an explanation of 
 ChucK objects and references.
 
-```ck
+```chuck
 class Item { 
     float weight; 
 }
@@ -274,7 +274,7 @@ A __`null`__ reference is a reference variable that points to no object
 (or the null object).  A null reference to an array can be created in 
 this fashion:
 
-```ck
+```chuck
 // declare array reference (by not specifying a capacity)
 int foo[];
 
@@ -288,7 +288,7 @@ int foo[];
 This is also useful in declaring functions that have arrays as arguments 
 or return type.
 
-```ck
+```chuck
 // our function
 fun void print( int bar[] )
 {
@@ -309,7 +309,7 @@ Like other objects, it is possible make multiple references to a single array.
 Like other objects, all assignments are <em>reference assignments</em>, meaning 
 the contents are __NOT__ copied, only a reference to array is duplicated.
 
-```ck
+```chuck
 // our single array
 int the_array[10];
 
@@ -326,7 +326,7 @@ the_array => int foo[] => int bar[];
 
 It is possible to reference sub-sections of multi-dimensional arrays.
 
-```ck
+```chuck
 // a 3D array
 int foo3D[4][4][4];
 

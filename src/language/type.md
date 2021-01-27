@@ -58,7 +58,7 @@ double-precision)
 Literal values are specified explicitly in code and are assigned a type by 
 the compiler. The following are some examples of literal values:
 
-```ck
+```chuck
 // int:
 42 => int a;
 0xaf30 => int b;
@@ -79,7 +79,7 @@ Variables are locations in memory that hold data. Variables have to be
 declared in ChucK before they are used. For example, to declare a variable 
 of type `int` called `foo`:
 
-```ck
+```chuck
 // declare an 'int' called 'foo'
 int foo;
 ```
@@ -89,28 +89,28 @@ We can assign a value to an existing variable by using the ChucK operator
 the way to do work and take action! We will discuss this family of operators
 in [operators and operations](./oper.md).
 
-```ck
+```chuck
 // assign value of 2 to previously declared 'foo' 
 2 => foo;
 ```
 
 It is possible to combine the two statements into one:
 
-```ck
+```chuck
 // assign 2 to a new variable 'foo' of type 'int'
 // 2 => int foo;
 ```
 
 To use a variable, just refer to it by name:
 
-```ck
+```chuck
 // debug-print the value of foo
 <<< foo >>>
 ```
 
 To update the value of foo, for example:
 
-```ck
+```chuck
 // multiply 'foo' by 10, assign back to 'foo'
 foo * 10 => foo;
 
@@ -120,7 +120,7 @@ foo * 10 => foo;
 
 Here is an example of a duration:
 
-```ck
+```chuck
 // assign value of '5 seconds' to new variable bar
 5::second => dur bar;
 
@@ -161,14 +161,14 @@ Two special primitive types are available to represent complex data, such as
 the output of an FFT: `complex` and `polar`. A complex number of the form 
 _`a + bi`_, can be declared as
 
-```ck
+```chuck
 #(2,3) => complex cmp; // cmp is now 2 + 3i 
 ```
 
 where the `#(...)` syntax explicitly denotes a complex number in rectangular 
 form. Similarly, explicit complex numbers can be manipulated directly:
 
-```ck
+```chuck
 #(5, -1.5) => complex cmp; // cmp is 5 - 1.5i
 #(2,3) + #(5,6) + cmp => complex sum; // sum is now 12 + 7.5i
 ```
@@ -177,7 +177,7 @@ The (floating point) real and imaginary parts of a complex number can
 be accessed with the __`.re`__ and  __`.im`__ components of a 
 `complex` number:
 
-```ck
+```chuck
 #(2.0,3.5) => complex cmp;
 cmp.re => float x; // x is 2.0
 cmp.im => float y; //y is 3.5
@@ -187,14 +187,14 @@ The `polar` type offers an equivalent, alternative representation of complex
 numbers in terms of a magnitude and phase value. A polar representation of 
 a complex number can be declared as:
 
-```ck
+```chuck
 %(2, .5*pi) => polar pol; // pol is 2 units and .5*pi radians
 ```
 
 The magnitude and phase values can be accessed via __`.mag`__ and 
 __`.phase`__ :
 
-```ck
+```chuck
 %(2, .5*pi) => polar pol;
 pol.mag => float m; // m is 2
 pol.phase => float p; // p is .5*pi;
@@ -204,7 +204,7 @@ __`polar`__ and __`complex`__ representations can be cast to each other and
 multiplied/added/assigned/etc. Here, `$` is the cast operator and can also 
 be used to cast float to int:
 
-```ck
+```chuck
 %(2, .5*pi) => polar pol;
 #(3, 4) => complex cmp;
 pol $ complex + #(10, 3) + cmp => complex cmp2; 

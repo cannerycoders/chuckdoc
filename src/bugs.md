@@ -8,7 +8,7 @@ If you find a [bug](http://soundlab.cs.princeton.edu/cicadas/), or experience
 a crash, please send us the CK file that caused it, and also your version 
 number:
 
-```sh
+```bash
 % chuck --version
 ```
 

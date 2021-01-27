@@ -48,7 +48,7 @@ nature of the entity (such as whether it is a variable or not).
 
 Some examples:
 
-```ck
+```chuck
 // a unit generator patch - the signal flow is apparent
 // (in this case, => connects two unit generators)
 SinOsc b => Gain g => BiQuad f => dac;
@@ -71,7 +71,7 @@ In ChucK, there is no stardard assignment operator (`=`), found in many
 other programming languages.  Assignment is carried out using ChucK operators.  
 In the previous examples, we have used __`=>`__ for assignment:
 
-```ck
+```chuck
 // assign 4 to variable foo
 4 => int foo;
 
@@ -92,7 +92,7 @@ that __`@=>`__ can also be used for reference assignments of objects
 on primitive types_. The behavior of __`=>`__ on objects is completely 
 context-dependent.
 
-```ck
+```chuck
 // using @=> is same as => for primitive types
 4 @=> int foo;
 
@@ -117,7 +117,7 @@ between assignment (`@=>` or `=>`) and equality (`==`).  In fact the following
 is __not__ a valid ChucK statement:
 
 
-```ckerr
+```chuckerr
     // not a valid ChucK statement!
     int foo = 4;
 ```
@@ -127,7 +127,7 @@ is __not__ a valid ChucK statement:
 These operators are used with variables (using `int` and `float`) to 
 perform one operation with assignment.
 
-```ck
+```chuck
 // add 4 to foo and assign result to foo
 foo + 4 => foo;
 
@@ -150,7 +150,7 @@ It is important to note the relationship between the value and
 variable when using `-=>` and `/=>`, since these operations are not 
 commutative.
 
-```ck
+```chuck
 // mod foo by T and assign result to foo
 T %=> foo;
 
@@ -169,7 +169,7 @@ That's probably enough operator abuse for now...
 
 Can you add, subtract, multiply and divide?  So can ChucK!
 
-```ck
+```chuck
 // divide (and assign)
 16 / 4 => int four;
 
@@ -191,7 +191,7 @@ ChucK implicitly casts `int` values to `float` when `float` is
 expected, but __not__ the other around.  The latter could result 
 in a loss of information and requires an explicit cast.
 
-```ck
+```chuck
 // adding float and int produces a float
 9.1 + 2 => float result;
 
@@ -212,7 +212,7 @@ Math.rand2f( 30, 1000 );
 The modulo operator `%` computes the remainder after integer, floating point, 
 duration, and time/duration division.
 
-```ck
+```chuck
 // 7 mod 4 (should yield 3)
 7 % 4 => int result;
 
@@ -231,7 +231,7 @@ synchronize timing in shreds.  The examples `otf_01.ck` through `otf_07.ck`
 [see under](../examples/#other") make use of this to on-the-fly synchronize 
 its various parts, no matter when each shred is added to the virtual machine:
 
-```ck
+```chuck
 // define period (agreed upon by several shreds)
 .5::second => dur T;
 
@@ -265,7 +265,7 @@ value of 0 or 1.__.
 * `<` : less than 
 * `<=` : less than or equal to
 
-```ck
+```chuck
 // test some universal truths
 if( 1 <= 4 && true )
     <<<"horray">>>;
@@ -289,7 +289,7 @@ These are used on `int` values at the bit level, often for bit masking.
 
 Values may be incremented or decremented by appending the ++ or -- operators.
 
-```ck
+```chuck
 4 => int foo;
 foo++;
 foo--;
@@ -301,7 +301,7 @@ foo--;
 
 These operators come before one operand.
 
-```ck
+```chuck
 // logical invert
 if( !true == false )
     <<<"yes">>>;
@@ -317,7 +317,7 @@ new object @=> object @ bar;
 
 ## `<<` (array append)
 
-```ck
+```chuck
 // instantiate empty float array
 float arr[0];
 

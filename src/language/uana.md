@@ -73,7 +73,7 @@ Unit analyzers (UAnae) are objects, and thus they need to be instantiated before
 they can be used. We declare unit analyzers the same way we declare UGens 
 and other [objects](./class.md#new).
 
-```ck
+```chuck
 // instantiate an FFT, assign reference to variable f 
 FFT f;
 ```
@@ -87,7 +87,7 @@ the behavior of the _ChucK_ operator between UGens, using `=^` to connect one
 UAna to another connects the analysis results of the first to the analysis 
 input of the second.
 
-```ck
+```chuck
 // instantiate FFT and flux objects. Connect them to trigger 
 // computation of spectrum and spectral flux on adc input
 adc => FFT fft =^ Flux flux => blackhole;
@@ -102,7 +102,7 @@ statement. In the example below, the analysis of fluxCapacitor
 depends on the results of `flux` so the `flux` object will always
 perform its analysis computation before the computation of fluxCapacitor.
 
-```ck
+```chuck
 // Set up analysis on adc, via an FFT object, a spectral 
 // flux object, and an instance of a hypothetical Uana 
 // class, FluxCapacitor, that operates on the flux result.
@@ -120,7 +120,7 @@ through which _audio samples_ are passed is denoted with the `=>`
 operator, and the connection through which _spectral data_ is passed
 (from the FFT to the IFFT) is denoted with the `=^` operator.
 
-```ck
+```chuck
 // Chain a sine into a reverb, 
 // Perform FFT, then IFFT, then apply gain, then output.
 SinOsc s => JCRev r => FFT f =^ IFFT i => Gain g => dac;
@@ -159,7 +159,7 @@ computation at a point in time, the UAna's `upchuck()` member function is
 called. In the example below, an FFT computation is triggered every 1024 
 samples.
 
-```ck
+```chuck
 adc => FFT fft => dac;
 // set the FFT to be of of size 2048 samples
 2048 => fft.size;
@@ -184,7 +184,7 @@ For example, in the code below, the `FFT` object, `fft` performs computation
 every 5 seconds as triggered by `shred1`, and it additionally performs 
 computation at a variable rate as triggered by `shred2`.
 
-```ck
+```chuck
 adc => FFT fft -> dac;
 2048 => fft.size;
 
@@ -220,7 +220,7 @@ points as we move through time, by setting various parameters of the unit
 analyzer. To set the a value for a parameter of a UAna, a value of the proper 
 type should be ChucKed to the corresponding control function.
 
-```ck
+```chuck
 // connect the input to an FFT
 adc => FFT fft => blackhole;
 
@@ -243,7 +243,7 @@ above syntax is equivalent to calling functions. For example, the line
 below could alternatively be used to change the FFT window to a Hamming
 window, as above.
 
-```ck
+```chuck
 fft.window(Windowing.hamming(512));
 ```
 
@@ -255,7 +255,7 @@ a Uana, we may call an overloaded function of the same name. Additionally,
 assignments can be chained together when assigning one value to multiple 
 targets.
 
-```ck
+```chuck
 // connect adc to FFT
 adc => FFT fft => blackhole;
 
@@ -275,7 +275,7 @@ that certain analysis computations near the beginning of time and
 analysis computations after certain parameters have changed will
 logically involve a short "transient" period.</p>
 
-```ck
+```chuck
 // connect adc to FFT to blackhole
 adc => FFT fft => blackhole;
 
@@ -327,7 +327,7 @@ Additionally, all `UanaBlob`s store the time when the blob was last computed.
 
 The example below demonstrates how one might access the results of an FFT:
 
-```ck
+```chuck
 adc => FFT fft => blackhole;
 // ... set FFT parameters here ...
 
@@ -369,7 +369,7 @@ Beware: whenever a UAna is `upchuck()`-ed, the contents of its previous
 refer to the same `UAnaBlob`.  When `fft.upchuck()` is called the second time, 
 the contents of the `UAnaBlob` referred to by `blob1` are overwritten.
 
-```ck
+```chuck
 adc => FFT fft => blackhole;
 
 UAnaBlob blob1, blob2;
@@ -393,7 +393,7 @@ any `upchuck()` after the first will not re-compute the analysis, even if UAna
 parameters have changed. After the code below, `blob` refers to a `UAnaBlob` 
 that is the result of computing the first (size 1024) FFT.
 
-```ck
+```chuck
 adc => FFT fft => blackhole;
 1024 => fft.size;
 
@@ -428,7 +428,7 @@ Often, the computation of one UAna will depend on the computation results of
 upstream UAnae. For example, in the UAna network below, the spectral flux is 
 computed using the results of an FFT.
 
-```ck
+```chuck
 adc => FFT fft =^ Flux flux => blackhole;
 ```
 
@@ -442,7 +442,7 @@ computation is handled internally by ChucK; you should understand the flow of
 control, but you don't need to do `fft.upchuck()` explicitly. Just writing code 
 like that below will do the trick:
 
-```ck
+```chuck
 adc => FFT fft =^ Flux flux => blackhole;
 UAnaBlob blob;
 while (true) 
@@ -459,7 +459,7 @@ Additionally, each time a UAna `upchuck()`s, its results are cached until time
 passes. This means that a UAna will only perform its computation once for a 
 particular point in time.
 
-```ck
+```chuck
 adc => FFT fft =^ Flux flux => blackhole;
 fft =^ Centroid c => blackhole;
 
@@ -482,7 +482,7 @@ When no `upchuck()` is performed on a UAna, or on UAnae that depend on it, it
 will not perform computation. For example, in the network below, the flux is 
 never computed.
 
-```ck
+```chuck
 adc => FFT fft =^ Flux flux => blackhole;
 UAnaBlob blob;
 while (true) 
@@ -502,7 +502,7 @@ and flux are all computed at different rates. When the analysis times for
 due to its internal caching. When it is an analysis time point for `fft`
 but not for `flux`, `flux` will not be computed.
 
-```ck
+```chuck
 adc => FFT fft =^ Flux flux => blackhole;
 fft =^ Centroid c => blackhole;
 UAnaBlob blob1, blob2, blob3;
@@ -554,7 +554,7 @@ synchronized, computed, and cached so that they are available to be accessed
 via `upchuck()` on each UAna (possibly by a different shred waiting for an 
 event - see [below](#using_events).
 
-```ck
+```chuck
 adc => FFT fft =^ Flux flux =^ UAna agglom => blackhole;
 fft =^ Centroid centroid =^ agglom;
 
@@ -579,7 +579,7 @@ recognizing a loop in the network. `a` then uses `b`'s _last computed_
 UAnaBlob to perform its computation. This may or may not be desirable,
 so be careful.
 
-```ck
+```chuck
 adc => UAna a =^ UAna b =^ Uana c => blackhole;
 b =^ a; // creates a feedback loop
 
@@ -598,7 +598,7 @@ UAnae, and it concatenates their output blob data into a feature vector
 that can be used as input to a classifier, for example using 
 [smirk](http://smirk.cs.princeton.edu/). 
 
-```ck
+```chuck
 adc => FFT fft =^ Flux flux =^ FeatureCollector fc => blackhole;
 fft =^ Centroid centroid =^ fc;
 // could add abitrarily many more UAnae that connect to fc via =^
@@ -622,7 +622,7 @@ while (true)
 When a UAna is `upchuck()`-ed, it triggers an event. In the example below, 
 a separate shred prints the results of FFT whenever it is computed.
 
-```ck
+```chuck
 adc => FFT fft => blackhole;
 spork ~printer(); // spork a printing shred
 while (true) 

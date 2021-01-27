@@ -10,12 +10,12 @@ folder examples - in either the source download or the executable download.
 Examples listed together are variations on a theme, or are intended to be 
 run in parallel, like this:
 
-```sh
+```bash
 % chuck moe.ck larry.ck curly.ck
 ```
 
 or perhaps:
-```sh
+```bash
 % chuck otf*.ck
 ```
 
@@ -175,7 +175,7 @@ of the [ChucK Language Specification](/language/index.md).
 
 | Events                                    |                                                                                  |
 | :---------------------------------------- | :------------------------------------------------------------------------------- |
-| event broadcast method                    | [broadcast.ck](event/broadcase.ck)                                               |
+| event broadcast method                    | [broadcast.ck](event/broadcast.ck)                                               |
 | event signal method                       | [signal.ck](event/signal.ck), [signal4.ck](event/signal4.ck)                     |
 | extending events (creating custom events) | [event_signal.ck](event/event_signal.ck)                                         |
 | typing-based instrument                   | [clix.ck](event/clix.ck), [clix2.ck](event/clix2.ck), [clix3.ck](event/clix3.ck) |

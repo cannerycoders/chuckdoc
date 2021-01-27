@@ -35,7 +35,7 @@ like timing - is deterministic in ChucK.
 The simplest way to to run shreds concurrently is to specify them on the 
 command line:
 
-```sh
+```bash
 % chuck foo.ck bar.ck boo.ck
 ```
 
@@ -67,7 +67,7 @@ the __`spork`__ keyword/operator:
   back the return value at some later point in time will be provided in a 
   future release.
 
-```ck
+```chuck
 // define function go()
 fun void go()
 {
@@ -83,7 +83,7 @@ spork ~ go() => Shred @ offspring;
 
 A slightly longer example:
 
-```ck
+```chuck
 // define function
 fun void foo( string s )
 {
@@ -124,7 +124,7 @@ does exactly that. This is often useful immediately after sporking a new shred,
 and you would like for that shred to have a chance to run but you do not want 
 to advance time yet for yourself.
 
-```ck
+```chuck
 // spork shred
 spork ~ go();
 
@@ -136,7 +136,7 @@ me.yield();
 It may also be useful to exit the current shred.  For example if a MIDI device 
 fails to open, you may exit the current shred.
 
-```ck
+```chuck
 // make a MidiIn object
 MidiIn min;
 
@@ -152,7 +152,7 @@ if( !min.open( 0 ) )
 
 You can get the shred id:
 
-```ck
+```chuck
 // print out the shred id
 <<< me.id(); >>>;
 ```
@@ -169,7 +169,7 @@ it. Unlike `spork ~`, there is no parent-child relationship between the shred
 that calls the function and the new shred that is added.  This is useful for 
 dynamically running stored programs.
 
-```ck
+```chuck
 // spork "foo.ck"
 Machine.add( "foo.ck" );
 ```
@@ -179,7 +179,7 @@ This will likely be changed in the future.
 
 Similarly, you can remove shreds from the virtual machine.
 
-```ck
+```chuck
 // add
 Machine.add( "foo.ck" ) => int id;
 
@@ -212,34 +212,34 @@ programs using optional command line arguments.  An argument is specified by
 appending a colon character ':' to the name of the ChucK program to which 
 you wish to send that argument, followed by the argument itself.  
 
-```sh
+```bash
  % chuck foo.ck:foo
 ```
 
 Multiple arguments can be specified, each separated by the colon character.  
 
-```sh
+```bash
  % chuck foo.ck:foo:bar:boo
 ```
 
 Furthermore, each ChucK program has its own set of arguments, which are 
 specified separately.  
 
-```sh
+```bash
  % chuck foo.ck:foo bar.ck:bar boo.ck
 ```
 
 Command line arguments can also be used when using on-the-fly programming 
 facilities of ChucK.
 
-```sh
+```bash
  % chuck + foo.ck:foo bar.ck:bar:boo
 ```
 
 __`Machine.add()`__ and __`Machine.replace()`__ accept command line arguments 
 in a similar fashion.  
 
-```ck
+```chuck
 // add foo.ck
 // pass foo and bar as command line arguments
 Machine.add( "foo.ck:foo:bar" ) => int id;
@@ -252,7 +252,7 @@ Machine.replace( id, "bar.ck:foo:bar" );
 To access command line arguments within a ChucK program, use the 
 __`me.args()`__ and __`me.arg()`__ functions.  
 
-```ck
+```chuck
 // print out all arguments
 for( int i; i < me.numArgs(); i++ )
     <<< me.arg( i ) >>>;

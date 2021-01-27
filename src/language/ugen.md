@@ -56,7 +56,7 @@ Unit generators (UGens) are objects, and need to be instantiated before they
 can be used. We declare unit generators the same way we declare 
 [objects](./class.md#new).
 
-```ck
+```chuck
 // instantiate a SinOsc, assign reference to variable s
 SinOsc s;
 ```
@@ -68,21 +68,21 @@ SinOsc s;
 The ChucK operator (`=>`) is specially overloaded for unit generators: 
 ChucKing one UGen to another connects their respective output(s) and input(s).
 
-```ck
+```chuck
 // instantiate a SinOsc, connect its output to dac's input
 SinOsc s => dac;
 ```
 
 It is also possible to linearly chain many UGens together in a single statement.
 
-```ck
+```chuck
 // connect SinOsc to Gain to reverb to dac
 SinOsc s => Gain g => JCRev r => dac;
 ```
 
 Furthermore, it is possible to introduce feedback in the network.
 
-```ck
+```chuck
 // connect adc to Gain to delayline to dac; (feedforward)
 adc => Gain g1 => DelayL d => dac;
 
@@ -98,7 +98,7 @@ network.  It is essential to note that the above only connects the unit
 generators, but does not actually generate audio - unless time is advanced.  
 (see [manipulating time](./time.md) and [using events](./event.md).
 
-```ck
+```chuck
 // connect SinOsc to dac
 SinOsc s => dac;
 // set initial frequency (see next section)
@@ -111,7 +111,7 @@ SinOsc s => dac;
 It is also possible to dynamically disconnect unit generators, using 
 the _UnChucK_ operator __`=<`__ or __`!=>`__:
 
-```ck
+```chuck
 // connect SinOsc to dac
 SinOsc s => dac;
 
@@ -142,7 +142,7 @@ on the unit generator.  To set the a value for a parameter of a unit generator
 a value of the proper type should be ChucKed to the corresponding control 
 function.
 
-```ck
+```chuck
 // connect SinOsc to dac
 SinOsc s => dac;
 // set initial frequency to 440 hz
@@ -158,7 +158,7 @@ SinOsc s => dac;
 Since the control functions are member functions of the unit generator, the 
 above syntax is equilavent to calling functions.
 
-```ck
+```chuck
 // connect SinOsc to dac
 SinOsc s => dac;
 
@@ -175,7 +175,7 @@ For a list of unit generators and their control methods, consult
 To read the current value of certain parameters (not all parameters can 
 be read), we may call an overloaded function of the same name.
 
-```ck
+```chuck
 // connect SinOsc to dac
 SinOsc s => dac;
 
@@ -187,7 +187,7 @@ You can chain assignments together when you want to assign one value to
 multiple targets. Note that the parentheses are only needed when the read 
 function is on the very left.
 
-```ck
+```chuck
 // SinOsc to dac
 SinOsc foo => dac;
 // triosc to dac
@@ -205,7 +205,7 @@ bar.freq( foo.freq() );
 
 Of course, varying parameters over time is often more interesting.
 
-```ck
+```chuck
 // SinOsc to dac
 SinOsc s => dac;
 
@@ -252,7 +252,7 @@ their output channels when connecting to stereo UGens.  Stereo UGens contain
 the parameters `.left` and `.right`, which allow access to the individual 
 channels.
 
-```ck
+```chuck
 // adding separate reverb to left and right channels
 adc.left => JCRev rl => dac.left;
 adc.right => JCRev rr => dac.right;
@@ -262,7 +262,7 @@ The Pan2 stereo object takes a mono signal and split it to a stereo signal,
 with control over the panning.  The pan position may be changed with the 
 .pan parameter (-1 (hard left) <= p <= 1 (hard right)).
 
-```ck
+```chuck
 // white noise to pan to dac
 Noise n => Pan2 p => dac;
 

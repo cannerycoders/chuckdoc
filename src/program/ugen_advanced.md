@@ -204,7 +204,7 @@ __`WarpTable`__ is mostly useful for conditioning control signals.
 It is end-constrained in that an input of 0 always yields 0 and an output 
 of 1 always yields 1.
 
-```ck
+```chuck
 WarpTable.value(0) => 0 always
 WarpTable.value(1) => 1 always
 ```

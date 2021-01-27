@@ -63,7 +63,7 @@ ChucK has a number of classes defined within the language.
 Let's begin with some examples.  For these examples, let's assume 
 `Foo` is a defined class.
 
-```ck
+```chuck
 // create a Foo object; stored in reference variable bar
 Foo bar;
 ```
@@ -81,7 +81,7 @@ is a reference, and does not represent the object itself.
 To declare a reference variable that refers to nothing (also called a 
 _null reference_):
 
-```ck
+```chuck
 // create a null reference to a Foo object
 Foo @ bar;
 ```
@@ -91,7 +91,7 @@ The above code only declare a reference and initializes it to `null`
 
 We can assign a new instance to the reference variable:
 
-```ck
+```chuck
 // assign new instance of Foo to bar
 new Foo @=> Foo @ bar;
 // (this statement is equivalent to 'Foo bar', above)
@@ -103,7 +103,7 @@ The `@=>` operator performs the reference assignment (described [here](./oper.md
 
 It is possible to make many references to same object:
 
-```ck
+```chuck
 // make a Foo
 Foo bar;
 
@@ -146,7 +146,7 @@ will not conflict with identically named classes in other running shreds.
 Classes encapsulate a set of behaviors and data. To define a new object type, 
 the keyword __`class`__ is used followed by the name of that class. 
 
-```ck
+```chuck
 // define class X
 class X
 {
@@ -159,7 +159,7 @@ namespace (instead of the local one), and can be instantiated from other
 programs that are subsequently compiled.  There can be at most one public 
 class per file.
 
-```ck
+```chuck
 // define public class MissPopular
 public class MissPopular
 {
@@ -188,7 +188,7 @@ and functions are only associated with the class (and shared by the instances).
 
 Instance data and methods are associated with an object.
 
-```ck
+```chuck
 // define class X
 class X
 {
@@ -237,7 +237,7 @@ single _pre-constructor_. The code immediately inside a class definiton
 (and not inside any functions) is run every time an instance of that class 
 is created.
 
-```ck
+```chuck
 // define class X
 class X
 {
@@ -275,7 +275,7 @@ Static data and functions are associated with a class, and are shared by all
 instances of that class -- in fact,static elements can be accessed without 
 an instance, by using the name of the class: `Classname.element`.
 
-```ck
+```chuck
 // define class X
 class X
 {
@@ -330,7 +330,7 @@ may be assigned to a parent class reference type.
 For now, access modifiers (public, protected, private) are included but not 
 fully implemented.  Everything is public by default.
 
-```ck
+```chuck
 // define class X
 class X
 {
@@ -377,7 +377,7 @@ Inheritance provides us a way of efficiently sharing code between classes which
 perform similar roles.  We can define a particular complex pattern of behavior, 
 while changing the way that certain aspects of the behavior operate.
 
-```ck
+```chuck
 // parent class defines some basic data and methods 
 class Xfunc
 { 

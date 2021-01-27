@@ -145,7 +145,7 @@ but no more).
 |                                                |
 | see [i-robot.ck](../examples/basic/i-robot.ck) |
 
-```ck
+```chuck
 Noise n => Gain g => dac;
 SinOsc s => g;
 .3 => g.gain;
@@ -167,7 +167,7 @@ The default for each sample is 0 if not set.
 | __`float next(float next)` | Value of next sample to be generated. (Note: if you are using the UGen.last method to read the output of the impulse, the value set by Impulse.next does not appear as the output until after the next sample boundary. In this case, there is a consistent 1::samp offset between setting .next and reading that value using .last.) |
 | __`float next()`           | Value of next sample to be generated.                                                                                                                                                                                                                                                                                                 |
 
-```ck
+```chuck
 Impulse i => dac;
 while( true ) {
     1.0 => i.next;
@@ -187,7 +187,7 @@ while( true ) {
 |                                            |                          |
 | see : [step.ck](../examples/basic/step.ck) |                          |
 
-```ck
+```chuck
  -1.0 => float amp;
  // square wave using Step
  while( true ) {

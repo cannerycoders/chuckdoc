@@ -20,7 +20,7 @@ We start with a blank ChucK program, and add the following line of code:
 (by default, a ChucK program starts executing from the first instruction 
 in the top-level (global) scope). 
 
-```ck
+```chuck
 // connect sine oscillator to D/A convertor (sound card)
 SinOsc s => dac;
 ```
@@ -47,7 +47,7 @@ audio data are both inextricably related in ChucK (as in reality), and
 separated in the way they are manipulated.  But for now, let's generate 
 our sine wave and hear it by adding one more line:
 
-```ck
+```chuck
 // connect sine oscillator to D/A convertor (sound card)
 SinOsc s => dac;
 
@@ -57,7 +57,7 @@ SinOsc s => dac;
 
 Let's now run this (assuming you saved the file as `foo.ck`):
 
-```sh
+```bash
 % chuck foo.ck
 ```
 
@@ -67,7 +67,7 @@ it has reached the end).  For now, we can just take the second line of code
 to mean "let time pass for 2 seconds (and let audio compute during that 
 time)".  If you want to play it indefinitely, we could write a loop:
 
-```ck
+```chuck
 // connect sine oscillator to D/A convertor (sound card)
 SinOsc s => dac;
 
@@ -94,7 +94,7 @@ naturally from the timing.
 
 Now, let's try changing the frequency randomly every 100ms:
 
-```ck
+```chuck
 // make our patch
 SinOsc s => dac;
 
@@ -114,7 +114,7 @@ _assigned. to the oscillator's frequency, every `100::ms`.
 
 Go ahead and run this (again replace `foo.ck` with your filename):
 
-```sh
+```bash
 % chuck foo.ck
 ```
 
@@ -124,7 +124,7 @@ sample)_), or change `1000.0` to `5000.0`...
 
 Run and listen:
 
-```sh
+```bash
 % chuck foo.ck
 ```
 
@@ -136,7 +136,7 @@ Now let's write another (slightly longer) program: (these files can be found
 in the [examples directory](examples/index.md), so you don't have to type 
 them in - but you may have to copy them into your own work area).
 
-```ck
+```chuck
 Impulse i => BiQuad f => dac; // our audio signal chain
 
 .99 => f.prad; // set the filter's pole radius
@@ -160,7 +160,7 @@ while( true )
 
 Name this moe.ck, and run it:
 
-```sh
+```bash
 % chuck moe.ck
 ```
 
@@ -173,7 +173,7 @@ following modifications.
 
 Run all three in parallel:
 
-```sh
+```bash
 % chuck moe.ck larry.ck curly.ck
 ```
 

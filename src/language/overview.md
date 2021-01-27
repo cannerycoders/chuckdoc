@@ -36,13 +36,13 @@ for a more complete guide to the command line options).
 
 To run ChucK with a chuck-program/patch called `foo.ck` :
 
-```sh
+```bash
 % chuck foo.ck
 ```
 
 To run ChucK with multiple patches concurrently (or the same one multiple times):
 
-```sh
+```bash
 % chuck foo.ck bar.ck bar.ck boo.ck
 ```
 
@@ -52,7 +52,7 @@ audio system on your computer and print out all available audio and MIDI devices
 You may then refer to them (by number usually) from the command line or 
 from your program.  (see [VM Options](../program/vm.md") for a complete list)
 
-```sh
+```bash
 % chuck --probe
 ```
 
@@ -60,14 +60,14 @@ ChucK can be run in a different terminal as a host/listener that patches may
 be sent to.  The server should invoke the --loop flag to specify that the 
 virtual machine should not halt automatically (when the current programs exit).
 
-```sh
+```bash
 % chuck --loop 
 ```
 
 If a ChucK listener is running, we can (from a second terminal) send a 
 program/patch to to the listener by using the `+` command line option:
 
-```sh
+```bash
 % chuck + foo.ck 
 ```
 
@@ -90,7 +90,7 @@ indicate to the compiler to skip the rest of the line.  /* and */
 denotes block commenting - the compiler ignores the text in between.  
 (Note: block comments cannot be nested)
 
-```ck
+```chuck
 // this is a comment
 int foo; // another comment
 
@@ -105,7 +105,7 @@ int foo; // another comment
 For the time being, `stdout` and `chout` have been temporarily disabled for the 
 present release.  In their place we have provided a debug print syntax:
 
-```ck
+```chuck
 // prints out value of _expression_
 <<< expression >>>;
 ```
@@ -116,7 +116,7 @@ non-declaration expression (non l-value) and will not affect the
 execution of the code. Expressions which represent an object will print 
 the value of that object's reference address:
 
-```ck
+```chuck
 // assign 5 to a newly declared variable
 5 => int i;
 // prints "5 : (int)"
@@ -132,7 +132,7 @@ the value of that object's reference address:
 For more formatted data output, a comma-separated list of expressions 
 will print only their respective values (with one space between):
 
-```ck
+```chuck
 // prints "the value of x is 3.5" (x from above)
 <<<"the value of x is", x>>>;
 

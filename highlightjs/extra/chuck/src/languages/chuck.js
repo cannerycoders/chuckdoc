@@ -106,7 +106,7 @@ export default function(hljs)
     const CHUCK_OPERATORS =
     {
         className: "keyword",
-        begin: /=>|\*=>|=\^|<<<|>>>|<</   // just the weird operators
+        begin: /=>|\*=>|=\^|<<<|>>>|<<|\$/   // just the weird operators
     };
 
     const CHUCK_NAMESPACES =
