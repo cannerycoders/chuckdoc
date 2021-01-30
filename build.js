@@ -182,6 +182,7 @@ function initChucKDocs()
         "</a>";
     snips.ckoffsite = "<hr/>" +
         "[ChucK Home](https://chuck.cs.princeton.edu) | " +
+        "[Floss Manual](https://en.flossmanuals.net/chuck/_full/1) | " +
         "[ccrma](https://ccrma.stanford.edu) | " +
         "[soundlab](https://soundlab.cs.princeton.edu)";
     snips.ckbackhome = "[ChucK Docs](/index.md)";

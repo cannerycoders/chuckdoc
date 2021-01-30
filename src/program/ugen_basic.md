@@ -115,12 +115,14 @@ __output__ device.
 #### adc
 
 __`adc`__  analog-to-digital converter - abstraction for underlying 
-audio __input__ device |
+audio __input__ device
 
 | adc.functions          | Description            |
 | :--------------------- | :--------------------- |
 | _see of [UGen](#ugen)_ |                        |
 | __`UGen left()`__      | output of left channel |
+| __`UGen right()`__     | output to right channel                   |
+| __`UGen chan(int n)`__ | returns nth channel (from [UGen](#ugen)) |
 
 #### blackhole
 

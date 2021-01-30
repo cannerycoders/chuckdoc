@@ -177,7 +177,7 @@ of the [ChucK Language Specification](/language/index.md).
 | :---------------------------------------- | :------------------------------------------------------------------------------- |
 | event broadcast method                    | [broadcast.ck](event/broadcast.ck)                                               |
 | event signal method                       | [signal.ck](event/signal.ck), [signal4.ck](event/signal4.ck)                     |
-| extending events (creating custom events) | [event_signal.ck](event/event_signal.ck)                                         |
+| extending events (creating custom events) | [event_extend.ck](event/event_extend.ck)                                         |
 | typing-based instrument                   | [clix.ck](event/clix.ck), [clix2.ck](event/clix2.ck), [clix3.ck](event/clix3.ck) |
 | more keyboard events                      | [kb.ck](event/kb.ck), [kb2.ck](event/kb2.ck)                                     |
 
