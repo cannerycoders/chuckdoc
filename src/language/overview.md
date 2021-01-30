@@ -36,13 +36,13 @@ for a more complete guide to the command line options).
 
 To run ChucK with a chuck-program/patch called `foo.ck` :
 
-```bash
+```shell
 % chuck foo.ck
 ```
 
 To run ChucK with multiple patches concurrently (or the same one multiple times):
 
-```bash
+```shell
 % chuck foo.ck bar.ck bar.ck boo.ck
 ```
 
@@ -52,7 +52,7 @@ audio system on your computer and print out all available audio and MIDI devices
 You may then refer to them (by number usually) from the command line or 
 from your program.  (see [VM Options](../program/vm.md") for a complete list)
 
-```bash
+```shell
 % chuck --probe
 ```
 
@@ -60,14 +60,14 @@ ChucK can be run in a different terminal as a host/listener that patches may
 be sent to.  The server should invoke the --loop flag to specify that the 
 virtual machine should not halt automatically (when the current programs exit).
 
-```bash
+```shell
 % chuck --loop 
 ```
 
 If a ChucK listener is running, we can (from a second terminal) send a 
 program/patch to to the listener by using the `+` command line option:
 
-```bash
+```shell
 % chuck + foo.ck 
 ```
 

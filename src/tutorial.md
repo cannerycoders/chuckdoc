@@ -57,7 +57,7 @@ SinOsc s => dac;
 
 Let's now run this (assuming you saved the file as `foo.ck`):
 
-```bash
+```shell
 % chuck foo.ck
 ```
 
@@ -114,7 +114,7 @@ _assigned. to the oscillator's frequency, every `100::ms`.
 
 Go ahead and run this (again replace `foo.ck` with your filename):
 
-```bash
+```shell
 % chuck foo.ck
 ```
 
@@ -124,7 +124,7 @@ sample)_), or change `1000.0` to `5000.0`...
 
 Run and listen:
 
-```bash
+```shell
 % chuck foo.ck
 ```
 
@@ -160,7 +160,7 @@ while( true )
 
 Name this moe.ck, and run it:
 
-```bash
+```shell
 % chuck moe.ck
 ```
 
@@ -173,7 +173,7 @@ following modifications.
 
 Run all three in parallel:
 
-```bash
+```shell
 % chuck moe.ck larry.ck curly.ck
 ```
 

@@ -10,12 +10,12 @@ folder examples - in either the source download or the executable download.
 Examples listed together are variations on a theme, or are intended to be 
 run in parallel, like this:
 
-```bash
+```shell
 % chuck moe.ck larry.ck curly.ck
 ```
 
 or perhaps:
-```bash
+```shell
 % chuck otf*.ck
 ```
 

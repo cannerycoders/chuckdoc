@@ -35,7 +35,7 @@ like timing - is deterministic in ChucK.
 The simplest way to to run shreds concurrently is to specify them on the 
 command line:
 
-```bash
+```shell
 % chuck foo.ck bar.ck boo.ck
 ```
 
@@ -212,27 +212,27 @@ programs using optional command line arguments.  An argument is specified by
 appending a colon character ':' to the name of the ChucK program to which 
 you wish to send that argument, followed by the argument itself.  
 
-```bash
+```shell
  % chuck foo.ck:foo
 ```
 
 Multiple arguments can be specified, each separated by the colon character.  
 
-```bash
+```shell
  % chuck foo.ck:foo:bar:boo
 ```
 
 Furthermore, each ChucK program has its own set of arguments, which are 
 specified separately.  
 
-```bash
+```shell
  % chuck foo.ck:foo bar.ck:bar boo.ck
 ```
 
 Command line arguments can also be used when using on-the-fly programming 
 facilities of ChucK.
 
-```bash
+```shell
  % chuck + foo.ck:foo bar.ck:bar:boo
 ```
 
