@@ -251,9 +251,9 @@ of the [ChucK Language Specification](/language/index.md).
 | chugraph | [chugraph.ck](extend/chugraph.ck) |
 
 --------------------------------------------------------------------------------
-## Programming for Musicians and Digital Artists: Creating music with ChucK
+## [Programming for Musicians and Digital Artists: Creating music with ChucK](https://www.manning.com/books/programming-for-musicians-and-digital-artists)
 
-#### chapter1
+### chapter1
 | chapter1                                                                       |
 | :----------------------------------------------------------------------------- |
 | [Listing1.1.ck](book/digital-artists/chapter1/Listing1.1.ck)                   |
@@ -278,7 +278,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [Listing1.20.ck](book/digital-artists/chapter1/Listing1.20.ck)                 |
 | [Listing1.7Shorthand.ck](book/digital-artists/chapter1/Listing1.7Shorthand.ck) |
 | [WowExample.ck](book/digital-artists/chapter1/WowExample.ck)                   |
-#### chapter2
+### chapter2
 | chapter2                                                     |
 | :----------------------------------------------------------- |
 | [Listing2.1.ck](book/digital-artists/chapter2/Listing2.1.ck) |
@@ -289,7 +289,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [Listing2.6.ck](book/digital-artists/chapter2/Listing2.6.ck) |
 | [Listing2.7.ck](book/digital-artists/chapter2/Listing2.7.ck) |
 | [Listing2.8.ck](book/digital-artists/chapter2/Listing2.8.ck) |
-#### chapter3
+### chapter3
 | chapter3                                                     |
 | :----------------------------------------------------------- |
 | [Listing3.1.ck](book/digital-artists/chapter3/Listing3.1.ck) |
@@ -300,7 +300,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [Listing3.6.ck](book/digital-artists/chapter3/Listing3.6.ck) |
 | [Listing3.7.ck](book/digital-artists/chapter3/Listing3.7.ck) |
 | [Listing3.8.ck](book/digital-artists/chapter3/Listing3.8.ck) |
-#### chapter4
+### chapter4
 | chapter4                                                       |
 | :------------------------------------------------------------- |
 | [Listing4.1.ck](book/digital-artists/chapter4/Listing4.1.ck)   |
@@ -315,7 +315,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [Listing4.10.ck](book/digital-artists/chapter4/Listing4.10.ck) |
 | [Listing4.11.ck](book/digital-artists/chapter4/Listing4.11.ck) |
 | [Listing4.12.ck](book/digital-artists/chapter4/Listing4.12.ck) |
-#### chapter5
+### chapter5
 | chapter5                                                       |
 | :------------------------------------------------------------- |
 | [Listing5.1.ck](book/digital-artists/chapter5/Listing5.1.ck)   |
@@ -338,7 +338,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [Listing5.18.ck](book/digital-artists/chapter5/Listing5.18.ck) |
 | [Listing5.19.ck](book/digital-artists/chapter5/Listing5.19.ck) |
 | [Listing5.20.ck](book/digital-artists/chapter5/Listing5.20.ck) |
-#### chapter6
+### chapter6
 | chapter6                                                       |
 | :------------------------------------------------------------- |
 | [Listing6.1.ck](book/digital-artists/chapter6/Listing6.1.ck)   |
@@ -356,7 +356,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [Listing6.13.ck](book/digital-artists/chapter6/Listing6.13.ck) |
 | [Listing6.14.ck](book/digital-artists/chapter6/Listing6.14.ck) |
 | [Listing6.15.ck](book/digital-artists/chapter6/Listing6.15.ck) |
-#### chapter7
+### chapter7
 | chapter7                                                       |
 | :------------------------------------------------------------- |
 | [Listing7.1.ck](book/digital-artists/chapter7/Listing7.1.ck)   |
@@ -378,7 +378,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [Listing7.17.ck](book/digital-artists/chapter7/Listing7.17.ck) |
 | [Listing7.18.ck](book/digital-artists/chapter7/Listing7.18.ck) |
 | [TryThis.ck](book/digital-artists/chapter7/TryThis.ck)         |
-#### chapter8
+### chapter8
 | chapter8                                                       |
 | :------------------------------------------------------------- |
 | [Listing8.1.ck](book/digital-artists/chapter8/Listing8.1.ck)   |
@@ -397,7 +397,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [initialize.ck](book/digital-artists/chapter8/initialize.ck)   |
 | [piano.ck](book/digital-artists/chapter8/piano.ck)             |
 | [score.ck](book/digital-artists/chapter8/score.ck)             |
-#### chapter9
+### chapter9
 | chapter9                                                       |
 | :------------------------------------------------------------- |
 | [BPM.ck](book/digital-artists/chapter9/BPM.ck)                 |
@@ -418,7 +418,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [UseBPM2.ck](book/digital-artists/chapter9/UseBPM2.ck)         |
 | [UseBPM3.ck](book/digital-artists/chapter9/UseBPM3.ck)         |
 | [initialize.ck](book/digital-artists/chapter9/initialize.ck)   |
-#### chapter9
+### chapter9
 | chapter9                                                                   |
 | :------------------------------------------------------------------------- |
 | [BPM.ck](book/digital-artists/chapter9/DrumMachine/BPM.ck)                 |
@@ -436,7 +436,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [kick.ck](book/digital-artists/chapter9/DrumMachine/kick.ck)               |
 | [score.ck](book/digital-artists/chapter9/DrumMachine/score.ck)             |
 | [snare.ck](book/digital-artists/chapter9/DrumMachine/snare.ck)             |
-#### chapter9
+### chapter9
 | chapter9                                                                     |
 | :--------------------------------------------------------------------------- |
 | [Listing9.20.ck](book/digital-artists/chapter9/SmartMandolin/Listing9.20.ck) |
@@ -445,7 +445,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [MandoPlayer.ck](book/digital-artists/chapter9/SmartMandolin/MandoPlayer.ck) |
 | [MandoScore.ck](book/digital-artists/chapter9/SmartMandolin/MandoScore.ck)   |
 | [initialize.ck](book/digital-artists/chapter9/SmartMandolin/initialize.ck)   |
-#### chapter10
+### chapter10
 | chapter10                                                         |
 | :---------------------------------------------------------------- |
 | [Listing10.1.ck](book/digital-artists/chapter10/Listing10.1.ck)   |
@@ -455,7 +455,7 @@ of the [ChucK Language Specification](/language/index.md).
 | [Listing10.4b.ck](book/digital-artists/chapter10/Listing10.4b.ck) |
 | [Listing10.4c.ck](book/digital-artists/chapter10/Listing10.4c.ck) |
 | [Listing10.5.ck](book/digital-artists/chapter10/Listing10.5.ck)   |
-#### chapter11
+### chapter11
 | chapter11                                                                     |
 | :---------------------------------------------------------------------------- |
 | [Listing11.1.ck](book/digital-artists/chapter11/Listing11.1.ck)               |
