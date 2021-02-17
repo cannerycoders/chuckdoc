@@ -251,7 +251,7 @@ of the [ChucK Language Specification](/language/index.md).
 | chugraph | [chugraph.ck](extend/chugraph.ck) |
 
 --------------------------------------------------------------------------------
-## Book
+## Programming for Musicians and Digital Artists: Creating music with ChucK
 
 #### chapter1
 | chapter1                                                                       |
