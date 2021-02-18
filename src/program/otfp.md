@@ -11,7 +11,7 @@ ${PROGHEADER}
 ## On-the-fly Programming Commands
 
 These command-line options are used for on-the-fly programming 
-(see [on-the-fly](href="http://on-the-fly.cs.princeton.edu/)).
+(see [on-the-fly](http://on-the-fly.cs.princeton.edu/)).
 By default, this requires that a ChucK virtual machine be already running 
 on the localhost.  These commands communicate via sockets to add/remove/replace 
 shreds in the VM, and to query VM state.  The simplest way to set up a 
