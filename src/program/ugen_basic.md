@@ -293,10 +293,10 @@ __`Osc`__ base class for simple oscillator ugens.
 | _see [Ugen](#ugen)_                           |
 | __`int channel(), channel(int channel)`__     | Get/set channel if the sound file contains more than one channel of audio, select which channel to play.                        |
 | __`int channels()`__                          | Number of channels available in the sound file.                                                                                 |
-| __`int chuncks(), chunks(int frames)`__       | Get/set chunk size, in frames, for loading the file from disk. Set to 0 to disable chunking.                                    |
+| __`int chunks(), chunks(int frames)`__        | Get/set chunk size, in frames, for loading the file from disk. Set to 0 to disable chunking.                                    |
 | __`float freq(), freq(float freq)`__          | Get/set loop rate (in file loops per second).                                                                                   |
 | __`int interp(int interp)`__                  | Get/set interpolation mode. 0: drop sample, 1: linear interpolation, 2: sinc interpolation                                      |
-| __`int dur length()`__                        | Get total length of the file.                                                                                                   |
+| __`dur length()`__                            | Get total length of the file.                                                                                                   |
 | __`int loop(), loop(int loop)`__              | Get/set toggle for looping file playback.                                                                                       |
 | __`float phase(), phase(float phase)`__       | Get/set phase position, normalized to [0,1).                                                                                    |
 | __`float phaseOffset(float value)`__          | Advance the playhead by the specified phase offset in [0,1), where 0 is no advance and 1 advance the entire length of the file. |

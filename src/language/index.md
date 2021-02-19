@@ -93,7 +93,7 @@ Compiler, and Virtual Machine for a ChucK programmer.
 [the `me` keyword](spork.md#me)  
 [using `machine.add()`](spork.md#add)  
 [inter-shred communication](spork.md#com)  
-[commandl ine](spork.md#arguments)  
+[commandline](spork.md#arguments)  
 
 ### [Classes and Objects](class.md)
 
