@@ -71,11 +71,30 @@ Object group[10];
 // array of null object references
 Object @ nullgroup[10];
 ```
+
 [Check here](./class.md) for more information on object declaration and 
 instantation in Chuck.
 
 The above examples are 1-dimensional arrays (or vectors).  Coming up next 
 are multi-dimensional arrays!
+
+### dynamic arrays
+
+It is possible to dynamically add and remove elements from an array.
+This is done with the _append operator_ `<<` the the array methods
+`popBack()`, `clear()`, `erase()`, and `find()` can be used in conjunction
+to achieve a modicum of dynamism.
+
+```chuck
+float argh[0]; // instantiate int array
+<<< "array size:", argh.size() >>>; // prints array size: 0
+// append items (array should grow dynamically as needed)
+argh << 3.0 << 4 << 5;
+<<< "array size:", argh.size() >>>; // prints  array size: 3
+<<< "contents:", argh[0], argh[1], argh[2] >>>; // prints 3.000, 4.000, 5.000
+argh.popBack(); // pops the last item (5.0)
+<<< "array size:", argh.size() >>>; // prints array size: 2
+```
 
 ### multi-dimensional arrays
 
@@ -212,8 +231,7 @@ int foo[2];
 // put something in element "0"
 20 => foo["0"];
 
-// this should print out 10 20
-<<< foo[0], foo["0"] >>>;
+<<< foo[0], foo["0"] >>>; // prints out 10 20
 ```
 
 The capacity of an array relates only to the integer portion of it. An array 
@@ -227,11 +245,22 @@ int foo[0];
 // put something in element "here"
 20 => foo["here"];
 
-// this should print out 20
-<<< foo["here"] >>>
+<<< foo["here"] >>> // prints 20
 
-// this should cause an exception
-<<< foo[0] >>>
+<<< foo[0] >>> // causes an exception
+```
+
+The array `find()` and `erase()` methods can be used to achieve a 
+modicum of dynamism in associative arrays.
+
+```chuck
+int amap[0];
+3 => amap["x"];
+4 => amap["x"];
+<<< amap["x"], amap.find("x"), amap.find("xx") >>>; // prints 4 1 0
+amap.erase("x");
+// <<< amap["x"], amap.find("x") >>>; // crashes on amap["x"]
+<<< amap.find("x") >>>;  // prints 0
 ```
 
 __Note__: The associative capacity of an array is not defined, 
@@ -260,12 +289,14 @@ new Item @=> box["lamp"];
 // access allowed to "lamp"
 2.0 => box["lamp"].weight; 
 
-// access causes a <font color="red">NullPointerException</font>    
+// access causes a NullPointerException
 2.0 => box["sweater"].weight; 
 ```
+
+
 ### array assignment
 
-Arrays are objects.  So when we declare an array, we are actually 
+Arrays are objects. So when we declare an array, we are actually 
 
 1. declaring a reference to array (reference variable) and 
 2. instantiating a new array and reference assigned to the variable.  
