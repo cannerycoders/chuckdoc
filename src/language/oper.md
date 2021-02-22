@@ -65,6 +65,47 @@ SinOsc b => Gain g => BiQuad f => dac;
 There are many other well-defined uses of the ChucK operator, depending on 
 the context.
 
+### `^=` (upchuck)
+
+The `upchuck` operator is used in Unit Analysis to describe the connections 
+between UAnae.
+
+Here's a simple example that combines chuck with upchuck:
+
+```chuck
+SinOsc g => FFT fft =^ IFFT ifft => dac;
+```
+
+Note that the output of SinOsc is connected to FFT using `=>` while
+the output of the analysis (which is not audio data) is routed to
+IFF via `=^`.  Finally the output of IFFT _is_ audio data and thus
+can be connected to `dac`;
+
+### `<=` (unchuck)
+
+The `unchuck` operator is used to cancel the effects of a previous
+`chuck` operation.
+
+Here's a simple example:
+
+```chuck
+// start with some filtered noise
+Noise n => BiQuad f => dac;
+1::second => now;
+
+// unlink the ugen f from dac
+f =< dac;
+
+// look, no noise!
+1::second => now;
+
+// but f can be relinked
+f => dac;
+1::second => now
+
+```
+
+
 ### `@=>` (explicit assignment ChucK operator)
 
 In ChucK, there is no stardard assignment operator (`=`), found in many 
