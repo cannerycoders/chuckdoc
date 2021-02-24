@@ -35,9 +35,10 @@ ${PROGHEADER}
 
 </center>
 
+--------------------------------------------------------------------------------
+
 ### foundation
 
---------------------------------------------------------------------------------
 
 #### UGen
 
@@ -154,11 +155,11 @@ SinOsc s => g;
 while( true ) { 100::ms => now; }
 ```
 
-### wave forms
-
 -------------------------------------------------------------------------------
 
-## Impulse
+### wave forms
+
+#### Impulse
 
 __`Impulse`__  pulse generator - can set the value of the current sample. 
 The default for each sample is 0 if not set.
@@ -279,9 +280,9 @@ __`Osc`__ base class for simple oscillator ugens.
 | _subclass of [Osc](#osc)_           |                                    |
 | __`float width(), width(float w)`__ | Get/set length of duty cycle (0-1) |
 
-### sound files
-
 ----------------------------------------------------------------------------
+
+### sound files
 
 #### SndBuf
 
@@ -319,9 +320,9 @@ from a variety of uncompressed formats.
 | :------------------------------ |
 | _subclass of [SndBuf](#sndbuf)_ |
 
-### basic signal processing
-
 -------------------------------------------------------------------------------
+
+### basic signal processing
 
 #### HalfRect
 
@@ -352,9 +353,9 @@ __`FullRect`__  full wave rectifier.
 | see [zerox.ck](../examples/basic/zerox.ck) |
 
 
-### extending
-
 -------------------------------------------------------------------------------
+
+### extending
 
 #### Chubgraph
 
