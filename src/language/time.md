@@ -30,7 +30,7 @@ In ChucK:
 
 > [View sample codefor time & timing](../examples/index.md#time)
 
-<a id="type"></a>
+<a id="type"/>
 
 ## time and duration
 

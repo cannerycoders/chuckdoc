@@ -269,7 +269,7 @@ now % 5::second => dur bar;
 
 The latter (time/duration mod) is one of many ways to dynamically 
 synchronize timing in shreds.  The examples `otf_01.ck` through `otf_07.ck` 
-[see under](../examples/#other") make use of this to on-the-fly synchronize 
+[see under](../examples/index.md#other") make use of this to on-the-fly synchronize 
 its various parts, no matter when each shred is added to the virtual machine:
 
 ```chuck

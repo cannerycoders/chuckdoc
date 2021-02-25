@@ -30,7 +30,7 @@ ${PROGHEADER}
 [SndBuf2](#sndbuf2)  
 [HalfRect](#halfrect) |
 [FullRect](#fullrect)  
-[Chubgraph](#chubgraph) |
+[Chugraph](#chugraph) |
 [Chugen](#chugen)
 
 </center>
@@ -357,9 +357,9 @@ __`FullRect`__  full wave rectifier.
 
 ### extending
 
-#### Chubgraph
+#### Chugraph
 
- __`Chubgraph`__  Base class for chubgraph-based user unit generators.
+ __`Chubgraph`__  Base class for chugraph-based user unit generators.
 
 | Chubgraph.functions                                 | Description                                  |
 | :-------------------------------------------------- | -------------------------------------------- |
@@ -367,7 +367,7 @@ __`FullRect`__  full wave rectifier.
 | __`UGen inlet()__                                   | Terminal for sources chucked into this ugen. |
 | __`UGen outlet()__                                  | Terminal for the output of this ugen.        |
 |                                                     |                                              |
-| see [chubgraph.ck](../examples/extend/chubgraph.ck) |                                              |
+| see [chugraph.ck](../examples/extend/chugraph.ck) |                                              |
 
 #### Chugen
 

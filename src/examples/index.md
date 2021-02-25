@@ -50,7 +50,7 @@ or perhaps:
 | clocks (useful when recording and other)  | [tick.ck](basic/tick.ck), [tick2.ck](basic/tick2.ck)                                                     |
 | basic ring-mod (demonstrate ugen input)   | [ring.ck](basic/ring.ck)                                                                                 |
 | sndbuf (file read/write/playback)         | [sndbuf.ck](basic/sndbuf.ck)                                                                             |
-| sndbuf.valueat() - random access samples  | [valueat.ck](basic/valueat.ck)                                                                            |
+| sndbuf.valueat() - random access samples  | [valueat.ck](basic/valueat.ck)                                                                           |
 | step ugen                                 | [step.ck](basic/step.ck)                                                                                 |
 | unchuck                                   | [unchuck.ck](basic/unchuck.ck)                                                                           |
 | whirl                                     | [whirl.ck](basic/whirl.ck)                                                                               |
@@ -86,7 +86,7 @@ or perhaps:
 --------------------------------------------------------------------------------
 ### More Fun Experiments
 
-| More Fun Experiments                       |                                                                                                                                                                        |
+| More Fun Experiments <a name="other">      |                                                                                                                                                                        |
 | :----------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | variations on towers of hanoi sonification | [hanoi.ck](hanoi.ck), [hanoi++.ck](hanoi++.ck)                                                                                                                         |
 | on-the-fly synchronization (concurrent)    | [otf_01.ck](otf_01.ck), [otf_02.ck](otf_02.ck), [otf_03.ck](otf_03.ck), [otf_04.ck](otf_04.ck), [otf_05.ck](otf_05.ck), [otf_06.ck](otf_06.ck), [otf_07.ck](otf_07.ck) |
@@ -113,13 +113,13 @@ of the [ChucK Language Specification](/language/index.md).
 
 ### Foundation
 
-| Types                             |                                               |
+| Types <a name="type"/>            |                                               |
 | :-------------------------------- | :-------------------------------------------- |
 | survey of chuck's primitive types | [type_primitives.ck](type/type_primitives.ck) |
 | Object type                       | [type_object.ck](type/type_object.ck)         |
-| Analysis types  (polar, complex)  | [type_analysis.ck](type/type_analysis.ck)     |
+| Analysis types (polar, complex)   | [type_analysis.ck](type/type_analysis.ck)     |
 
-| Arrays                                |                                                  |
+| Arrays <a name="array"/>              |                                                  |
 | :------------------------------------ | :----------------------------------------------- |
 | array as function argument            | [array_argument.ck](array/array_argument.ck)     |
 | array @=> assignment                  | [array_assign.ck](array/array_assign.ck)         |
@@ -137,41 +137,41 @@ of the [ChucK Language Specification](/language/index.md).
 | logical operators        | [oper_logic.ck](oper/oper_logic.ck)                                                |
 | pre/post increment       | [oper_pre_inc.ck](oper/oper_pre_inc.ck), [oper_post_inc.ck](oper/oper_post_inc.ck) |
 
-| Time & Timing        |                                               |
-| :------------------- | :-------------------------------------------- |
-| time and duration    | [time_types.ck](time/time_tyeps.ck)           |
-| reasoning about time | [time_operations.ck](time/time_operations.ck) |
+| Time & Timing <a name="time"/> |                                               |
+| :----------------------------- | :-------------------------------------------- |
+| time and duration              | [time_types.ck](time/time_tyeps.ck)           |
+| reasoning about time           | [time_operations.ck](time/time_operations.ck) |
 
-| Control Structures        |                                                   |
-| :------------------------ | :------------------------------------------------ |
-| for loop                  | [ctrl_for_loop.ck](ctrl/ctlr_for_loop.ck)         |
-| until                     | [ctrl_until.ck](ctrl/ctrl_until.ck)               |
-| do-until                  | [ctrl_do_until.ck](ctrl/ctrl_do_until.ck)         |
-| break                     | [ctrl_break.ck](ctrl/ctrl_break.ck)               |
-| break w/ nesting          | [ctrl_break_nested.ck](ctrl/ctrl_break_nested.ck) |
-| continue w/ nested blocks | [ctrl_continue.ck](ctrl/ctrl_continue.ck)         |
-| sequencer                 | [ctrl_sequencer.ck](ctrl/ctrl_sequencer.ck)       |
+| Control Structures <a name="ctrl"/> |                                                   |
+| :---------------------------------- | :------------------------------------------------ |
+| for loop                            | [ctrl_for_loop.ck](ctrl/ctlr_for_loop.ck)         |
+| until                               | [ctrl_until.ck](ctrl/ctrl_until.ck)               |
+| do-until                            | [ctrl_do_until.ck](ctrl/ctrl_do_until.ck)         |
+| break                               | [ctrl_break.ck](ctrl/ctrl_break.ck)               |
+| break w/ nesting                    | [ctrl_break_nested.ck](ctrl/ctrl_break_nested.ck) |
+| continue w/ nested blocks           | [ctrl_continue.ck](ctrl/ctrl_continue.ck)         |
+| sequencer                           | [ctrl_sequencer.ck](ctrl/ctrl_sequencer.ck)       |
 
-| Functions                     |                                                                                                                                                                                                  |
+| Functions <a name="func"/>    |                                                                                                                                                                                                  |
 | :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | function overloading          | [func_overload.ck](func/func_overload.ck), [func_overload_member.ck](func/func_overload_member.ck), [func_overload_multi.ck](func/func_overload_multi.ck), [func_doozey.ck](func/func_doozey.ck) |
 | recursive functions           | [func_recursion.ck](func/func_recursion.ck)                                                                                                                                                      |
 | objects as function arguments | [func_obj_arg.ck](func/func_obj_arg.ck)                                                                                                                                                          |
 | chucking to void function     | [func_void.ck](func/func_void.ck)                                                                                                                                                                |
 
-| Shreds & Concurrency               |                                                           |
-| :--------------------------------- | :-------------------------------------------------------- |
-| shred spork demo                   | [powerup.ck](shred/powerup.ck)                            |
-| shred spork                        | [spork.ck](shred/spork.ck),  [spork2.ck](shred/spork2.ck) |
-| machine.add() .remove() .replace() | [machine.ck](shred/machine.ck)                            |
-| machine.dir()                      | [dir.ck](shred/dir.ck)                                    |
+| Shreds & Concurrency <a name="spork"/> |                                                           |
+| :------------------------------------- | :-------------------------------------------------------- |
+| shred spork demo                       | [powerup.ck](shred/powerup.ck)                            |
+| shred spork                            | [spork.ck](shred/spork.ck),  [spork2.ck](shred/spork2.ck) |
+| machine.add() .remove() .replace()     | [machine.ck](shred/machine.ck)                            |
+| machine.dir()                          | [dir.ck](shred/dir.ck)                                    |
 
-| Classes & Objects                     |                             |
+| Classes & Objects<a name='class'/>    |                             |
 | :------------------------------------ | :-------------------------- |
 | Dinky instrument implemented as class | [dinky.ck](class/.dinky.ck) |
 | a file that uses the class Dinky      | [try.ck](class/try.ck)      |
 
-### Events
+### Events <a name="event"/>
 
 | Events                                    |                                                                                  |
 | :---------------------------------------- | :------------------------------------------------------------------------------- |
@@ -224,7 +224,7 @@ of the [ChucK Language Specification](/language/index.md).
 | Wurley (Wurlitzer model)      | [wurley.ck](stk/wurley.ck), [wurley2.ck](stk/wurley2.ck), [wurley3.ck](stk/wurley3.ck)                       |
 
 --------------------------------------------------------------------------------
-### Unit Analyzers
+### Unit Analyzers <a name="uana"/>
 
 | Transformations                       |                                                                                           |
 | :------------------------------------ | :---------------------------------------------------------------------------------------- |

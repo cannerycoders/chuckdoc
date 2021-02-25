@@ -37,7 +37,7 @@ For the sake of clarity we will define these terms:
 * a _reference variable_ refers indirectly to an object - it is not the 
   object itself. All ChucK _object variables_ are reference variables 
   (like in Java).
-* similarly, _reference assignment duplicates a reference to an object and 
+* similarly, _reference assignment_ duplicates a reference to an object and 
   assigns the reference to a reference variable.  The object itself is not 
   duplicated. All ChucK object assignments are reference assignments.
 
