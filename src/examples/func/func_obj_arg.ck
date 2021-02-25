@@ -3,13 +3,13 @@
 class Other
 { 
     10 => int x;
-    int y;
+    11 => int y;
 }
 
 class X
 { 
-    int x;
-    int y;
+    5 => int x;
+    6 => int y;
 
     public void set( Other a )
     { 
