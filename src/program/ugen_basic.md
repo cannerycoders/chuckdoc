@@ -118,11 +118,11 @@ __output__ device.
 __`adc`__  analog-to-digital converter - abstraction for underlying 
 audio __input__ device
 
-| adc.functions          | Description            |
-| :--------------------- | :--------------------- |
-| _see of [UGen](#ugen)_ |                        |
-| __`UGen left()`__      | output of left channel |
-| __`UGen right()`__     | output to right channel                   |
+| adc.functions          | Description                              |
+| :--------------------- | :--------------------------------------- |
+| _see of [UGen](#ugen)_ |                                          |
+| __`UGen left()`__      | output of left channel                   |
+| __`UGen right()`__     | output to right channel                  |
 | __`UGen chan(int n)`__ | returns nth channel (from [UGen](#ugen)) |
 
 #### blackhole
@@ -361,12 +361,12 @@ __`FullRect`__  full wave rectifier.
 
  __`Chubgraph`__  Base class for chugraph-based user unit generators.
 
-| Chubgraph.functions                                 | Description                                  |
-| :-------------------------------------------------- | -------------------------------------------- |
-| _see [UGen](#ugen)_                                 |                                              |
-| __`UGen inlet()__                                   | Terminal for sources chucked into this ugen. |
-| __`UGen outlet()__                                  | Terminal for the output of this ugen.        |
-|                                                     |                                              |
+| Chubgraph.functions                               | Description                                  |
+| :------------------------------------------------ | -------------------------------------------- |
+| _see [UGen](#ugen)_                               |                                              |
+| __UGen inlet(), inlet(UGen)__                     | Terminal for sources chucked into this ugen. |
+| __UGen outlet(), outlet(UGen)__                   | Terminal for the output of this ugen.        |
+|                                                   |                                              |
 | see [chugraph.ck](../examples/extend/chugraph.ck) |                                              |
 
 #### Chugen
