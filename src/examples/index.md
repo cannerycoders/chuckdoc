@@ -418,8 +418,8 @@ of the [ChucK Language Specification](/language/index.md).
 | [UseBPM2.ck](book/digital-artists/chapter9/UseBPM2.ck)         |
 | [UseBPM3.ck](book/digital-artists/chapter9/UseBPM3.ck)         |
 | [initialize.ck](book/digital-artists/chapter9/initialize.ck)   |
-### chapter9
-| chapter9                                                                   |
+#### Drum Machine
+| Drum Machine                                                               |
 | :------------------------------------------------------------------------- |
 | [BPM.ck](book/digital-artists/chapter9/DrumMachine/BPM.ck)                 |
 | [Listing9.11.ck](book/digital-artists/chapter9/DrumMachine/Listing9.11.ck) |
@@ -436,8 +436,9 @@ of the [ChucK Language Specification](/language/index.md).
 | [kick.ck](book/digital-artists/chapter9/DrumMachine/kick.ck)               |
 | [score.ck](book/digital-artists/chapter9/DrumMachine/score.ck)             |
 | [snare.ck](book/digital-artists/chapter9/DrumMachine/snare.ck)             |
-### chapter9
-| chapter9                                                                     |
+
+#### Smart Mandolin 
+| Smart Mandolin                                                               |
 | :--------------------------------------------------------------------------- |
 | [Listing9.20.ck](book/digital-artists/chapter9/SmartMandolin/Listing9.20.ck) |
 | [Listing9.21.ck](book/digital-artists/chapter9/SmartMandolin/Listing9.21.ck) |

@@ -2,7 +2,7 @@ ${PROGHEADER}
 
 <center>
 
-[^ programmer's guide](./index.md) | [std libraries](./stdlib.md) | [std uana](./uana.md)
+[^ programmer's guide](./index.md) | [std libraries](./classes_std.md) | [std uana](./uana.md)
 
 ## ChucK Advanced Unit Generators
 

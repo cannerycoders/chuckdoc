@@ -2,7 +2,7 @@ ${PROGHEADER}
 
 <center>
 
-[^ programmer's guide](./index.md) | [std libraries](./stdlib.md) | [std uana](./uana.md)
+[^ programmer's guide](./index.md) | [std libraries](./classes_std.md) | [std uana](./uana.md)
 
 </center>
 
@@ -944,13 +944,13 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`.afterTouch`__ (float, R+W)                 | aftertouch [0.0 - 1.0]            |
 | __`.controlOne`__ (float, R+W)                 | control one [instrument specific] |
 | __`.controlTwo`__ (float, R+W)                 | control two [instrument specific] |
-| _inherited from StkInstrument_:                |
+| _inherited from StkInstrument_:                |                                   |
 | __`.noteOn`__ (float velocity)                 | trigger note on                   |
 | __`.noteOff`__ (float velocity)                | trigger note off                  |
 | __`.freq`__ (float frequency)                  | set/get frequency (Hz)            |
 | __`.controlChange`__ (int number, float value) | assert control change             |
 
- see [wurley.ck](../examples/stk/wurley.ck)                              |
+ see [wurley.ck](../examples/stk/wurley.ck)
 
 
 ### stk - delay
@@ -1204,23 +1204,23 @@ rand() function varies from one OS to another.
 
 #### Blit
 
-__`Blit`__ STK band-limited impulse train.                     |
+__`Blit`__ STK band-limited impulse train.
 
 This class generates a band-limited impulse train using a
-closed-form algorithm reported by Stilson and Smith in 
-"Alias-Free Digital Synthesis of Classic Analog Waveforms", 
-1996. The user can specify both the fundamental frequency 
+closed-form algorithm reported by Stilson and Smith in
+"Alias-Free Digital Synthesis of Classic Analog Waveforms", 1996.
+The user can specify both the fundamental frequency
 of the impulse train and the number of harmonics contained
 in the resulting signal.
 
 The signal is normalized so that the peak value is +/-1.0.
 
-If nHarmonics is 0, then the signal will contain all 
-harmonics up to half the sample rate. Note, however, 
-that this setting may produce aliasing in the signal 
-when the frequency is changing (no automatic modification 
-of the number of harmonics is performed by the 
-setFrequency() function).
+If nHarmonics is 0, then the signal will contain all
+harmonics up to half the sample rate. Note, however,
+that this setting may produce aliasing in the signal
+when the frequency is changing (no automatic modification
+of the number of harmonics is performed by the `setFrequency()` 
+function).
 
 Original code by Robin Davies, 2005.
 Revisions by Gary Scavone for STK, 2005.
