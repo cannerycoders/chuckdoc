@@ -28,9 +28,9 @@ In ChucK:
 * time is _advanced_ (and can only be advanced) by explicitly manipulating `now`
 * you have flexible and precise control
 
-> [View sample codefor time & timing](../examples/index.md#time)
+> [View sample code for time & timing](../examples/index.md#time)
 
-<a id="type"/>
+<a id="type" />
 
 ## time and duration
 
