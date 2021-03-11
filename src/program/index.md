@@ -70,7 +70,7 @@ Compiler, and Virtual Machine for a ChucK programmer.
 [SndBuf2](ugen_basic.md#sndbuf2)  
 [HalfRect](ugen_basic.md#halfrect) |
 [FullRect](ugen_basic.md#fullrect)  
-[Chubgraph](ugen_basic.md#chubgraph) |
+[Chugraph](ugen_basic.md#chugraph) |
 [Chugen](ugen_basic.md#chugen)
 
 #### filters

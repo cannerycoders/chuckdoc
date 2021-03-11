@@ -359,9 +359,9 @@ __`FullRect`__  full wave rectifier.
 
 #### Chugraph
 
- __`Chubgraph`__  Base class for chugraph-based user unit generators.
+ __`Chugraph`__  Base class for chugraph-based user unit generators.
 
-| Chubgraph.functions                               | Description                                  |
+| Chugraph.functions                               | Description                                  |
 | :------------------------------------------------ | -------------------------------------------- |
 | _see [UGen](#ugen)_                               |                                              |
 | __UGen inlet(), inlet(UGen)__                     | Terminal for sources chucked into this ugen. |
