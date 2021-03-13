@@ -47,6 +47,7 @@ expanded so that order and type of filter can be set).
 | BPF.functions                     |
 | :-------------------------------- |
 | _see [FilterBasic](#FilterBasic)_ |
+| see [bp.ck](../examples/filter/bp.ck) |
 
 #### BRF
 
@@ -56,6 +57,7 @@ expanded so that order and type of filter can be set).
 | BRF.functions                     |
 | :-------------------------------- |
 | _see [FilterBasic](#FilterBasic)_ |
+| see [br.ck](../examples/filter/br.ck) |
 
 
 #### LPF
@@ -67,6 +69,8 @@ expanded so that order and type of filter can be set).
 | LPF.functions                     |
 | :-------------------------------- |
 | _see [FilterBasic](#FilterBasic)_ |
+| see [lp.ck](../examples/filter/lp.ck) |
+| [rlp.ck](../examples/filter/rlp.ck) |
 
 #### HPF
 
@@ -77,6 +81,8 @@ expanded so that order and type of filter can be set).
 | HPF.functions                     |
 | :-------------------------------- |
 | _see [FilterBasic](#FilterBasic)_ |
+| see [hp.ck](../examples/filter/hp.ck) |
+| [rhp.ck](../examples/filter/rhp.ck) |
 
 #### ResonZ
 
@@ -86,6 +92,7 @@ expanded so that order and type of filter can be set).
 | ResonZ.functions                  |
 | :-------------------------------- |
 | _see [FilterBasic](#FilterBasic)_ |
+| see [resonz.ck](../examples/filter/resonz.ck) |
 
 
 #### BiQuad

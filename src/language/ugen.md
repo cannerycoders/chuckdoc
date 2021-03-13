@@ -243,7 +243,8 @@ computed by the UGen.  if UGen has more than one channel, the average of all com
 
 ChucK supports stereo (default) and multi-channel audio 
 (see [command-line options](../program/vm.md)) to select interfaces and number 
-of channels). The __`dac`__ and the __`adc`__ are now multi-channel UGens.  
+of channels. The __`dac`__ and the __`adc`__ are now multi-channel UGens
+
 By default, ChucKing two UGens containing the same number of channels (e.g. 
 both stereo or both mono) automatically matches the output channels with the 
 input channels (e.g. left to left, right to right for stereo).  Stereo UGens 

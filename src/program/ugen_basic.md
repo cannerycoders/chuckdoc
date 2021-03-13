@@ -42,8 +42,8 @@ ${PROGHEADER}
 
 #### UGen
 
-__UGen__ is the base class for all unit generator types in ChucK. There is no v
-in instantiating a member of this class.
+__UGen__ is the base class for all unit generator types in ChucK. There is no 
+value in instantiating a member of this class.
 
 | UGen.functions                      | Description                                                                                                                                                                                                                                                                      |
 | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,7 +83,7 @@ __UGenStereo__ is subclass of [UGenMulti](#ugenmulti) and the baseclass for ster
 
 #### Pan2
 
-__Pan2__ is a subclass -f [UGenStereo](#ugenstereo) and is used
+__Pan2__ is a subclass of [UGenStereo](#ugenstereo) and is used
 to spread a mono signal to stereo.
 
 | Pan2.functions                            |
@@ -93,7 +93,7 @@ to spread a mono signal to stereo.
 
 #### Mix2
 
-__Mix2__ is a subclass -f [UGenStereo](#ugenstereo) and is used
+__Mix2__ is a subclass of [UGenStereo](#ugenstereo) and is used
 to mix stereo input down to mono channel.
 
 | Mix2.functions                  |
