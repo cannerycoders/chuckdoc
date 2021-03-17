@@ -1052,8 +1052,8 @@ __`Echo`__ STK echo effect class.
 __`Envelope`__ STK envelope base class.
 
 This class implements a simple envelope generator which is capable of 
-ramping to a target value by a specified \e rate. It also responds to 
-simple \e keyOn and \e keyOff messages, ramping to 1.0 on keyOn and 
+ramping to a target value by a specified `rate`. It also responds to 
+simple `keyOn` and `keyOff` messages, ramping to 1.0 on keyOn and 
 to 0.0 on keyOff.
 
 by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
@@ -1076,8 +1076,8 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 
 This Envelope subclass implements a traditional ADSR (Attack, Decay, 
 Sustain, Release) envelope.  It responds to simple keyOn and keyOff 
-messages, keeping track of its state. The \e state = ADSR::DONE 
-after the envelope value reaches 0.0 in the ADSR::RELEASE state.
+messages, keeping track of its state. The state == `ADSR::DONE`
+after the envelope value reaches 0.0 in the `ADSR::RELEASE` state.
 
 by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 

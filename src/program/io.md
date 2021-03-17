@@ -85,10 +85,10 @@ that implements basic file system reading and writing.
 | __`void seek(int pos)`__               | move the current file position to the requested position              |
 | __`int size()`__                       | return the size of the currently openen file                          |
 | __`int tell()`__                       | return the current file position                                      |
-| __`void write(string val)`             | write a string to the currently opened file                           |
-| __`void write(int val)`                | write an int to the currently opened file                             |
-| __`void write(int val, int flags)`     | write an int to the currently opened file                             |
-| __`void write(float val)`              | write a float to the currently opened file                            |
+| __`void write(string val)`__           | write a string to the currently opened file                           |
+| __`void write(int val)`__              | write an int to the currently opened file                             |
+| __`void write(int val, int flags)`__   | write an int to the currently opened file                             |
+| __`void write(float val)`__            | write a float to the currently opened file                            |
 
 See [write2.ck](../examples/io/write2.ck), [read-line.ck](../examples/io/read-line.ck)
 
@@ -139,14 +139,14 @@ The mechanics of OscIn are:
 5. receive the OscMsg when it arrives
 6. interpret and act upon the OscMsg contents
 
-| OscIn.fuctions                         | Description                                                    |
-| :------------------------------------- | :------------------------------------------------------------- |
-| __`void addAddress(string address)`__  | Add the IP address of a OSC broadcaster to our listening queue |
-| __`void listenAll()`__                 |                                                                |
-| __`int port(), port(int port)`__       | Get/set the TCP/UDP port                                       |
-| __`int recv(OscMsg msg)`               | read an [OscMsg](#oscmsg) from a socket                        |
-| __`void removeAddress(string address)` | Remove the IP address from the listening queue.                |
-| __`void removeAllAddresses()`__        | remove all addresses from our listening queue                  |
+| OscIn.fuctions                           | Description                                                    |
+| :--------------------------------------- | :------------------------------------------------------------- |
+| __`void addAddress(string address)`__    | Add the IP address of a OSC broadcaster to our listening queue |
+| __`void listenAll()`__                   |                                                                |
+| __`int port(), port(int port)`__         | Get/set the TCP/UDP port                                       |
+| __`int recv(OscMsg msg)`__               | read an [OscMsg](#oscmsg) from a socket                        |
+| __`void removeAddress(string address)`__ | Remove the IP address from the listening queue.                |
+| __`void removeAllAddresses()`__          | remove all addresses from our listening queue                  |
 
 See [OSC_recv.ck](../examples/osc/OSC_recv.ck).
 
@@ -327,7 +327,7 @@ It handles reading and writing for serial input/output devices, such as Arduino.
 | __`void close()`__                        |                                                                           |
 | __`int dataAvailable()`__                 |                                                                           |
 | __`void flush()`__                        | Flush the IO buffer.                                                      |
-| __`int getByte()                          | Get next requested byte.                                                  |
+| __`int getByte()`__                       | Get next requested byte.                                                  |
 | __`int[] getBytes()`__                    | Get next requested number of bytes.                                       |
 | __`int[] getInts()`__                     | Get next requested number of integers.                                    |
 | __`string getLine()`__                    | Get next requested line.                                                  |
@@ -353,21 +353,21 @@ See [gomidi.ck](../examples/midi/gomidi.ck),
 [playmidi.ck](../examples/midi/playmidi.ck),
 [polyphony.ck](../examples/midi/polyphony.ck),
 
-| MidiIn.functions                   | Description                                              |
-| :--------------------------------- | :------------------------------------------------------- |
-| __`int can_wait()                  |                                                          |
-| __`int good()                      |                                                          |
-| __`string name()                   | Return the Midi device's name as string.                 |
-| __`int num()                       |                                                          |
-| __`int open(int port)              | Open Midi device using a port number.                    |
-| __`int open(string name)           | Open Midi device using the device's name.                |
-| __`void printerr(int print_or_not) | Set error printing (1 for on, 0 for off). On by default. |
-| __`int recv(MidiMsg msg)           | receive a MidiMsg for action/interpretation              |
+| MidiIn.functions                      | Description                                              |
+| :------------------------------------ | :------------------------------------------------------- |
+| __`int can_wait()`__                  |                                                          |
+| __`int good()`__                      |                                                          |
+| __`string name()`__                   | Return the Midi device's name as string.                 |
+| __`int num()`__                       |                                                          |
+| __`int open(int port)`__              | Open Midi device using a port number.                    |
+| __`int open(string name)`__           | Open Midi device using the device's name.                |
+| __`void printerr(int print_or_not)`__ | Set error printing (1 for on, 0 for off). On by default. |
+| __`int recv(MidiMsg msg)`__           | receive a MidiMsg for action/interpretation              |
 
 
 #### MidiOut
 
-__`MidiOut`__ is a subclass of [Object](classes_std#object) and 
+__`MidiOut`__ is a subclass of [Object](classes_std.md#object) and 
 allows you to _generate_ Midi events for consumption by an attached
 Midi device.
 
@@ -385,7 +385,7 @@ See [midiout.ck](../examples/midi/midiout.ck), [gomidi2.ck](../examples/midi/gom
 
 #### MidiMsg
 
-__`MidiMsg`__ is a subclass of [Object](classes_std#object) and encapsulates
+__`MidiMsg`__ is a subclass of [Object](classes_std.md#object) and encapsulates
 data about a single Midi message.
 
 | MidiMsg.members | Description                                                                                |
@@ -399,7 +399,7 @@ See [playmidi.ck](../examples/midi/playmidi.ck)
 
 #### MidiFileIn
 
-__`MidiFileIn`__ is a subclass of [Object](classes_std#object) and facilitates
+__`MidiFileIn`__ is a subclass of [Object](classes_std.md#object) and facilitates
 the reading of a standard midi file.
 
 | MidiFileIn.functions                   | Description |
