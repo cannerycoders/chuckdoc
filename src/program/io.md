@@ -180,13 +180,13 @@ See [OSC_send.ck](../examples/osc/OSC_send.ck).
 __`OscMsg`__ is produced by the OscIn `recv` methods and represents the
 _payload_ of a single OSC transmission.
 
-| OscOut.members       |
+| OscMsg.members       |
 | :------------------- |
 | __`string address`__ |
 | __`OscArg[] args`__  |
 | __`string typetag`__ |
 
-| OscOut.methods                |
+| OscMsg.methods                |
 | :---------------------------- |
 | __`float getFloat(int i)`__   |
 | __`int getInt(int i)`__       |
