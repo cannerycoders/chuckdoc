@@ -68,27 +68,27 @@ that implements basic file system reading and writing.
 | __`int READ`__   | enumeration constant |
 | __`int WRITE`__  | enumeration constant |
 
-| FileIO.functions                       | Description                                                           |
-| :------------------------------------- | :-------------------------------------------------------------------- |
-| __`void close()`__                     | closes the open file                                                  |
-| __`string[] dirList()`__               | returns the list of filenames in the opened directory                 |
-| __`int eof()`__                        | returns 1 if the current file location is at the end                  |
-| __`void flush()`__                     | flushes the output buffer associated with the open (and writing file) |
-| __`int good()`__                       | returns 1 if the current FileIO state is valid                        |
-| __`int isDir()`__                      | returns 1 is the current open file is a directory                     |
-| __`int mode(), mode(int flag)`__       | Get/set the current file mode                                         |
-| __`int more()`__                       | Indicates whether there is more to read in the current file.          |
-| __`int open(string path)`__            | opens for reading the file or directory given by path                 |
-| __`int open(string path, int flags)`__ | opens the file or directory given by path according to the mode flags |
-| __`int readInt(int flags)`__           | reads and returns an int from the currently opened file               |
-| __`string readLine(int flags)`__       | read and return a line of text                                        |
-| __`void seek(int pos)`__               | move the current file position to the requested position              |
-| __`int size()`__                       | return the size of the currently openen file                          |
-| __`int tell()`__                       | return the current file position                                      |
-| __`void write(string val)`__           | write a string to the currently opened file                           |
-| __`void write(int val)`__              | write an int to the currently opened file                             |
-| __`void write(int val, int flags)`__   | write an int to the currently opened file                             |
-| __`void write(float val)`__            | write a float to the currently opened file                            |
+| FileIO.functions                       | Description                                                                                  |
+| :------------------------------------- | :------------------------------------------------------------------------------------------- |
+| __`void close()`__                     | closes the open file                                                                         |
+| __`string[] dirList()`__               | returns the list of filenames in the opened directory                                        |
+| __`int eof()`__                        | returns 1 if the current file location is at the end                                         |
+| __`void flush()`__                     | flushes the output buffer associated with the open (and writing file)                        |
+| __`int good()`__                       | returns 1 if the current FileIO state is valid                                               |
+| __`int isDir()`__                      | returns 1 is the current open file is a directory                                            |
+| __`int mode(), mode(int flag)`__       | Get/set the current file mode                                                                |
+| __`int more()`__                       | Indicates whether there is more to read in the current file.                                 |
+| __`int open(string path)`__            | opens for reading the file or directory given by path. Returns 1 on success.                 |
+| __`int open(string path, int flags)`__ | opens the file or directory given by path according to the mode flags. Returns 1 on success. |
+| __`int readInt(int flags)`__           | reads and returns an int from the currently opened file                                      |
+| __`string readLine(int flags)`__       | read and return a line of text                                                               |
+| __`void seek(int pos)`__               | move the current file position to the requested position                                     |
+| __`int size()`__                       | return the size of the currently openen file                                                 |
+| __`int tell()`__                       | return the current file position                                                             |
+| __`void write(string val)`__           | write a string to the currently opened file                                                  |
+| __`void write(int val)`__              | write an int to the currently opened file                                                    |
+| __`void write(int val, int flags)`__   | write an int to the currently opened file                                                    |
+| __`void write(float val)`__            | write a float to the currently opened file                                                   |
 
 See [write2.ck](../examples/io/write2.ck), [read-line.ck](../examples/io/read-line.ck)
 
