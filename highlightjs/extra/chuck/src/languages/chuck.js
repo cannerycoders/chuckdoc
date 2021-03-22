@@ -59,7 +59,7 @@ export default function(hljs)
         built_in: "dac|10 adc|10 blackhole|10 me|10 now|10 ms second minute hour day week " +
         "Object UGenMulti UGenStereo UGen " +
         "Osc UAnaBlob UAna Windowing " +
-        "ChubGraph Chugen " +
+        "Chugraph2 Chugraph Chugen " +
         "Mix2 Pan2 Gain Impulse Step Noise " +
 
         "Phasor SinOsc|10 TriOsc SawOsc SqrOsc PulseOsc SndBuf2 SndBuf " +
