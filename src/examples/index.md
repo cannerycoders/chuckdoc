@@ -86,7 +86,7 @@ or perhaps:
 --------------------------------------------------------------------------------
 ### More Fun Experiments
 
-| More Fun Experiments <a name="other"></a>    |                                                                                                                                                                        |
+| More Fun Experiments <a name="other"></a>  |                                                                                                                                                                        |
 | :----------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | variations on towers of hanoi sonification | [hanoi.ck](hanoi.ck), [hanoi++.ck](hanoi++.ck)                                                                                                                         |
 | on-the-fly synchronization (concurrent)    | [otf_01.ck](otf_01.ck), [otf_02.ck](otf_02.ck), [otf_03.ck](otf_03.ck), [otf_04.ck](otf_04.ck), [otf_05.ck](otf_05.ck), [otf_06.ck](otf_06.ck), [otf_07.ck](otf_07.ck) |
@@ -113,13 +113,13 @@ of the [ChucK Language Specification](/language/index.md).
 
 ### Foundation
 
-| Types <a name="type"></a>           |                                               |
+| Types <a name="type"></a>         |                                               |
 | :-------------------------------- | :-------------------------------------------- |
 | survey of chuck's primitive types | [type_primitives.ck](type/type_primitives.ck) |
 | Object type                       | [type_object.ck](type/type_object.ck)         |
 | Analysis types (polar, complex)   | [type_analysis.ck](type/type_analysis.ck)     |
 
-| Arrays <a name="array"></a>             |                                                  |
+| Arrays <a name="array"></a>           |                                                  |
 | :------------------------------------ | :----------------------------------------------- |
 | array as function argument            | [array_argument.ck](array/array_argument.ck)     |
 | array @=> assignment                  | [array_assign.ck](array/array_assign.ck)         |
@@ -138,21 +138,21 @@ of the [ChucK Language Specification](/language/index.md).
 | pre/post increment       | [oper_pre_inc.ck](oper/oper_pre_inc.ck), [oper_post_inc.ck](oper/oper_post_inc.ck) |
 
 | Time & Timing <a name="time"></a> |                                               |
-| :------------------------------ | :-------------------------------------------- |
-| time and duration               | [time_types.ck](time/time_tyeps.ck)           |
-| reasoning about time            | [time_operations.ck](time/time_operations.ck) |
+| :-------------------------------- | :-------------------------------------------- |
+| time and duration                 | [time_types.ck](time/time_tyeps.ck)           |
+| reasoning about time              | [time_operations.ck](time/time_operations.ck) |
 
 | Control Structures <a name="ctrl"></a> |                                                   |
-| :----------------------------------- | :------------------------------------------------ |
-| for loop                             | [ctrl_for_loop.ck](ctrl/ctlr_for_loop.ck)         |
-| until                                | [ctrl_until.ck](ctrl/ctrl_until.ck)               |
-| do-until                             | [ctrl_do_until.ck](ctrl/ctrl_do_until.ck)         |
-| break                                | [ctrl_break.ck](ctrl/ctrl_break.ck)               |
-| break w/ nesting                     | [ctrl_break_nested.ck](ctrl/ctrl_break_nested.ck) |
-| continue w/ nested blocks            | [ctrl_continue.ck](ctrl/ctrl_continue.ck)         |
-| sequencer                            | [ctrl_sequencer.ck](ctrl/ctrl_sequencer.ck)       |
+| :------------------------------------- | :------------------------------------------------ |
+| for loop                               | [ctrl_for_loop.ck](ctrl/ctlr_for_loop.ck)         |
+| until                                  | [ctrl_until.ck](ctrl/ctrl_until.ck)               |
+| do-until                               | [ctrl_do_until.ck](ctrl/ctrl_do_until.ck)         |
+| break                                  | [ctrl_break.ck](ctrl/ctrl_break.ck)               |
+| break w/ nesting                       | [ctrl_break_nested.ck](ctrl/ctrl_break_nested.ck) |
+| continue w/ nested blocks              | [ctrl_continue.ck](ctrl/ctrl_continue.ck)         |
+| sequencer                              | [ctrl_sequencer.ck](ctrl/ctrl_sequencer.ck)       |
 
-| Functions <a name="func"></a>   |                                                                                                                                                                                                  |
+| Functions <a name="func"></a> |                                                                                                                                                                                                  |
 | :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | function overloading          | [func_overload.ck](func/func_overload.ck), [func_overload_member.ck](func/func_overload_member.ck), [func_overload_multi.ck](func/func_overload_multi.ck), [func_doozey.ck](func/func_doozey.ck) |
 | recursive functions           | [func_recursion.ck](func/func_recursion.ck)                                                                                                                                                      |
@@ -160,11 +160,11 @@ of the [ChucK Language Specification](/language/index.md).
 | chucking to void function     | [func_void.ck](func/func_void.ck)                                                                                                                                                                |
 
 | Shreds & Concurrency <a name="spork"></a> |                                                           |
-| :------------------------------------ | :-------------------------------------------------------- |
-| shred spork demo                      | [powerup.ck](shred/powerup.ck)                            |
-| shred spork                           | [spork.ck](shred/spork.ck),  [spork2.ck](shred/spork2.ck) |
-| machine.add() .remove() .replace()    | [machine.ck](shred/machine.ck)                            |
-| machine.dir()                         | [dir.ck](shred/dir.ck)                                    |
+| :---------------------------------------- | :-------------------------------------------------------- |
+| shred spork demo                          | [powerup.ck](shred/powerup.ck)                            |
+| shred spork                               | [spork.ck](shred/spork.ck),  [spork2.ck](shred/spork2.ck) |
+| machine.add() .remove() .replace()        | [machine.ck](shred/machine.ck)                            |
+| machine.dir()                             | [dir.ck](shred/dir.ck)                                    |
 
 | Classes & Objects <a name='class' />  |                             |
 | :------------------------------------ | :-------------------------- |
@@ -250,10 +250,12 @@ of the [ChucK Language Specification](/language/index.md).
 --------------------------------------------------------------------------------
 ### Extend
 
-| Extend   |                                   |
-| :------- | :-------------------------------- |
-| chugen   | [chugen.ck](extend/chugen.ck)     |
-| chugraph | [chugraph.ck](extend/chugraph.ck) |
+| Extend     |                                       |
+| :--------- | :------------------------------------ |
+| chugen     | [chugen.ck](extend/chugen.ck)         |
+| chugraph   | [chugraph.ck](extend/chugraph.ck)     |
+| chugraph2  | [chugraph2.ck](extend/chugraph2.ck)   |
+| chugraph2a | [chugraph2a.ck](extend/chugraph2a.ck) |
 
 --------------------------------------------------------------------------------
 ## [Programming for Musicians and Digital Artists: Creating music with ChucK](https://www.manning.com/books/programming-for-musicians-and-digital-artists)
