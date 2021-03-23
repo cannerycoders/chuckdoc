@@ -1031,7 +1031,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`.delay`__ (dur, R+W) | length of delay           |
 | __`.max`__ (dur, R+W)   | max delay ( buffer size ) |
 
- see [i-robot.ck]9../examples/basic/i-robot.ck)
+ see [i-robot.ck](../examples/basic/i-robot.ck)
 
 #### Echo
 
