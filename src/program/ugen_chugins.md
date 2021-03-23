@@ -246,16 +246,16 @@ GVERB is based on the original "gverb/gigaverb" by Juhana Sadeharju
 RTcmix (http://rtcmix.org), which in turn adapted it from the Max/MSP
 version by Olaf Mtthes (olaf.matthes at gmx.de).
 
-| GVerb.functions                                     | Description                                     |
-| :-------------------------------------------------- | :---------------------------------------------- |
-| __`float roomsize(), roomsize(float)`__             | get/set room size [1.0 - 300.0], default 30.0   |
-| __`dur revtime(), revtime(dur)`__                   | get/set revert time dur, default .5:second      |
-| __`float damping(), damping(float)`__               | get/set damping [0.0 - 1.0], default 0.0        |
-| __`float spread(), spread(float)`__                 | get/set spread default 15.0                     |
-| __`float inputbandwidth(), inputbandwidth(float)`__ | get/set inputbandwidth [0.0 - 1.0], default 0.5 |
-| __`float dry(), dry(float)`__                       | get/set dry [0.0 - 1.0], default 0.6            |
-| __`float early() early(float)`__                    | get/set early [0.0 - 1.0], default 0.4          |
-| __`float tail() tail(float)`__                      | get/set early [0.0 - 1.0], default 0.5          |
+| GVerb.functions                           | Description                                     |
+| :---------------------------------------- | :---------------------------------------------- |
+| __`float roomsize(), roomsize(float)`__   | get/set room size [1.0 - 300.0], default 30.0   |
+| __`dur revtime(), revtime(dur)`__         | get/set revert time dur, default .5:second      |
+| __`float damping(), damping(float)`__     | get/set damping [0.0 - 1.0], default 0.0        |
+| __`float spread(), spread(float)`__       | (private) get/set spread default 15.0           |
+| __`float bandwidth(), bandwidth(float)`__ | get/set inputbandwidth [0.0 - 1.0], default 0.5 |
+| __`float dry(), dry(float)`__             | get/set dry [0.0 - 1.0], default 0.6            |
+| __`float early() early(float)`__          | get/set early [0.0 - 1.0], default 0.4          |
+| __`float tail() tail(float)`__            | get/set early [0.0 - 1.0], default 0.5          |
 
 see [test.ck](../examples.chugins/GVerb/test.ck)
 
