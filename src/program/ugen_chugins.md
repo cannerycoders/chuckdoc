@@ -270,7 +270,7 @@ by Kassen
 | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | __`float freq(), freq(float)`__           | get/set the cutoff frequency. This sets both the frequency at which the 2 sample&holds sample the input signal and the frequency of the sine that crossfades between them. |
 | __`float resonance(), resonance(float)`__ | get/set the resonance, which is implemented as negative feedback. accepts values between 0 and 0.95                                                                        |
-| __` float accent(), accent(float)         | get/set the amount of waveshaping on the crossfading sine. Ranges from 0 to 1, where 1 is close to regular under-sampling (if no resonance is used).                       |
+| __`float accent(), accent(float)`__       | get/set the amount of waveshaping on the crossfading sine. Ranges from 0 to 1, where 1 is close to regular under-sampling (if no resonance is used).                       |
 
 see [test.ck](../examples.chugins/KasFilter/test.ck),
     [readme.ck](../examples.chugins/KasFilter/readme.ck)
