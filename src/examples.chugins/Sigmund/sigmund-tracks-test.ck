@@ -1,7 +1,7 @@
 // Analyze audio file
 SndBuf obama => Sigmund siggy => blackhole;
 // change this to the path to your audio file
-"../PitchTrack/data/obama.wav" => obama.read;
+me.dir() + "../PitchTrack/data/obama.wav" => obama.read;
 0 => obama.pos;
 true => siggy.tracks; // sort sinusoids into tracks
 128 => Std.mtof => siggy.maxfreq; // don't track high freqs
@@ -32,10 +32,14 @@ while (now < end)
 {
 	for (int i; i<numTracks; i++)
 	{
-		siggy.peak(i) => freq[i].target;
-
-		// uncomment this for funkier output
-		//Std.ftom(siggy.peak(i))$int => Std.mtof => freq[i].target;
+        float ftgt;
+        siggy.peak(i) => ftgt;
+        if(false)
+        {
+            // quantize f for funkier output
+            Std.ftom(ftgt) $ int => Std.mtof => ftgt;
+        }
+        ftgt => freq[i].target;
 		siggy.amp(i) => amp[i].target;
 	}
 	// try a higher value for an audible pulse
