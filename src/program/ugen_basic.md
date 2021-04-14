@@ -240,7 +240,7 @@ __`Osc`__ base class for simple oscillator ugens.
 
 | SinOsc.functions                            |
 | :------------------------------------------ |
-| _see [Osc](#osc)_                          |
+| _see [Osc](#osc)_                           |
 |                                             |
 | see: [whirl.ck](../examples/basic/whirl.ck) |
 
@@ -364,8 +364,8 @@ __`FullRect`__  full wave rectifier.
 | Chugraph.functions                                | Description                                  |
 | :------------------------------------------------ | -------------------------------------------- |
 | _see [UGen](#ugen)_                               |                                              |
-| __`UGen inlet(), inlet(UGen)`__                     | Terminal for sources chucked into this ugen. |
-| __`UGen outlet(), outlet(UGen)`__                   | Terminal for the output of this ugen.        |
+| __`UGen inlet(), inlet(UGen)`__                   | Terminal for sources chucked into this ugen. |
+| __`UGen outlet(), outlet(UGen)`__                 | Terminal for the output of this ugen.        |
 |                                                   |                                              |
 | see [chugraph.ck](../examples/extend/chugraph.ck) |                                              |
 
