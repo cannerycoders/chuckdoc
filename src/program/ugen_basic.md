@@ -164,11 +164,11 @@ while( true ) { 100::ms => now; }
 __`Impulse`__  pulse generator - can set the value of the current sample. 
 The default for each sample is 0 if not set.
 
-| Impulse.functions          | Description                                                                                                                                                                                                                                                                                                                           |
-| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| _see [Ugen](#ugen)_        |                                                                                                                                                                                                                                                                                                                                       |
-| __`float next(float next)` | Value of next sample to be generated. (Note: if you are using the UGen.last method to read the output of the impulse, the value set by Impulse.next does not appear as the output until after the next sample boundary. In this case, there is a consistent 1::samp offset between setting .next and reading that value using .last.) |
-| __`float next()`           | Value of next sample to be generated.                                                                                                                                                                                                                                                                                                 |
+| Impulse.functions            | Description                                                                                                                                                                                                                                                                                                                           |
+| :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _see [Ugen](#ugen)_          |                                                                                                                                                                                                                                                                                                                                       |
+| __`float next(float next)`__ | Value of next sample to be generated. (Note: if you are using the UGen.last method to read the output of the impulse, the value set by Impulse.next does not appear as the output until after the next sample boundary. In this case, there is a consistent 1::samp offset between setting .next and reading that value using .last.) |
+| __`float next()`__           | Value of next sample to be generated.                                                                                                                                                                                                                                                                                                 |
 
 ```chuck
 Impulse i => dac;
@@ -201,11 +201,11 @@ while( true ) {
 
 #### Noise
 
- __`Noise`__  white noise generator                                                     |
+ __`Noise`__  white noise generator
 
 | Noise.functions                                                                      |
 | :----------------------------------------------------------------------------------- |
-| _see [Ugen](#ugen)_                                                                  |  |
+| _see [Ugen](#ugen)_                                                                  |
 |                                                                                      |
 | see [wind.ck](../examples/basic/wind.ck), [powerup.ck](../examples/shred/powerup.ck) |
 
@@ -240,7 +240,7 @@ __`Osc`__ base class for simple oscillator ugens.
 
 | SinOsc.functions                            |
 | :------------------------------------------ |
-| _ see [Osc](#osc)_                          |
+| _see [Osc](#osc)_                          |
 |                                             |
 | see: [whirl.ck](../examples/basic/whirl.ck) |
 
@@ -361,11 +361,11 @@ __`FullRect`__  full wave rectifier.
 
  __`Chugraph`__  Base class for chugraph-based user unit generators.
 
-| Chugraph.functions                               | Description                                  |
+| Chugraph.functions                                | Description                                  |
 | :------------------------------------------------ | -------------------------------------------- |
 | _see [UGen](#ugen)_                               |                                              |
-| __UGen inlet(), inlet(UGen)__                     | Terminal for sources chucked into this ugen. |
-| __UGen outlet(), outlet(UGen)__                   | Terminal for the output of this ugen.        |
+| __`UGen inlet(), inlet(UGen)`__                     | Terminal for sources chucked into this ugen. |
+| __`UGen outlet(), outlet(UGen)`__                   | Terminal for the output of this ugen.        |
 |                                                   |                                              |
 | see [chugraph.ck](../examples/extend/chugraph.ck) |                                              |
 
