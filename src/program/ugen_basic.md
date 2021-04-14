@@ -227,7 +227,7 @@ __`Osc`__ base class for simple oscillator ugens.
 
 #### Phasor
 
- __`Phasor`__ simple ramp generator (0 to 1). Can be used for phase control.               |
+ __`Phasor`__ simple ramp generator (0 to 1). Can be used for phase control.
 
 | Phasor.functions                    | Description                                           |
 | :---------------------------------- | :---------------------------------------------------- |
