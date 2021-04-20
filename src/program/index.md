@@ -48,8 +48,8 @@ Compiler, and Virtual Machine for a ChucK programmer.
 
 <!-- nb: extra eol spaces on some lines cause <br/> -->
 [UGen](ugen_basic.md#ugen) |
-[UGenStereo](ugen_basic.md#ugenstereo) |
-[UGenMulti](ugen_basic.md#ugenmulti) |
+[UGen_Stereo](ugen_basic.md#ugen_stereo) |
+[UGen_Multi](ugen_basic.md#ugen_multi) |
 [Mix2](ugen_basic.md#mix2) |
 [Pan2](ugen_basic.md#pan2)  
 [dac](ugen_basic.md#dac) |

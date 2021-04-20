@@ -8,8 +8,8 @@ ${PROGHEADER}
 
 <!-- nb: extra eol spaces on some lines cause <br/> -->
 [UGen](#ugen) |
-[UGenStereo](#ugenstereo) |
-[UGenMulti](#ugenmulti) |
+[UGen_Stereo](#ugen_stereo) |
+[UGen_Multi](#ugen_multi) |
 [Mix2](#mix2) |
 [Pan2](#pan2)  
 [dac](#dac) |
@@ -58,47 +58,47 @@ value in instantiating a member of this class.
 | __`int op()`__                      | Return the ugen's operation mode.                                                                                                                                                                                                                                                |
 
 
-#### UGenMulti
+#### UGen_Multi
 
-__UGenMulti__ is a subclass of [UGen](#ugen) and the base class for 
+__UGen_Multi__ is a subclass of [UGen](#ugen) and the base class for 
 multi-channel unit generators.
 
-| UGenMulti.functions        | Description                                                                                             |
-| :------------------------- | :------------------------------------------------------------------------------------------------------ |
-| _see [UGen](#ugen)_        |                                                                                                         |
-| __`UGen chan(int which)`__ | Returns the ugen representing a specific channel of this ugen, or null if no such channel is available. |
+| UGen_Multi.functions                              | Description                                                                                             |
+| :------------------------------------------------ | :------------------------------------------------------------------------------------------------------ |
+| _see [UGen](#ugen)_                               |                                                                                                         |
+| __`UGen chan(int which), chan(int which, UGen)`__ | Get/set the ugen representing a specific channel of this ugen, or null if no such channel is available. |
 
 
-#### UGenStereo
+#### UGen_Stereo
 
-__UGenStereo__ is subclass of [UGenMulti](#ugenmulti) and the baseclass for stereo unit generators.
+__UGen_Stereo__ is subclass of [UGen_Multi](#ugen_multi) and the baseclass for stereo unit generators.
 
-| UGenStereo.functions              | Description                                                                                                            |
+| UGen_Stereo.functions             | Description                                                                                                            |
 | :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
-| _see [UGenMulti](#ugenmulti)_     |                                                                                                                        |
-| __`UGen left()`__                 | Left channel (same as `chan(0)`).                                                                                      |
-| __`UGen right()`__                | Right channel (same as `chan(1)`).                                                                                     |
+| _see [UGen_Multi](#ugen_multi)_   |                                                                                                                        |
+| __`UGen left()`__                 | Get/set left channel (same as `chan(0)`).                                                                              |
+| __`UGen right()`__                | Get/set right channel (same as `chan(1)`).                                                                             |
 | __`float pan(), pan(float val)`__ | Get/set panning between left and right channels, in range [-1,1], with -1 being far-left, 1 far-right, and 0 centered. |
 
 
 #### Pan2
 
-__Pan2__ is a subclass of [UGenStereo](#ugenstereo) and is used
+__Pan2__ is a subclass of [UGen_Stereo](#ugen_stereo) and is used
 to spread a mono signal to stereo.
 
 | Pan2.functions                            |
 | :---------------------------------------- |
-| _see [UGenStereo](#ugenstereo)_           |
+| _see [UGen_Stereo](#ugen_stereo)_         |
 | see [moe2.ck](../examples/stereo/moe2.ck) |
 
 #### Mix2
 
-__Mix2__ is a subclass of [UGenStereo](#ugenstereo) and is used
+__Mix2__ is a subclass of [UGen_Stereo](#ugen_stereo) and is used
 to mix stereo input down to mono channel.
 
-| Mix2.functions                  |
-| :------------------------------ |
-| _see [UGenStereo](#ugenstereo)_ |
+| Mix2.functions                    |
+| :-------------------------------- |
+| _see [UGen_Stereo](#ugen_stereo)_ |
 
 #### dac
 
