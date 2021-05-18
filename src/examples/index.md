@@ -46,6 +46,7 @@ or perhaps:
 | FM (actual frequency modulation)          | [fm3.ck](basic/fm3.ck)                                                                                   |
 | mic input and simple comb filter          | [i-robot.ck](basic/i-robot.ck)                                                                           |
 | impulse generator                         | [imp.ck](basic/imp.ck)                                                                                   |
+| oscillator demo                           | [oscillatronx.ck](basic/oscillatronx.ck)                                                                 |
 | recording (via WvOut)                     | [rec.ck](basic/rec.ck), [rec-auto.ck](basic/rec-auto.ck), [rec-auto-stereo.ck](basic/rec-auto-stereo.ck) |
 | clocks (useful when recording and other)  | [tick.ck](basic/tick.ck), [tick2.ck](basic/tick2.ck)                                                     |
 | basic ring-mod (demonstrate ugen input)   | [ring.ck](basic/ring.ck)                                                                                 |
@@ -57,6 +58,16 @@ or perhaps:
 | noise & filters                           | [wind.ck](basic/wind.ck), [wind2.ck](basic/wind2.ck)                                                     |
 | function test                             | [zerox.ck](basic/zerox.ck)                                                                               |
 | math.isinf() also math.isnan()            | [infnan.ck](basic/infnan.ck)                                                                             |
+
+
+| Stereo examples |      |
+| :-------------- | :--- |
+| using arrays as UGen busses (currently fails) | [array.ck](stereo/array.ck) |
+| Pan2 demos | [curly2.ck](stereo/curly2.ck), [larry2.ck](stereo/larry2.ck), [moe2.ck](stereo/moe2.ck) |
+| Pan2 demo | [powerup2.ck](stereo/powerup2.ck) |
+| Pan2 power demo | [stereo_noise.ck](stereo/stereo_noise.ck) |
+| Pan2 dope | [ugen_array.ck](stereo/ugen_array.ck) |
+
 
 | I/O examples   |                                 |
 | :------------- | :------------------------------ |
@@ -88,7 +99,7 @@ or perhaps:
 
 | More Fun Experiments <a name="other"></a>  |                                                                                                                                                                        |
 | :----------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| variations on towers of hanoi sonification | [hanoi.ck](hanoi.ck), [hanoi++.ck](hanoi++.ck)                                                                                                                         |
+| variations on towers of hanoi sonification | [hanoi.ck](hanoi.ck), [hanoi++.ck](hanoi++.ck), [hanoi2.ck](hanoi2.ck), [hanoi3.ck](hanoi3.ck)                                                                         |
 | on-the-fly synchronization (concurrent)    | [otf_01.ck](otf_01.ck), [otf_02.ck](otf_02.ck), [otf_03.ck](otf_03.ck), [otf_04.ck](otf_04.ck), [otf_05.ck](otf_05.ck), [otf_06.ck](otf_06.ck), [otf_07.ck](otf_07.ck) |
 
 
@@ -195,12 +206,12 @@ of the [ChucK Language Specification](/language/index.md).
 | MIDI event demo | [gomidi.ck](midi/gomidi.ck), [gomidi2.ck](midi/gomidi2.ck)         |
 | MIDI polyphony  | [polyfony.ck](midi/polyfony.ck), [polyfony2.ck](midi/polyfony2.ck) |
 | MIDI out        | [midiout.ck](midi/midiout.ck)                                      |
-| playmidi        | [playmidi.ck](midi/playmidi.ck)                                    |
+| MIDI file demo  | [midifile-play.ck](midi/midifile-play.ck)                          |
 
-| Events/OSC (Open Sounc Control)          |                                                                                                                        |
-| :--------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
-| OSC message event demo (run in parallel) | [OSC_send.ck](osc/OSC_send.ck), [OSC_recv.ck](osc/OSC_recv.ck), [s.ck (sender)](osc/s.ck), [r.ck (receiver)](osc/r.ck) |
-| OSC dump                                 | [osc_dump.ck](osc/osc_dump.ck)                                                                                         |
+| Events/OSC (Open Sound Control)          |                                                        |
+| :--------------------------------------- | :----------------------------------------------------- |
+| OSC message event demo (run in parallel) | [s.ck (sender)](osc/s.ck), [r.ck (receiver)](osc/r.ck) |
+| OSC dump                                 | [osc-dump.ck](osc/osc-dump.ck)                         |
 
 --------------------------------------------------------------------------------
 ### Unit Generators
@@ -233,11 +244,14 @@ of the [ChucK Language Specification](/language/index.md).
 
 | Transformations                       |                                                                                           |
 | :------------------------------------ | :---------------------------------------------------------------------------------------- |
+| Finding the pitch of a note           | [autocorr.ck](analysis/autocorr.ck)                                                       |
+| Silliness with FeatureCollector       | [concat.ck](analysis/concat.ck)                                                           |
 | FFT                                   | [fft.ck](analysis/fft.ck), [fft2.ck](analysis/fft2.ck), [fft3.ck](analysis/fft2.ck)       |
 | IFFT                                  | [ifft.ck](analysis/ifft.ck), [ifft2.ck](analysis/ifft2.ck), [ifft3.ck](analysis/ifft3.ck) |
 | DCT                                   | [dct.ck](analysis/dct.ck)                                                                 |
 | Windowing                             | [win.ck](analysis/win.ck)                                                                 |
 | (really bad) spectral cross-synthesis | [xsynth.ck](analysis/xsynth.ck)                                                           |
+| calculate signal delay                | [xcorr.ck](analysis/xcorr.ck)                                                             |
 
 | Feature Extractors |                                                                                          |
 | :----------------- | :--------------------------------------------------------------------------------------- |
@@ -246,6 +260,16 @@ of the [ChucK Language Specification](/language/index.md).
 | RMS                | [rms.ck](analysis/features/rms.ck)                                                       |
 | RollOff            | [rolloff.ck](analysis/features/rolloff.ck), [rolloff2.ck](analysis/features/rolloff2.ck) |
 | Zero Crossing      | [zerox.ck](analysis/features/zerox.ck)                                                   |
+
+| Tracking                                |                                                      |
+| :-------------------------------------- | :--------------------------------------------------- |
+| harmonize (with Tracking and Smacking)  | [harm.ck](analysis/tracking/harm.ck)                 |
+| rough pitch tracking                    | [pitch-track.ck](analysis/tracking/pitch-track.ck)   |
+| rough pitch tracking + major third      | [pitch-third.ck](analysis/tracking/pitch-third.ck)   |
+| rough pitch tracking + perfect fifth    | [pitch-fifth.ck](analysis/tracking/pitch-fifth.ck)   |
+| rough pitch tracking + dominant seventh | [pitch-fifth.ck](analysis/tracking/pitch-seventh.ck) |
+| Smacking - track 'smack' events         | [Smacking.ck](analysis/tracking/Smacking.ck)         |
+| Tracking - track peak amplitude via FFT | [Tracking.ck](analysis/tracking/Tracking.ck)         |
 
 --------------------------------------------------------------------------------
 ### Extend
