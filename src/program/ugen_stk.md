@@ -115,7 +115,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 
 #### BlowHole
 
- __`BlowHole`__  STK clarinet physical model with one register hole and one tonehole.
+ __`BlowHole`__  STK blowhole physical model with one register hole and one tonehole.
 
 This class is based on the clarinet model, with the addition 
 of a two-port register hole and a three-port dynamic tonehole
@@ -182,7 +182,6 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`float volume(), volume(float)`__           | get/set volume [0.0 - 1.0]       |
 | __`void startBowing(float)`__                 | set start bowing [0.0 - 1.0]     |
 | __`void stopBowing(float)`__                  | set stop bowing [0.0 - 1.0]      |
-| __`float rate(), rate(float)`__               | get/set rate of attack (sec)     |
 | _inherited from StkInstrument_:               |
 | __`void noteOn(float velocity)`__             | trigger note on                  |
 | __`void noteOff(loat velocity)`__             | trigger note off                 |
