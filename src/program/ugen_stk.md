@@ -68,7 +68,7 @@ Modified for Stk 4.0 by Gary Scavone.
 | __`float bowMotion(), bowMotion(float)`__                     | get/set bow motion [0.0 - 1.0]                                                      |
 | __`float bowRate(), bowRate(float)`__                         | get/set bow attack rate (sec)                                                       |
 | __`float strikePosition(), strikePosition(float)`__           | get/set strike position [0.0 - 1.0]                                                 |
-| __`float integrationConstant(), integrationConstant(float)`__ | get/set integration constant, vibrato frequency                                     |
+| __`float vibratoFreq(), vibratoFreq(float)`__ | get/set vibrato frequency                                     |
 | __`float modesGain(), modesGain(float)`__                     | get/set amplitude for modes [0.0 - 1.0]                                             |
 | __`int preset(), preset(int)`__                               | get/set instrument presets (0 - 3, see above)                                       |
 | __`void pluck(float)`__                                       | set pluck instrument [0.0 - 1.0]                                                    |
