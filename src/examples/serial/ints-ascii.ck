@@ -12,16 +12,20 @@ if( me.args() ) me.arg(0) => Std.atoi => device;
 // serial io
 SerialIO cereal;
 // open serial device
-cereal.open( device, SerialIO.B9600, SerialIO.BINARY );
+cereal.open( device, SerialIO.B9600, SerialIO.ASCII );
 
 // infinite time-loop
 while( true )
 {
     // wait on event
-    cereal.onInts(1) => now;
-    // get int
-    cereal.getInts() @=> int i[];
+    cereal.onInts(2) => now;
+    // get ints
+    cereal.getInts() @=> int ints[];
     // print
-    if( i.size() > 0 )
-        chout <= "int: " <= i[0] <= "\n";
+    chout <= "ints: ";
+    for( int i; i < ints.size(); i++ )
+    {
+        chout <= ints[i] <= " ";
+    }
+    chout <= IO.newline();
 }

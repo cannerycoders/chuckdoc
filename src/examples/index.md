@@ -60,13 +60,13 @@ or perhaps:
 | math.isinf() also math.isnan()            | [infnan.ck](basic/infnan.ck)                                                                             |
 
 
-| Stereo examples |      |
-| :-------------- | :--- |
-| using arrays as UGen busses (currently fails) | [array.ck](stereo/array.ck) |
-| Pan2 demos | [curly2.ck](stereo/curly2.ck), [larry2.ck](stereo/larry2.ck), [moe2.ck](stereo/moe2.ck) |
-| Pan2 demo | [powerup2.ck](stereo/powerup2.ck) |
-| Pan2 power demo | [stereo_noise.ck](stereo/stereo_noise.ck) |
-| Pan2 dope | [ugen_array.ck](stereo/ugen_array.ck) |
+| Stereo examples                               |                                                                                         |
+| :-------------------------------------------- | :-------------------------------------------------------------------------------------- |
+| using arrays as UGen busses (currently fails) | [array.ck](stereo/array.ck)                                                             |
+| Pan2 demos                                    | [curly2.ck](stereo/curly2.ck), [larry2.ck](stereo/larry2.ck), [moe2.ck](stereo/moe2.ck) |
+| Pan2 demo                                     | [powerup2.ck](stereo/powerup2.ck)                                                       |
+| Pan2 power demo                               | [stereo-noise.ck](stereo/stereo-noise.ck)                                               |
+| Pan2 dope                                     | [ugen-array.ck](stereo/ugen-array.ck)                                                   |
 
 
 | I/O examples   |                                 |
@@ -77,6 +77,15 @@ or perhaps:
 | read-str       | [read-str.ck](io/read-str.ck)   |
 | write          | [write.ck](io/write.ck)         |
 | write2         | [write.ck](io/write2.ck)        |
+
+| Serial examples |                                                                                                     |
+| :-------------- | :-------------------------------------------------------------------------------------------------- |
+| bytes           | [byte.ck](serial/byte.ck), [bytes.ck](serial/bytes.ck)                                              |
+| ints            | [ints.ck](serial/ints.ck), [ints-ascii.ck](serial/ints-ascii.ck), [ints-bin.ck](serial/ints-bin.ck) |
+| lines           | [lines.ck](serial/lines.ck)                                                                         |
+| list            | [list.ck](serial/list.ck)                                                                           |
+| write           | [write.ck](serial/write.ck), [write-bytes.ck](serial/write-bytes.ck)                                |
+| arduino         | [ckserial.ino](serial/arduino/ckserial.ino)
 
 --------------------------------------------------------------------------------
 ### Deep Stuff
