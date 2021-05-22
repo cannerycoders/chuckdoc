@@ -482,10 +482,10 @@ Control Change Numbers:
 * Number Of Objects = 11
 * Resonance Frequency = 1
 * Shake Energy = 128
-* Instrument Selection = 1071
-* Maraca = 0
-* Cabasa = 1
-* Sekere = 2
+* Instrument Selection = 107
+    * Maraca = 0
+    * Cabasa = 1
+    * Sekere = 2
     * Guiro = 3
     * Water Drops = 4
     * Bamboo Chimes = 5
