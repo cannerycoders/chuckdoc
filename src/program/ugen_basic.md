@@ -222,8 +222,8 @@ __`Osc`__ base class for simple oscillator ugens.
 | __`float freq(), freq(float hz)`__      | Get/set frequency of oscillator in Hertz (cycles per second).                                                                            |
 | __`dur period(), period(dur value)`__   | Get/set period of oscillator (inverse of frequency).                                                                                     |
 | __`float phase(), phase(float phase)`__ | Get/set oscillator phase, in range [0,1).                                                                                                |
-| __`float sfreq(float hz)`__             |                                                                                                                                          |
-| __`int sync(), sync(int type)`__        | Get/set ode for input (if any). 0: sync frequency to input, 1: sync phase to input, 2: frequency modulation (add input to set frequency) |
+| __`float sfreq(float hz)`__             | (same as freq).                                                                                                                           |
+| __`int sync(), sync(int type)`__        | Get/set mode for input (if any). 0: sync frequency to input, 1: sync phase to input, 2: frequency modulation (add input to set frequency) |
 
 #### Phasor
 
@@ -232,7 +232,6 @@ __`Osc`__ base class for simple oscillator ugens.
 | Phasor.functions                    | Description                                           |
 | :---------------------------------- | :---------------------------------------------------- |
 | _see [Osc](#osc)_                   |                                                       |
-| __`float width(), width(float w)`__ | Set duration of the ramp in each cycle. (default 1.0) |
 
 #### SinOsc
 
