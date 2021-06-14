@@ -1355,20 +1355,20 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`.path`__ (string, R+W)          | specifies file to be played                  |
 
 
+<a id="wvout2"></a>
+
 #### WvOut
 
- __`WvOut`__  STK audio data output base class.
+ __`WvOut`__  and __`WvOut2`__ STK audio data output classes.
 
-This class provides output support for various audio 
-file formats.  It also serves as a base class for 
-"realtime" streaming subclasses.
+These classes provide output support for various audio file formats.  
+They also serves as a base class for "realtime" streaming subclasses.
 
-WvOut writes samples to an audio file.  It supports 
-multi-channel data in interleaved format.  It is 
-important to distinguish the tick() methods, which 
-output single samples to all channels in a sample 
-frame, from the tickFrame() method, which takes 
-a pointer to multi-channel sample frame data.
+WvOut writes single-channel samples to an audio file.  WvOut2 supports 
+multi-channel data in interleaved format.  It is important to distinguish 
+the tick() methods, which output single samples to all channels in a sample 
+frame, from the tickFrame() method, which takes a pointer to multi-channel 
+sample frame data.
 
 WvOut currently supports WAV, AIFF, AIFC, SND (AU), MAT-file (Matlab), 
 and STK RAW file formats.  Signed integer (8-, 16-, and 32-bit) 
@@ -1381,6 +1381,13 @@ be modified.  Uncompressed data types are not supported.
 Currently, WvOut is non-interpolating and the output rate
 is always Stk::sampleRate().
 
+WvOut supports automatic filename generation by seting filename
+to "special:auto". Now, the autoPrefix parameter, if provided, 
+will be _prepended_ to the filename. Do this if you want the 
+automatically named file to appear in a directory other than 
+chuck's working directory.  When auto naming is enabled, the output 
+file name will include a timestamp.
+
 by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 
 | WvOut.functions                         | Description                  |
@@ -1390,6 +1397,8 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`.wavFilename`__ (string, WRITE only) | open WAVE file for writing   |
 | __`.rawFilename`__ (string, WRITE only) | open raw file for writing    |
 | __`.aifFilename`__ (string, WRITE only) | open AIFF file for writing   |
+| __`.autoPrefix`__ (string, R+W)         | get/set the prefix |
+| __`.record`__ (int, R+W)                | start/stop output. |
 | __`.closeFile`__ (string, WRITE only)   | close file properly          |
 
 ${PROGFOOTER}

@@ -113,7 +113,7 @@ Compiler, and Virtual Machine for a ChucK programmer.
 [BLT](ugen_stk.md#blt) | [Blit](ugen_stk.md#blit) | 
 [BlitSaw](ugen_stk.md#blitsaw) | [BlitSquare](ugen_stk.md#blitsquare) |
 [WvIn](ugen_stk.md#wvin) | [WaveLoop](ugen_stk.md#waveloop) | 
-[WvOut](ugen_stk.md#wvout) |
+[WvOut](ugen_stk.md#wvout) | [WvOut2](ugen_stk.md#wvout2) |
 [StkInstrument](ugen_stk.md#stkinstrument) |
 [BandedWG](ugen_stk.md#bandedwg) | [BlowBotl](ugen_stk.md#blowbotl) |
 [BlowHole](ugen_stk.md#blowhole) | [Bowed](ugen_stk.md#bowed) |
