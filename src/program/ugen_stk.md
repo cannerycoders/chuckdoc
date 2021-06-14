@@ -1381,11 +1381,11 @@ be modified.  Uncompressed data types are not supported.
 Currently, WvOut is non-interpolating and the output rate
 is always Stk::sampleRate().
 
-WvOut supports automatic filename generation by seting filename
-to "special:auto". Now, the autoPrefix parameter, if provided, 
+WvOut supports automatic filename generation by setting the filename
+to __"special:auto"__. Now, the __autoPrefix__ parameter, if provided, 
 will be _prepended_ to the filename. Do this if you want the 
 automatically named file to appear in a directory other than 
-chuck's working directory.  When auto naming is enabled, the output 
+chuck's working directory.  When auto-naming is enabled, the output 
 file name will include a timestamp.
 
 by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
