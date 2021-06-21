@@ -22,7 +22,7 @@ dac => WvOut2 w => blackhole;
 .5 => w.fileGain;
 
 // temporary workaround to automatically close file on remove-shred
-// null @=> w;
+null @=> w;
 
 // infinite time loop...
 // ctrl-c will stop it, or modify to desired duration

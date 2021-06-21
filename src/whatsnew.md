@@ -4,8 +4,97 @@ ${PAGEHEADER}
 
 ---
 
-#### 1.4.0.2
+#### 1.4.1.0 (June 2021)
 
+(NOTE) chuck-1.4.1.0 is the first significant release resulting from a 
+coordinated team effort to update and improve ChucK for teaching and 
+research.  In April 2021, Perry and Ge led a ChucK "Global 
+Repair-a-thon", which identified issues and put forth a new Development 
+Roadmap. The ChucK dev team will follow this roadmap for updates, new 
+features, and new ChucK mediums (e.g., Chunity, WebChucK, FaucK, 
+ChucKTrip, and more). Many people were involved in this significant 
+release, including Jack Atherton, Mike Mulshine, Matt Wright, Rebecca 
+Fiebrink, Dan Trueman, Lloyd May, Mark Cerquiera, Mario Buoninfante, 
+Perry Cook, Spencer Salazar, and Ge Wang.  Many thanks to everyone who 
+contributed. Happy ChucKing!
+
+  - (added) static Object.apropos();
+    All ChucK objects (i.e., all non-primitive types) can now invoke 
+    .apropos(), which will dynamically generate and print to console
+    the description and inheritance hierarchy of the underlying type,
+    as well as the available functions at runtime.  This can be called
+    on any object instance or on any class (without an instance):
+        // any object instance
+        SinOsc foo;
+        // print to console info about its underlying type
+        foo.apropos();
+        (OR)
+        // apropos from any class (identical output as above)
+        SinOsc.apropos();
+    Intended to be a quick runtime reference / learning tool!
+  - (added) examples/apropos.ck -- show .apropos() in action
+  - (added) examples/deep/chant.ck (by Perry Cook, 2006) -- a chant singing
+    synthesizer that makes use of ChucK's strongly-time and concurrent
+    programming features.
+  - (added) new Multi-channel LiSa UGens! (LiSa10 was already present)
+        LiSa2 (stereo)
+        LiSa4 (quad),
+        LiSa6 (6-channel; laptop orchestra edition!)
+        LiSa8 (8-channel),
+        LiSa16 (16-channel)
+  - (fixed) LiSa playback bug; voice panning now handles the mono case;
+    previously was silencing voice playback
+  - (added) new STK set/get access functions in FM:
+        float op4Feedback( float value );
+            Set operator 4 feedback.
+        float op4Feedback();
+            Get operator 4 feedback.
+        float opADSR( int opNum, float a, float d, float s, float r );
+            Set operator ADSR: attack, decay, sustain, release.
+        float opAM( int opNum, float value );
+            Set operator amplitude modulation.
+        float opAM( int opNum );
+            Get operator amplitude modulation.
+        float opGain( int opNum, float value );
+            Set operator gain.
+        float opGain( int opNum );
+            Get gperator gain.
+        float opRatio( int opNum, float ratio );
+            Set operator frequency ratio.
+        float opRatio( int opNum );
+            Get operator frequency ratio.
+        float opWave( int opNum, int wave );
+            Set operator waveform [1-8].
+  - (added) new Synthesis Toolkit (STK) FM instruments from Perry!
+        HnkyTonk: STK-style Honkey Tonk Piano FM synthesis instrument.
+            (aka, Algorithm 1 of the Yamaha TX81Z DX11 FM synthesizer)
+        FrencHrn: STK-style French Horn FM synthesis instrument.
+            (aka, Algorithm 2 of the Yamaha TX81Z DX11 FM synthesizer)
+        KrstlChr: STK-style "Crystal Choir" FM synthesis instrument.
+            (aka, Algorithm 7 of the Yamaha TX81Z DX11 FM synthesizer)
+    *** for each of these, try using the new .apropos() to examine its
+    documentation and interface; e.g., HnkyTonk.apropos(); ***
+  - (added) new Moog function:
+        float filterStartFreq( float freq );
+            Set filter starting frequency.
+        float filterStartFreq();
+            Get filter starting frequency.
+  - (added) new STK examples:
+        examples/stk/frenchrn-algo2.ck -- FM French Horn demo
+        examples/stk/honkeytonk-algo1.ck -- FM Honkey Tonk demo
+        examples/stk/krstlchr-algo7.ck -- FM Kristal Choir demo
+        examples/stk/hevymetl-acoustic-algo3.ck -- FM HevyMetl => Nylon Guitar
+        examples/stk/hevymetl-trumpet-algo3.ck -- FM HevyMetl => Trumpet
+  - (updated) tweaks to a number of STK UGens, which may result in audio
+    changes; the affected UGens are:
+        BandedWG, BeeThree, FMVoices, HevyMetl, PercFlut, Rhodey,
+        TubeBell, Wurley
+  - (fixed) issue in PluckTwo in computing delay length; this affects
+    the tuning of various plucked string models, including Mandolin.
+  - (added) .frames() for SndBuf and SndBuf2; returns the number of sample
+    frames in the loaded sound file. This is identical in behavior to
+    .samples() -- but for stereo+, .frames() is semanitically more 
+    accurate than .samples().
   - (added) "global" declarations for int, float, string, Object, UGen, Event;
     this can be used in-language across ChucK files (each file must first 
     "declare" the global value before using it). This also support usage from
@@ -24,20 +113,56 @@ ${PAGEHEADER}
     when pan is at center (pan=0). Mathematically, the reduction amount 
     can be calculated using Std.lintodb(Math.cos(pi/4))
     [To hear this new behavior, check out examples/stereo/stereo_noise.ck]
+  - (BEHAVIOR CHANGED) clearly separated array.size() and array.capacity();
+    for historical/compatibility reasons, array.cap() is the same as
+    array.size() and generally should be avoided in favor of either .size()
+    or .capacity()
+  - (BEHAVIOR CHANGED): internally, all ChucK static functions are now
+    passed an extra parameter (Chuck_Type * TYPE) as a pointer to the
+    base type/class. This will affect Chugins, which should be updated/
+    rebuilt with the latest headers.
+  - (BEHAVIOR CHANGED): when connecting two multi-channel UGen's (both
+    are at least stereo), say LHS => RHS, if LHS channels < RHS channels,
+    the channels will be connected one-by-one up to the LHS channel count;
+    previously, the LHS channels will be automatically repeated to connect
+    to the RHS channels that have no corresponding LHS channels.  This
+    behavior can still be achieved by manually connecting the individual
+    channels of LHS and and RHS through LHS.chan(n) and RHS.chan(n).
   - (fixed) resolved a bug with SndBuf not playing when .rate < 0 and while
     .pos beyond the end
   - (fixed) resolved a bug with SndBuf where it could output DC when .rate < 0
     after it reaches the beginning of the file (e.g., if the first sample is
     non-zero)
+  - (fixed) resolved a bug in ADSR when sustain is set to 0 and audio stops,
+    .releaseTime return NaN and basically the world ends (thanks to
+    mariobuoninfante for help in addressing this)
+  - (fixed) reset Gen10 table to allow add/remove partials; thanks to 
+    mariobuoninfant
+  - (fixed) updated MidiOut and removed check in order to allow messages
+    of size less than or greater than 3 bytes; thanks to mariobuoninfante
+    for this issue report on Ubuntu Studio 64-bit; this fix addresses
+    the sending of MIDI clock, stop, continue, and SysEx -- also thank 
+    you mariobuoninfante for the fix.
   - (deprecated) Chubgraph => (new) Chugraph;
     Chubgraph will continue to function, with a deprecation warning.
   - (documentation) updated embedded documentation text for all statically
     linked UGens and libraries.
+  - (documentation) brought examples in alignment between distribution
+    and the online examples collection; many examples updated for clarity
+    and utility
+        http://chuck.stanford.edu/doc/examples
+        http://chuck.cs.princeton.edu/doc/examples
   - (internal/refactor) the "Mega Merge 2021" integrates a long-standing
     branch since REFACTOR-2017 that includes support for globals and was
     the basis for Chunity.  Future Chunity releases will align with mainline
     ChucK language features. (thanks to Jack Atherton for several years of
     laying the groundwork and for ChucK in Chunity!)
+  - (internal/developement) added m_started flag to the ChucK class to avoid
+    a strange (but mostly harmless) condition when the virtual machine is
+    shutting down and ChucK::run() attempt to call ChucK::start()
+  - (internal/development) Thanks to Mark Cerqueira -- migrated from old
+    Travis CI (continuous integration testing) to GHA (GitHub Actions).
+
 ---
 
 #### 1.4.0.1
