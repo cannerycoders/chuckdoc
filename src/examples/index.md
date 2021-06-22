@@ -60,6 +60,7 @@ or perhaps:
 | noise & filters                           | [wind.ck](basic/wind.ck), [wind2.ck](basic/wind2.ck)                                                     |
 | function test                             | [zerox.ck](basic/zerox.ck)                                                                               |
 | math.isinf() also math.isnan()            | [infnan.ck](basic/infnan.ck)                                                                             |
+| help - built-in help                      | [help.ck](help.ck)                                                                                       |
 
 
 --------------------------------------------------------------------------------
@@ -67,7 +68,7 @@ or perhaps:
 
 | Deep Stuff                                   |                                 |
 | :------------------------------------------- | :------------------------------ |
-| formant-based singing synthesis              | [chant.ck](deep/chant.ck)     |
+| formant-based singing synthesis              | [chant.ck](deep/chant.ck)       |
 | audio dithering "by hand"                    | [dither.ck](deep/dither.ck)     |
 | how phones dial                              | [dtmf.ck](deep/dtmf.ck)         |
 | one pole envelope follower                   | [follower.ck](deep/follower.ck) |
