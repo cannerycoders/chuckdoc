@@ -124,7 +124,11 @@ Compiler, and Virtual Machine for a ChucK programmer.
 [Sitar](ugen_stk.md#sitar) | [StifKarp](ugen_stk.md#stifkarp) |
 [VoicForm](ugen_stk.md#voicform) | [FM](ugen_stk.md#fm) |
 [BeeThree](ugen_stk.md#beethree) | [FMVoices](ugen_stk.md#fmvoices) |
-[HevyMetl](ugen_stk.md#hevymetl) | [PercFlut](ugen_stk.md#prcflut) |
+[FrencHrn](ugen_stk.md#frenchrn) | 
+[HevyMetl](ugen_stk.md#hevymetl) | 
+[HnkyTonk](ugen_stk.md#hnkytonk) | 
+[KrstlChr](ugen_stk.md#krstlchr) | 
+[PercFlut](ugen_stk.md#prcflut) |
 [Rhodey](ugen_stk.md#rhodey) | [TubeBell](ugen_stk.md#tubebell) |
 [Wurley](ugen_stk.md#wurley)
 

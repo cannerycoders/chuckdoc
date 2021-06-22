@@ -47,18 +47,19 @@ Proceedings of the 1999 International Computer Music Conference.
 
 Control Change Numbers: 
 
-- Bow Pressure = 2
-- Bow Motion = 4
-- Strike Position = 8 (not implemented)
-- Vibrato Frequency = 11
-- Gain = 1
-- Bow Velocity = 128
-- Set Striking = 64
-- Instrument Presets = 16
-    - Uniform Bar = 0
-    - Tuned Bar = 1
-    - Glass Harmonica = 2
-    - Tibetan Bowl = 3
+* Bow Pressure = 2
+* Bow Motion = 4
+* Strike Position = 8 (not implemented)
+* Vibrato Frequency = 11
+* Gain = 1
+* Bow Velocity = 128
+* Set Striking = 64
+* Instrument Presets = 16
+    * Uniform Bar = 0
+    * Tuned Bar = 1
+    * Glass Harmonica = 2
+    * Tibetan Bowl = 3
+
 by Georg Essl, 1999 - 2002. 
 Modified for Stk 4.0 by Gary Scavone. 
 
@@ -91,6 +92,7 @@ a helmholtz resonator (biquad filter) with a polynomial jet excitation
 (a la Cook).
 
 Control Change Numbers: 
+
 * Noise Gain = 4
 * Vibrato Frequency = 11
 * Vibrato Gain = 1
@@ -131,6 +133,7 @@ possibly subject to patents held by Stanford University, Yamaha,
 and others.
 
 Control Change Numbers: 
+
 * Reed Stiffness = 2
 * Noise Gain = 4
 * Tonehole State = 11
@@ -165,6 +168,7 @@ This is a digital waveguide model, making its use possibly subject
 to patents held by Stanford University, Yamaha, and others.
 
 Control Change Numbers: 
+
 * Bow Pressure = 2
 * Bow Position = 4
 * Vibrato Frequency = 11
@@ -196,6 +200,7 @@ This is a digital waveguide model, making its use possibly subject
 to patents held by Stanford University, Yamaha, and others.
 
 Control Change Numbers: 
+
 * Lip Tension = 2
 * Slide Length = 4
 * Vibrato Frequency = 11
@@ -231,6 +236,7 @@ This is a digital waveguide model, making its use possibly subject to
 patents held by Stanford University, Yamaha, and others.
 
 Control Change Numbers: 
+
 * Reed Stiffness = 2
 * Noise Gain = 4
 * Vibrato Frequency = 11
@@ -266,6 +272,7 @@ This is a digital waveguide model, making its use possibly subject
 to patents held by Stanford University, Yamaha, and others.
 
 Control Change Numbers: 
+
 * Jet Delay = 2
 * Noise Gain = 4
 * Vibrato Frequency = 11
@@ -307,6 +314,7 @@ Stanford University.  For information, contact the Office of Technology
 Licensing, Stanford University.
 
 Control Change Numbers: 
+
 * Body Size = 2
 * Pluck Position = 4
 * String Sustain = 11
@@ -343,7 +351,7 @@ Control Change Numbers:
 * Vibrato Frequency = 7
 * Direct Stick Mix = 1
 * Volume = 128
-- Modal Presets = 16
+* Modal Presets = 16
     * Marimba = 0
     * Vibraphone = 1
     * Agogo = 2
@@ -390,6 +398,7 @@ ADSR envelope (inherited from the Sampler class) and adds two
 sweepable formant (FormSwep) filters.
 
 Control Change Numbers: 
+
 * Filter Q = 2
 * Filter Sweep Rate = 4
 * Vibrato Frequency = 11
@@ -433,6 +442,7 @@ This is a digital waveguide model, making its use possibly subject
 to patents held by Stanford University, Yamaha, and others.
 
 Control Change Numbers: 
+
 * Reed Stiffness = 2
 * Reed Aperture = 26
 * Noise Gain = 4
@@ -477,6 +487,7 @@ This class implements simulations of breaking sticks, crunchy snow (or not),
 a wrench, sandpaper, and more.
 
 Control Change Numbers: 
+
 * Shake Energy = 2
 * System Decay = 4
 * Number Of Objects = 11
@@ -643,6 +654,7 @@ see [voic-o-form.ck](../examples/stk/voic-o-form.ck)
  arbitrary number of waves and envelopes, determined via a constructor argument.
 
 Control Change Numbers: 
+
 * Control One = 2
 * Control Two = 4
 * LFO Speed = 11
@@ -685,11 +697,14 @@ Algorithm 8 is :
     4 --
 
 Control Change Numbers: 
-    - Operator 4 (feedback) Gain = 2 (.controlOne)
-    - Operator 3 Gain = 4 (.controlTwo)
-       - LFO Speed = 11
-       - LFO Depth = 1
-       - ADSR 2 & 4 Target = 128
+
+* Operator 4 (feedback) 
+    * Gain = 2 (.controlOne)
+* Operator 3 
+    * Gain = 4 (.controlTwo)
+    * LFO Speed = 11
+    * LFO Depth = 1
+    * ADSR 2 & 4 Target = 128
 
 The basic Chowning/Stanford FM patent expired in 1995, but there exist 
 follow-on patents, mostly assigned to Yamaha.  If you are of the type 
@@ -722,15 +737,16 @@ referred to as algorithm 6 of the TX81Z.
 Algorithm 6 is :
 
         /->1 -\
-        4-|-->2 - +-> Out
+     4-|-->2 - +-> Out
         \->3 -/
 
 Control Change Numbers: 
-    - Vowel = 2 (.controlOne)
-    - Spectral Tilt = 4 (.controlTwo)
-    - LFO Speed = 11
-    - LFO Depth = 1
-    - ADSR 2 & 4 Target = 128
+
+* Vowel = 2 (.controlOne)
+* Spectral Tilt = 4 (.controlTwo)
+* LFO Speed = 11
+* LFO Depth = 1
+* ADSR 2 & 4 Target = 128
 
 The basic Chowning/Stanford FM patent expired in 1995, but there 
 exist follow-on patents, mostly assigned to Yamaha.  If you are of the
@@ -755,6 +771,32 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`.freq`__ (float frequency)                  | set/get frequency (Hz)            |
 | __`.controlChange`__ (int number, float value) | assert control change             |
 
+#### FrencHrn 
+
+__`FrencHrn`__ STK-style French Horn FM synthesis instrument
+
+This class implements 3 cascade operators and a 4th modulator with 
+feedback modulation, also referred to as algorithm 2 of the TX81Z.
+
+Algorithm 2 is
+
+    4--\
+    3---+-->>2-->1-->Out
+
+Control Change Numbers:
+
+* Total Modulator Index = 2 (.controlOne)\n\
+* Modulator Crossfade = 4 (.controlTwo)\n\
+* LFO Speed = 11\n\
+* LFO Depth = 1\n\
+* ADSR 2 & 4 Target = 128\n\
+
+The basic Chowning/Stanford FM patent expired in 1995, but there exist 
+follow-on patents, mostly assigned to Yamaha. If you are of the type 
+who should worry about this (making money) worry away.
+
+by Perry R. Cook and Gary P. Scavone, 1995 - 2002.";
+
 #### HevyMetl
 
 __`HevyMetl`__  STK heavy metal FM synthesis instrument.
@@ -768,11 +810,12 @@ Algorithm 3 is :
     3-->2-- + -->1-->Out
 
 Control Change Numbers: 
-    - Total Modulator Index = 2 (.controlOne)
-    - Modulator Crossfade = 4 (.controlTwo)
-    - LFO Speed = 11
-    - LFO Depth = 1
-    - ADSR 2 & 4 Target = 128
+
+* Total Modulator Index = 2 (.controlOne)
+* Modulator Crossfade = 4 (.controlTwo)
+* LFO Speed = 11
+* LFO Depth = 1
+* ADSR 2 & 4 Target = 128
 
 The basic Chowning/Stanford FM patent expired in 1995, but there 
 exist follow-on patents, mostly assigned to Yamaha.  If you are 
@@ -794,6 +837,58 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`.freq`__ (float frequency)                  | set/get frequency (Hz)            |
 | __`.controlChange`__ (int number, float value) | assert control change             |
 
+#### HnkyTonk
+
+__HnkyTonk__ is STK-style Honkey Tonk Piano FM synthesis instrument.
+
+This class implements 4 cascade operators with feedback modulation, 
+also referred to as algorithm 1 of the TX81Z.
+
+Algorithm 1 is : 
+
+    4-->3-->2-->1-->Out
+
+Control Change Numbers:
+
+* Total Modulator Index = 2 (.controlOne)\n\
+* Modulator Crossfade = 4 (.controlTwo)\n\
+* LFO Speed = 11\n\
+* LFO Depth = 1\n\
+* ADSR 2 & 4 Target = 128\n\
+
+The basic Chowning/Stanford FM patent expired in 1995, but there exist 
+follow-on patents, mostly assigned to Yamaha. If you are of the type 
+who should worry about this (making money) worry away.
+
+by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
+
+
+#### KrstlChr
+
+__`KrstlChr`__ STK-style "Crystal Choir" FM synthesis instrument.
+
+This class implements 3 parallel operators with being modulated 
+(feedback modulation), also referred to as algorithm 7 of the TX81Z.
+
+Algorithm 7 is :
+
+    1 - \
+    2 -- +-> Out
+    4-->3 -/ 
+    
+Control Change Numbers:
+
+* Total Modulator Index = 2 (.controlOne)\n\
+* Modulator Crossfade = 4 (.controlTwo)\n\
+* LFO Speed = 11\n\
+* LFO Depth = 1\n\
+* ADSR 2 & 4 Target = 128\n\
+
+The basic Chowning/Stanford FM patent expired in 1995, but there 
+exist follow-on patents, mostly assigned to Yamaha. If you are of 
+the type who should worry about this (making money) worry away.
+
+by Perry R. Cook and Gary P. Scavone, 1995 - 2002.";
 
 #### PercFlut
 
@@ -801,15 +896,18 @@ __`PercFlut`__  STK percussive flute FM synthesis instrument.
 
 This class implements algorithm 4 of the TX81Z.
 
-Algorithm 4 is :   4->3--\
-                      2-- + -->1-->Out
+Algorithm 4 is
+
+    4->3--\
+       2-- + -->1-->Out
 
 Control Change Numbers: 
-    - Total Modulator Index = 2 (.controlOne)
-    - Modulator Crossfade = 4 (.controlTwo)
-    - LFO Speed = 11
-    - LFO Depth = 1
-    - ADSR 2 & 4 Target = 128
+
+* Total Modulator Index = 2 (.controlOne)
+* Modulator Crossfade = 4 (.controlTwo)
+* LFO Speed = 11
+* LFO Depth = 1
+* ADSR 2 & 4 Target = 128
 
 The basic Chowning/Stanford FM patent expired in 1995, but there 
 exist follow-on patents, mostly assigned to Yamaha.  If you are 
@@ -839,11 +937,14 @@ __`Rhodey`__  STK Fender Rhodes-like electric piano FM
 This class implements two simple FM Pairs summed together, 
 also referred to as algorithm 5 of the TX81Z.
 
-Algorithm 5 is :     4->3--\
-                            + --> Out
-                     2->1--/
+Algorithm 5 is :     
+
+    4->3--\
+           + --> Out
+    2->1--/
 
 Control Change Numbers: 
+
 * Modulator Index One = 2 (.controlOne)
 * Crossfade of Outputs = 4 (.controlTwo)
 * LFO Speed = 11
@@ -894,11 +995,14 @@ __`TubeBell`__  STK tubular bell (orchestral chime) FM.
 This class implements two simple FM Pairs summed together, also referred to 
 as algorithm 5 of the TX81Z.
 
-Algorithm 5 is :  4->3--\
-                         + --> Out
-                  2->1--/
+Algorithm 5 is :  
+
+    4->3--\
+           + --> Out
+    2->1--/
 
 Control Change Numbers: 
+
 * Modulator Index One = 2 (.controlOne)
 * Crossfade of Outputs = 4 (.controlTwo)
 * LFO Speed = 11
@@ -918,16 +1022,19 @@ __`Wurley`__  STK Wurlitzer electric piano FM.
 This class implements two simple FM Pairs summed together, 
 also referred to as algorithm 5 of the TX81Z.
 
-Algorithm 5 is :  4->3--\
-                         + --> Out
-                  2->1--/
+Algorithm 5 is
+
+    4->3--\
+           + --> Out
+    2->1--/
 
 Control Change Numbers: 
-    - Modulator Index One = 2 (.controlOne)
-    - Crossfade of Outputs = 4 (.controlTwo)
-    - LFO Speed = 11
-    - LFO Depth = 1
-    - ADSR 2 & 4 Target = 128
+
+* Modulator Index One = 2 (.controlOne)
+* Crossfade of Outputs = 4 (.controlTwo)
+* LFO Speed = 11
+* LFO Depth = 1
+* ADSR 2 & 4 Target = 128
 
 The basic Chowning/Stanford FM patent expired in 1995, but there 
 exist follow-on patents, mostly assigned to Yamaha.  If you are 
