@@ -25,7 +25,7 @@ ${PROGHEADER}
 [TriOsc](#triosc) |
 [SawOsc](#sawosc) |
 [SqrOsc](#sqrosc) |
-[PulseOsc](pulseosc)  
+[PulseOsc](#pulseosc)  
 [SndBuf](#sndbuf) |
 [SndBuf2](#sndbuf2)  
 [HalfRect](#halfrect) |
