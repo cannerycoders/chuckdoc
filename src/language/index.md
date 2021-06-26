@@ -70,8 +70,10 @@ Compiler, and Virtual Machine for a ChucK programmer.
 
 [`if / else`](ctrl.md#if)  
 [`while`](ctrl.md#while)  
+[`do`](ctrl.md#do)  
 [`until`](ctrl.md#until)  
 [`for`](ctrl.md#for)  
+[`repeat`](ctrl.md#repeat)  
 [`break / continue`](ctrl.md#break")  
 
 ### [Manipulating Time](time.md)

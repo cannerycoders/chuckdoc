@@ -80,6 +80,10 @@ as long as the condition evaluates as non-zero. To execute the body of the
 loop before checking the condition, you can use a `do` / `while`
 loop.  This guarantees that the body gets executed as least once.
 
+<a id="do"></a>
+
+## `do`
+
 ```chuck
 do {
     // your code executes here at least once
@@ -132,6 +136,22 @@ iteration.
 ```chuck
 // for loop
 for( 0 => int foo; foo < 4 ; foo++ )
+{
+    // debug-print value of 'foo'
+    <<< foo >>>;
+}
+```
+
+<a id="repeat"></a>
+
+## `repeat`
+
+A loop that iterates a number of times. Internal state tracks and decrements
+a count parameter.
+
+```chuck
+// repeat loop
+repeat(10)
 {
     // debug-print value of 'foo'
     <<< foo >>>;

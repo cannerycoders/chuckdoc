@@ -75,7 +75,6 @@ Compiler, and Virtual Machine for a ChucK programmer.
 
 #### filters
 
-[FilterBasic](ugen_filters.md#filterbasic) |
 [BPF](ugen_filters.md#bpf) |
 [BRF](ugen_filters.md#brf) |
 [LPF](ugen_filters.md#lpf) |
