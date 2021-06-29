@@ -217,11 +217,11 @@ while( true ) {
 
 __`Osc`__ base class for simple oscillator ugens.
 
-| Osc.functions                           | Description                                                                                                                              |
-| :-------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| __`float freq(), freq(float hz)`__      | Get/set frequency of oscillator in Hertz (cycles per second).                                                                            |
-| __`dur period(), period(dur value)`__   | Get/set period of oscillator (inverse of frequency).                                                                                     |
-| __`float phase(), phase(float phase)`__ | Get/set oscillator phase, in range [0,1).                                                                                                |
+| Osc.functions                           | Description                                                                                                                               |
+| :-------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| __`float freq(), freq(float hz)`__      | Get/set frequency of oscillator in Hertz (cycles per second).                                                                             |
+| __`dur period(), period(dur value)`__   | Get/set period of oscillator (inverse of frequency).                                                                                      |
+| __`float phase(), phase(float phase)`__ | Get/set oscillator phase, in range [0,1).                                                                                                 |
 | __`float sfreq(float hz)`__             | (same as freq).                                                                                                                           |
 | __`int sync(), sync(int type)`__        | Get/set mode for input (if any). 0: sync frequency to input, 1: sync phase to input, 2: frequency modulation (add input to set frequency) |
 
@@ -229,9 +229,9 @@ __`Osc`__ base class for simple oscillator ugens.
 
  __`Phasor`__ simple ramp generator (0 to 1). Can be used for phase control.
 
-| Phasor.functions                    | Description                                           |
-| :---------------------------------- | :---------------------------------------------------- |
-| _see [Osc](#osc)_                   |                                                       |
+| Phasor.functions  | Description |
+| :---------------- | :---------- |
+| _see [Osc](#osc)_ |             |
 
 #### SinOsc
 
@@ -305,6 +305,7 @@ __`Osc`__ base class for simple oscillator ugens.
 | __`float rate(), rate(float rate)`__          | Get/set playback rate (relative to file's natural speed). For example, 0.5 is half speed and 2 is twice as fast.                |
 | __`string read(string read)`__                | Load file for reading.                                                                                                          |
 | __`int samples()`__                           | Total number of sample frames in the file.                                                                                      |
+| __`int frames()`__                            | Total number of sample frames in the file.                                                                                      |
 | __`float valueAt(int pos)`__                  | Sample value at given position (in samples).                                                                                    |
 | __`string write(string read)`__               | Set file for writing (currently unsupported).                                                                                   |
 |                                               |
