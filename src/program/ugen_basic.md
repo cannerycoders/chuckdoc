@@ -326,7 +326,8 @@ from a variety of uncompressed formats.
 
 #### HalfRect
 
-__`HalfRect`__  half wave rectifier.
+__`HalfRect`__  half wave rectifier. For input values < 0, output is 0. 
+Otherwise input.
 
 | HalfRect.functions  |
 | :------------------ |
@@ -334,7 +335,8 @@ __`HalfRect`__  half wave rectifier.
 
 #### FullRect
 
-__`FullRect`__  full wave rectifier.
+__`FullRect`__  full wave rectifier. For input values < 0, output is -input. 
+Otherwise input.
 
 | FullRect.functions  |
 | :------------------ |
