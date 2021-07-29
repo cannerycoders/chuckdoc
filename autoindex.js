@@ -1,4 +1,6 @@
-// auto-generate built/autoindex.md
+// auto-generate built/autoindex.md associated
+// with the examples dir. NB: this is different
+// from the searchindex.
 let path = require("path");
 let klaw = require("klaw");
 

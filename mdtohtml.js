@@ -1,3 +1,5 @@
+// mdtohtml:
+//  converts the pile of md to a pile of html
 const path = require("path");
 const fs = require("fs");
 let showdown = require("showdown");
