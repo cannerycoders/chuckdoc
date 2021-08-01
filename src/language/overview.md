@@ -151,7 +151,7 @@ will print only their respective values (with one space between):
 Like any programming language, ChucK reserves certain words and character 
 sequences. These have special meanings.
 
-#### primitive types
+### primitive types
 
 * `int`
 * `float`
