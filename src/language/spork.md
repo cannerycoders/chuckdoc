@@ -17,7 +17,7 @@ ${LANGHEADER}
 ## Concurrency & Shreds
 
 ChucK is able to run many processes concurrently (the processes behave as if 
-they are running in parallel).  A ChucKian process is called a _shred_.  
+they are running in parallel).  A ChucKian process is called a _shred_.
 To _spork_ a shred means creating and adding a new process to the virtual 
 machine.  Shreds may be sporked from a variety of places, and may themselves 
 spork new shreds.
@@ -26,7 +26,7 @@ ChucK supports sample-synchronous, non-preemptive concurrency.  Via the timing
 mechanism, any number of programs/shreds can be automatically _shreduled_ and 
 synchronized use the timing information. A _shreduler_ in the virtual machine 
 does the _shreduling_.  The concurrency is _sample-synchronous_, meaning 
-that inter-process audio timing is guaranteed to be precise to the sample.  
+that inter-process audio timing is guaranteed to be precise to the sample.
 Note that each process/shred does not necessarily need to know about each 
 other - it only has to deal with time locally. The virtual machine will make 
 sure things happen correctly "across the board".  Finally, concurrency - 
@@ -39,7 +39,7 @@ command line:
 % chuck foo.ck bar.ck boo.ck
 ```
 
-This command runs chuck on `foo.ck`, `bar.ck`, and `boo.ck. concurrently.  
+This command runs chuck on `foo.ck`, `bar.ck`, and `boo.ck`. concurrently.  
 There are other ways to run shreds concurrently (see 
 [on-the-fly-programming commands](../program/otfp.md)).  Next, we show 
 how to create new shreds from within ChucK programs.
