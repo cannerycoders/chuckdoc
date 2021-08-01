@@ -151,7 +151,7 @@ will print only their respective values (with one space between):
 Like any programming language, ChucK reserves certain words and character 
 sequences. These have special meanings.
 
-### primitive types
+#### primitive types
 
 * `int`
 * `float`
@@ -160,7 +160,7 @@ sequences. These have special meanings.
 * `void`
 * `same` (unimplemented)
 
-### control structures
+#### control structures
 
 * `if`
 * `else`
@@ -173,7 +173,7 @@ sequences. These have special meanings.
 * `return`
 * `switch` (unimplemented)
 
-### class keywords
+#### class keywords
 
 * `class`
 * `extends`
@@ -187,7 +187,7 @@ sequences. These have special meanings.
 * `protected` (unimplemented)
 * `private` (unimplemented)
 
-### other chuck keywords
+#### other chuck keywords
 
 * `function`
 * `fun`
@@ -195,7 +195,7 @@ sequences. These have special meanings.
 * `const`
 * `new`
 
-### special values
+#### special values
 
 * `now`
 * `true`
@@ -206,7 +206,7 @@ sequences. These have special meanings.
 * `me`
 * `pi`
 
-### special durations
+#### special durations
 
 * `samp`
 * `ms`
@@ -216,7 +216,7 @@ sequences. These have special meanings.
 * `day`
 * `week`
 
-### special global ugens
+#### special global ugens
 
 * `dac`
 * `adc`
