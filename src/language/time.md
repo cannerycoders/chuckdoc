@@ -30,11 +30,11 @@ In ChucK:
 
 > [View sample code for time & timing](../examples/index.md#time)
 
-<a id="type" />
+<a id="type"></a>
 
 ## time and duration
 
-ime and duration are native types in ChucK.  __`time`__ represents an absolute 
+Time and duration are native types in ChucK.  __`time`__ represents an absolute 
 point in time (from the beginning of ChucK time).  __`dur`__ represents a 
 duration (with the same logical units as `time`).
 
