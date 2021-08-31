@@ -220,7 +220,7 @@ to now must be greater than or equal to now, otherwise an exception is thrown.
 e => now;
 ```
 
-See [events](./event.md)> for a more complete discussion of using events!
+See [events](./event.md) for a more complete discussion of using events!
 
 The advancement of time can occur at any point in your code.
 
