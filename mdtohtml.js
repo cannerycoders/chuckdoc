@@ -14,7 +14,7 @@ let klaw = require("klaw");
 let VarMap = {}; // filled in by initChucKDocs
 let ClassMapper = (page) => { return "ChucK" }; // pagename to outer div class
 let root = process.cwd();
-let OutputDir = path.join(root, "output");
+let OutputDir = path.join(root, "_output");
 let InputDir = path.join(root, "src");
 
 main();
