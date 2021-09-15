@@ -12,8 +12,8 @@ let converter = new showdown.Converter(
 let klaw = require("klaw");
 
 let VarMap = {}; // filled in by initChucKDocs
-let ClassMapper = (page) => { return "ChucK" }; // pagename to outer div class
 let root = process.cwd();
+let NIHDir = path.join(root, "nih");
 let OutputDir = path.join(root, "_output");
 let InputDir = path.join(root, "src");
 
@@ -23,16 +23,66 @@ main();
 function main()
 {
     initChucKDocs();
+    klaw(NIHDir).on("data", processKlawItem);
     klaw(InputDir).on("data", processKlawItem);
+}
+
+function initChucKDocs()
+{
+    let snips = {};
+    snips.ckheader = "<a href='/index.md'>" +
+        "<img src='/images/chuck_logo.jpg' class='PageLogo'/>" +
+        "</a>";
+    snips.ckoffsite = "<hr/>" +
+        "[ChucK Home](https://chuck.cs.princeton.edu) | " +
+        "[Floss Manual](https://en.flossmanuals.net/chuck/_full/1) | " +
+        "[ccrma](https://ccrma.stanford.edu) | " +
+        "[soundlab](https://soundlab.cs.princeton.edu)";
+    snips.ckbackhome = "[ChucK Docs](/index.md)";
+    snips.cklanghome = "[ChucK Language](/language/index.md)";
+    snips.ckproghome = "[ChucK Programmer's Reference](/program/index.md)";
+
+    VarMap = {
+        "CHUCKVERS": "1.4.x.x (numchucks/db)",
+        "LASTBUILT": new Date().toLocaleString(),
+        "PAGEHEADER": snips.ckheader,
+        "BACKHOME": `<hr/><center>${snips.ckbackhome}</center>`,
+        "OFFSITELINKS": snips.ckoffsite,
+        "LANGHEADER": snips.ckheader,
+        "LANGFOOTER": `<hr/><center>${snips.cklanghome} | ${snips.ckbackhome}</center>`,
+        "PROGHEADER": snips.ckheader,
+        "PROGFOOTER": `<br/><hr/><center>${snips.ckproghome} | ${snips.ckbackhome}</center>`,
+        // currently no _NAV support needed
+        "NAVBAR": `
+<a href='_ROOT_index.html'>home</a> ..
+<a href='_ROOT_language/index.html'>language</a> ..
+<a href='_ROOT_program/index.html'>program</a> ..
+<a href='_ROOT_examples/index.html'>examples</a>`
+    };
+
+    ClassMapper = (subpath) =>
+    {
+        let basename = path.basename(subpath);
+        let dirname = path.dirname(subpath);
+        let classlist = ["ChucK"];
+        if(dirname != "" && dirname != ".") // ie not root
+            classlist.push(dirname[0].toUpperCase() + dirname.substr(1));
+        if(basename.indexOf("uana") != -1)
+            classlist.push("UAna");
+        // console.log(fileref + " classlist: " + classlist);
+        return classlist.join(" ");
+    };
 }
 
 function processKlawItem(item)
 {
     let subpath = item.path.substr(InputDir.length + 1);
     let fmt = path.parse(subpath);
-    if(fmt.ext == ".md")
+    let originalExt;
+    if([".md", ".ck"].indexOf(fmt.ext) != -1)
     {
         delete fmt.base;
+        originalExt = fmt.ext;
         fmt.ext = ".html";
     }
     fmt.dir = path.join(OutputDir, fmt.dir);
@@ -60,7 +110,15 @@ function processKlawItem(item)
             {
                 // convert
                 console.log("convert: " + subpath);
-                mdToHtml(item.path, output, subpath);
+                if(originalExt == ".md")
+                {
+                    console.log(".md -> .html " + subpath);
+                    mdToHtml(item.path, output, subpath);
+                }
+                else
+                {
+                    srcToHtml(item.path, output, subpath, originalExt);
+                }
             }
             else
             {
@@ -88,6 +146,31 @@ function mdToHtml(inpath, outpath, subpath)
     let html2 = fixupAssetRefs(html, depth);
     let html3 = fixupStyling(html2, subpath, depth);
     fs.writeFileSync(outpath, html3);
+}
+
+// Put lipstick on the pig that is source code.
+function srcToHtml(inpath, output, subpath, ext)
+{
+    let depth = 0;
+    let dirname = path.dirname(subpath);
+    if(dirname != ".")
+    {
+        let dirs = dirname.split(path.sep);
+        if(dirs[0] == ".") // refs like "./foo.md"
+            dirs.shift();
+        depth = dirs.length;
+    }
+    let txt = fs.readFileSync(inpath).toString();
+    // for now we assume that links from markdown lead
+    // to code...
+    let head = VarMap.CODEHEADER || "";
+    let foot = VarMap.CODEFOOTER || "";
+    let back = VarMap.BACKLINK || "";
+    let lang = ext.slice(1);
+    let ntxt = converter.makeHtml(`\`\`\`${lang}\n${txt}\n\`\`\``);
+    let nhtml = `${head}<code>${subpath}</code>${back}\n${ntxt}${foot}`;
+    let html2 = fixupStyling(nhtml, subpath, depth);
+    fs.writeFileSync(output, html2);
 }
 
 function substituteVars(txt)
@@ -124,7 +207,7 @@ function fixupAssetRefs(body, depth)
                 return match;
             else
             {
-                let p2 = p1.replace(".md", ".html");
+                let p2 = p1.replace(/\.md|\.ck/, ".html"); // need to handle x.md#anchor
                 if(p2[0] == "/")
                 {
                     // if a file in language/foo.html has refs like:
@@ -155,12 +238,20 @@ function fixupStyling(html, subfile, depth)
     else
         toroot = "../".repeat(depth);
 
-    let r = /<\/head>|<body>|<\/body>/g;
+    let r = /<head>|<\/head>|<body>|<\/body>/g;
     let nbody = html.replace(r, (match, p1) =>
     {
+        if(match == "<head>")
+        {
+            return `<head>
+                <meta name="viewport" content="width=device-width, initial-scale=1">`;
+        }
+        else
         if(match == "</head>")
         {
-            return `<link href="${toroot}index.css" rel="stylesheet">\n${match}`;
+            return `<link href="${toroot}index.css" rel="stylesheet">\n`+
+                   `<link href="${toroot}fonts.css" rel="stylesheet">\n`+
+                    match;
         }
         else
         if(match == "<body>")
@@ -169,50 +260,29 @@ function fixupStyling(html, subfile, depth)
         }
         else
         {
-            return "</div></body>"
+            let navhtml = VarMap.NAVBAR.replace(/_ROOT_/g, toroot);
+            let nav= `
+                <div class="MarkdownCtrls">
+                    <div class="MarkdownNavbar">${navhtml}</div>
+                    <div class="SearchCtrls Minify">
+                        <div class="CtrlBar">
+                          <input class="SearchInput">
+                          <button class="ClearSearch micon">close</button>
+                          <button class="DoSearch micon">search</button>
+                        </div>
+                        <div class="SearchOutput Invis"></div>
+                    </div>
+                </div>`;
+            return `</div>${nav}` + // end of Markdown
+                `<script src="${toroot}highlight.js/highlight.min.js"></script>\n` +
+                `<script src="${toroot}highlight.js/languages/shell.min.js"></script>\n` +
+                `<script src="${toroot}highlight.js/languages/bash.min.js"></script>\n` +
+                `<script src="${toroot}lunrjs.js"></script>\n` + 
+                //  no need for mark since ctrl-f works
+                `<script type="module">import "${toroot}index.js";</script>\n` +
+                `</body>`;
         }
-
     });
     return nbody;
 }
 
-function initChucKDocs()
-{
-    let snips = {};
-    snips.ckheader = "<a href='/index.md'>" +
-        "<img src='/images/chuck_logo.jpg' class='PageLogo'/>" +
-        "</a>";
-    snips.ckoffsite = "<hr/>" +
-        "[ChucK Home](https://chuck.cs.princeton.edu) | " +
-        "[Floss Manual](https://en.flossmanuals.net/chuck/_full/1) | " +
-        "[ccrma](https://ccrma.stanford.edu) | " +
-        "[soundlab](https://soundlab.cs.princeton.edu)";
-    snips.ckbackhome = "[ChucK Docs](/index.md)";
-    snips.cklanghome = "[ChucK Language](/language/index.md)";
-    snips.ckproghome = "[ChucK Programmer's Reference](/program/index.md)";
-
-    VarMap = {
-        "CHUCKVERS": "1.4.x.x (numchucks/db)",
-        "LASTBUILT": new Date().toLocaleString(),
-        "PAGEHEADER": snips.ckheader,
-        "BACKHOME": `<hr/><center>${snips.ckbackhome}</center>`,
-        "OFFSITELINKS": snips.ckoffsite,
-        "LANGHEADER": snips.ckheader,
-        "LANGFOOTER": `<hr/><center>${snips.cklanghome} | ${snips.ckbackhome}</center>`,
-        "PROGHEADER": snips.ckheader,
-        "PROGFOOTER": `<br/><hr/><center>${snips.ckproghome} | ${snips.ckbackhome}</center>`,
-    };
-
-    ClassMapper = (subpath) =>
-    {
-        let basename = path.basename(subpath);
-        let dirname = path.dirname(subpath);
-        let classlist = ["ChucK"];
-        if(dirname != "" && dirname != ".") // ie not root
-            classlist.push(dirname[0].toUpperCase() + dirname.substr(1));
-        if(basename.indexOf("uana") != -1)
-            classlist.push("UAna");
-        // console.log(fileref + " classlist: " + classlist);
-        return classlist.join(" ");
-    };
-}

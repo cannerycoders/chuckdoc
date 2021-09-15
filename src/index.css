@@ -1,22 +1,23 @@
 :root 
 {
+    --normalFont: font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --normalFontSize: 12px;
     --backgroundColor: #111;
     --textColor: #ddd;
     --hrColor: #037;
-    --linkColor: #073;
     --markdownLinkColor: rgb(104, 137, 230);
-    --normalFontSize: 12px;
+    --linkColor: var(--markdownLinkColor);
     --thumbBgdColor: rgb(67, 78, 83);
     --scrollbarBgdColor: rgb(21, 24, 22);
-    --borderColor: #333333;
+    --outputBgdColor: black;
+    --borderColor: #050510;
+    --scrollbarSz: 11px;
 }
 
 body 
 {
     height: 100vh;
-    width: 80%;
-    max-width: 640px;
-    margin: auto;
+    width: 100%;
     overflow: auto;
     font-family: var(--normalFont);
     font-size: var(--normalFontSize);
@@ -28,6 +29,25 @@ body
 }
 
 /* - general styling ---------------------------------------- */
+input,
+button
+{
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    border-width: .5px;
+}
+
+input
+{
+    font-family: var(--normalFont);
+}
+
+input:focus 
+{
+    outline: none !important;
+    border:1px solid rgb(20, 33, 151);
+    box-shadow: 0 0 5px #719ECE;
+}
 hr
 {
     border-style: solid;
@@ -60,25 +80,92 @@ a
 }
 
 /* --------------------------------------------------- */
+.Invis
+{
+    display: none; /* occupies no space */
+}
+
 .Markdown
 {
     position: relative;
-
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-right: 10px;
+    margin-right: 20px; /* for scrollbar */
     border-width: 1px;
     border-style: solid;
-    border-color: #444;
-    
+    border-color: var(--borderColor);
     max-width: 600px;
     min-width: 400px;
 }
 
-.Markdown.ChucK
+.MarkdownCtrls
 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    /* no z-index here, positioned by place in html */
 }
+
+.MarkdownNavbar
+{
+    padding: 5px;
+    text-align: right;
+    align-items: center; /* vertical align doesn't work in flexrow */
+    background-color: rgba(0,0,0, .65);
+    margin-bottom: 5px;
+}
+
+.SearchCtrls /* full width, overlay at top */
+{
+    transition: height 300ms ease-in;
+    height: 15px;
+    text-align: right;
+}
+
+.SearchCtrls.Minify
+{
+    max-height: 15px;
+}
+
+.SearchCtrls.Minify input,
+.SearchCtrls.Minify .ClearSearch
+{    
+    width: 0px;
+    border-style: none;
+    padding: 0px;
+    opacity: 0;
+    height: 0px;
+}
+
+.SearchOutput
+{
+    text-align: center;
+    background-color: var(--outputBgdColor);
+    padding: 10px;
+    overflow: auto;
+    max-height: 40vh;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.SearchCtrls button /* lives within MarkdownCtrls -- */
+{
+    vertical-align: middle;
+    border-style: none;
+    border-width: 0px;
+}
+
+.SearchCtrls input
+{
+    width: 12em;
+    transition: width 200ms ease-in;
+    margin-left: 0px;
+}
+
 
 .Markdown h1 a,
 .Markdown h2 a,
@@ -148,10 +235,8 @@ a
 .Markdown.ChucK .PageLogo
 {
     height: 32px;
-    position: absolute;
-    margin: 20px;
-    top: 0px;
-    right: 0px;
+    float: left;
+    margin-right: 10px;
 }
 
 .Markdown.ChucK
@@ -211,24 +296,120 @@ a
     padding: 5px;
 }
 
-code.language-ck
+/* these are default colors when highlighter not present --- */
+.Markdown .hljs-meta
 {
-    color: #f0b153;
+    color: #b38f18;
 }
 
-code.language-desc
+/* highlight.js modified vs2015 style --- */
+.hljs 
 {
-    color: rgb(101, 151, 101);
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #ccc; /* default color for non-highlighted/keyword text */
 }
 
-code.language-ckerr
-{
-    color: red;
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+    color: #C06040;
+}
+.hljs-link {
+  color: #569CD6;
+  text-decoration: underline;
 }
 
+.hljs-built_in,
+.hljs-type {
+    color: #6d8ff8;
+}
 
-code.language-bash,
-code.language-sh
-{
-    color: #1ee1e1;
+.hljs-number,
+.hljs-class {
+    color: #ccf;
+}
+
+.hljs-string,
+.hljs-meta-string {
+    color: rgb(199, 228, 199);
+}
+
+.hljs-regexp,
+.hljs-template-tag {
+  color: #9A5334;
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  color: #DCDCDC;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: rgb(127, 130, 116);
+  font-style: italic;
+}
+
+.hljs-doctag {
+  color: #608B4E;
+}
+
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag {
+  color: #9B9B9B;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #BD63C5;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+  color: #7168f0;
+}
+
+.hljs-section {
+  color: gold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/*.hljs-code {
+  font-family:'Monospace';
+}*/
+
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #D7BA7D;
+}
+
+.hljs-addition {
+  background-color: #144212;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #600;
+  display: inline-block;
+  width: 100%;
 }
