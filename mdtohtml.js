@@ -46,12 +46,12 @@ function initChucKDocs()
         "CHUCKVERS": "1.4.x.x (numchucks/db)",
         "LASTBUILT": new Date().toLocaleString(),
         "PAGEHEADER": snips.ckheader,
-        "BACKHOME": `<hr/><center>${snips.ckbackhome}</center>`,
+        "BACKHOME": "", // `<hr/><center>${snips.ckbackhome}</center>`,
         "OFFSITELINKS": snips.ckoffsite,
         "LANGHEADER": snips.ckheader,
-        "LANGFOOTER": `<hr/><center>${snips.cklanghome} | ${snips.ckbackhome}</center>`,
+        "LANGFOOTER": "", // `<hr/><center>${snips.cklanghome} | ${snips.ckbackhome}</center>`,
         "PROGHEADER": snips.ckheader,
-        "PROGFOOTER": `<br/><hr/><center>${snips.ckproghome} | ${snips.ckbackhome}</center>`,
+        "PROGFOOTER": "", // `<br/><hr/><center>${snips.ckproghome} | ${snips.ckbackhome}</center>`,
         // currently no _NAV support needed
         "NAVBAR": `
 <a href='_ROOT_index.html'>home</a> ..
