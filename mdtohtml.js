@@ -1,5 +1,8 @@
 // mdtohtml:
 //  converts the pile of md to a pile of html
+//  in this non-spa form, 
+//    each page loads the index.js/highlighter.js/lunr.js support
+//    so we need a relative reference to the root of the doc subtree.
 const path = require("path");
 const fs = require("fs");
 let showdown = require("showdown");

@@ -5,8 +5,16 @@
 // single-page app (spa). Biggest concern would be the search-index:
 // /searchIndex.json:  for chuck it's currently 2.4M. Typical image is 1M.
 // We could cache this in local-index or hope that the browser does that already.
-import ChuckHighlighter from "../highlighters/chuck.js";
-import AbcHighlighter from "../highlighters/abc.js";
+import ChuckHighlighter from "./highlighters/chuck.js";
+import AbcHighlighter from "./highlighters/abc.js";
+
+// console.log("loaded script " + window.location.pathname);
+// /docs/chuck/program/index.html -> toroot: ..
+let fields = window.location.pathname.replace(/\\/g, "/").split("/");
+let rootIndex = fields.indexOf("chuck");
+let depth = fields.length - rootIndex - 2;
+const sToRoot = "../".repeat(depth);
+//console.log("toroot:" + sToRoot);
 
 window.hljs.registerLanguage("chuck", ChuckHighlighter);
 window.hljs.registerLanguage("abc", AbcHighlighter);
@@ -42,7 +50,7 @@ for(let el of document.querySelectorAll("button"))
 }
 
 // obtain our search-index
-HttpRequest("/searchIndex.json")
+HttpRequest(`${sToRoot}searchIndex.json`)
 .then((txt) =>
 {
     sSearch.Index = sLunr.Index.load(JSON.parse(txt));
@@ -159,7 +167,7 @@ function onSearchBegin()
                 // searchIndex has refs to .md,.ck,.abc, etc files.
                 let label = r.ref.replace(".md", "");
                 let ref = r.ref.replace(/\.md$|\.abc$|\.ck$/, ".html");
-                return `<div><a href='/${ref}'>${label}</a></div>`;
+                return `<div><a href='${sToRoot}${ref}'>${label}</a></div>`;
             }
 
             for(let r of sSearch.Results)
