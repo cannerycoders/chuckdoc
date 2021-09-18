@@ -1,5 +1,11 @@
 /* global: hljs, lunr -- */
 
+let fields = window.location.pathname.replace(/\\/g, "/").split("/");
+let rootIndex = fields.indexOf("chuck");
+let depth = fields.length - rootIndex - 2;
+const sToRoot = "../".repeat(depth);
+//console.log("toroot:" + sToRoot);
+
 // This script runs on each page-load. Installed by mdtohtml.js.
 // Should load-time become an issue, we may need to move to a
 // single-page app (spa). Biggest concern would be the search-index:
@@ -7,15 +13,6 @@
 // We could cache this in local-index or hope that the browser does that already.
 import ChuckHighlighter from "./highlighters/chuck.js";
 import AbcHighlighter from "./highlighters/abc.js";
-
-// console.log("loaded script " + window.location.pathname);
-// /docs/chuck/program/index.html -> toroot: ..
-let fields = window.location.pathname.replace(/\\/g, "/").split("/");
-let rootIndex = fields.indexOf("chuck");
-let depth = fields.length - rootIndex - 2;
-const sToRoot = "../".repeat(depth);
-//console.log("toroot:" + sToRoot);
-
 window.hljs.registerLanguage("chuck", ChuckHighlighter);
 window.hljs.registerLanguage("abc", AbcHighlighter);
 window.hljs.highlightAll();
@@ -58,7 +55,7 @@ HttpRequest(`${sToRoot}searchIndex.json`)
     sSearch.OutputEl = document.querySelector(".SearchOutput");
     sSearch.CtrlsEl = document.querySelector(".SearchCtrls");
     // button click-handlers already installed
-    console.log("searchIndex loaded");
+    console.debug("searchIndex loaded");
 });
 
 function HttpRequest(url, method = "GET", responseType=null)
@@ -186,4 +183,4 @@ function onSearchBegin()
     };
 }
 
-console.debug("Done loading custom docs bootstrapper");
+console.debug("loaded chuck docs");
