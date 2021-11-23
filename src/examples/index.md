@@ -185,7 +185,7 @@ Control, how to extend ChucK unit generators, and more.
 | chugraph2                     | [chugraph2.ck](extend/chugraph2.ck)   |
 | chugraph2a                    | [chugraph2a.ck](extend/chugraph2a.ck) |
 | chugen (rhymes with 'ugen')   | [chugen.ck](extend/chugen.ck)         |
-| chugin (rhymes with 'plugin') | [chugen.ck](extend/chugen.ck)         |
+| chugin (rhymes with 'plugin') |                                       |
 
 
 ### Events
