@@ -253,7 +253,8 @@ function fixupStyling(html, subfile, depth)
         if(match == "</head>")
         {
             return `<link href="${toroot}index.css" rel="stylesheet">\n`+
-                   `<link href="${toroot}index.css" rel="stylesheet">\n`+
+                   `<link href="${toroot}fonts.css" rel="stylesheet">\n`+
+                   `<link href="${toroot}markdown.css" rel="stylesheet">\n`+
                    `<link rel="icon" href="/favicon.png">\n`+
                     match;
         }

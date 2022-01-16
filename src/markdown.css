@@ -1,0 +1,479 @@
+.Markdown
+{
+    position: relative;
+
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #444;
+    margin-left: auto;
+    margin-right: auto;
+    
+    max-width: 600px;
+    min-width: 400px;
+}
+
+.Markdown blockquote
+{
+    border-style: solid;
+    border-width: thin;
+    border-radius: 3px;
+    border-color: #333;
+    background-color: #050505;
+}
+
+.MarkdownCtrls
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    /* no z-index here, positioned by place in html */
+}
+
+.MarkdownSearch /* full width, overlay at top */
+{
+    transition: height 300ms ease-in;
+    height: 15px;
+    text-align: right;
+}
+
+.MarkdownNavbar
+{
+    padding: 5px;
+    text-align: right;
+    align-items: center; /* vertical align doesn't work in flexrow */
+    background-color: rgba(0,0,0, .65);
+    margin-bottom: 5px;
+}
+
+.MarkdownSearch.Minify
+{
+    max-height: 15px;
+}
+
+.MarkdownSearch button
+{
+    vertical-align: middle;
+    border-style: none;
+    border-width: 0px;
+}
+
+.MarkdownSearch input
+{
+    width: 12em;
+    transition: width 300ms ease-in;
+    margin-left: 0px;
+}
+
+mark
+{
+    background-color: var(--backgroundColor);
+    color: var(--textAttendColor);
+    text-decoration: underline;
+}
+ 
+.MarkdownSearch.Minify input,
+.MarkdownSearch.Minify .Close
+{
+    width: 0px;
+    border-style: none;
+    padding: 0px;
+    opacity: 0; /* hides icon, though overflow prevention would work too */
+    height: 0px;
+}
+
+.Markdown.ChucK
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Markdown.Fiddle
+{
+   background-color: #111212;
+}
+
+.Markdown h2,
+.Markdown h3
+{
+    color: #9b6522;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    /* font-size: 1.3em; */
+}
+
+.Markdown h4,
+.Markdown h5
+{
+    color: #9e7e56;
+    font-size: .9em;
+}
+
+.Markdown h6
+{
+    /* default color */
+    font-size: .9em;
+}
+
+.Markdown h5,
+.Markdown h6
+{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.Markdown h1 a,
+.Markdown h2 a,
+.Markdown h3 a
+{
+    /*color: #5558ab; */
+    color: #80531b
+}
+
+.Markdown a,
+.MarkdownNavbar a
+{
+    color: var(--markdownLinkColor);
+}
+
+.Markdown hr
+{
+    width: 90%;
+    color: #222;
+}
+
+.Markdown p,
+.Markdown > ol,  /* outermost */
+.Markdown > ul,
+.Markdown > h5,
+.Markdown > h6
+{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.Markdown img[style*='float:right']
+{
+    margin-right: -20px;
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
+
+.Markdown img
+{
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, .5);
+    vertical-align: top; /* two neighboring images should top-align */
+    margin-top: 5px;
+}
+
+.Markdown .hcentered
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Markdown pre,
+.Markdown table
+{
+    background-color: #020202;
+    padding: 10px;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: thin;
+    border-color: var(--borderColor);
+    overflow: auto;
+    box-shadow: 0px 0px 5px #222;
+    width: 95%;
+    max-width: 640px;
+}
+
+.Markdown table,
+.Markdown th,
+.Markdown td
+{
+    border: 1px solid rgb(26, 26, 26);
+    padding: 5px;
+}
+
+.Markdown th
+{
+    background-color: #080812;
+}
+
+/* first column of all tables */
+.Markdown td:nth-child(1) 
+{
+    width: 200px;
+}
+
+.Markdown .hljs-meta
+{
+    color: #b38f18;
+}
+
+code.language-bash,
+code.language-shell
+{
+    color: #1ee1e1;
+}
+
+.Markdown .PageLogo
+{
+    height: 24px;
+    margin-left: -20px; /* appears in <p> which has inset */
+    margin-right: 10px;
+    float: left;
+}
+
+.Markdown.Fiddle .PageLogo
+{
+    height: 32px;
+    margin-top: -10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(37, 73, 145);
+    /* increase gutter around icon */
+    border-color: black;
+    border-width: 8px;
+    border-style: solid;
+}
+
+.Markdown.ChucK p.ChucK
+{
+    text-align: justify;
+}
+
+.Markdown.ChucK .PageLogo
+{
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(71, 121, 220);
+}
+
+.Markdown.ChucK
+{
+   background : #111212 url(/img/chuck/chuckula_blood_dark.jpg) top center no-repeat;
+}
+
+.Markdown.ChucK.UAna,
+.Markdown.ChucK.UAna
+{
+    /* we repeat the upchuck since it's a short image */
+    background : #111212 url(/img/chuck/upchuckula_dark.jpg) top center repeat;
+}
+
+/* tables in Language are used for the navbar */
+.Markdown.ChucK.Program table,
+.Markdown table
+{
+    border: 1px solid #123;
+    padding: 5px;
+    box-shadow: 0px 0px 5px #222;
+}
+
+.Markdown.ChucK hr
+{
+    width: 100%;
+    border-width: .5px;
+    border-style: solid;
+    color:rgb(43, 58, 100);
+}
+
+.Markdown.ChucK th
+{
+    font-weight: normal;
+}
+
+.Markdown.ChucK th,
+.Markdown.ChucK td
+{
+    border-style: none;
+    padding: 5px;
+}
+
+code.language-desc
+{
+    color: rgb(101, 151, 101);
+}
+
+code.language-ckerr
+{
+    color: red;
+}
+
+/* highlight.js modified vs2015 style --- */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #ccc;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+    color: #C06040;
+}
+.hljs-link {
+  color: #569CD6;
+  text-decoration: underline;
+}
+
+.hljs-built_in,
+.hljs-type {
+    color: #6d8ff8;
+}
+
+.hljs-number,
+.hljs-class {
+    color: #ccf;
+}
+
+.hljs-string,
+.hljs-meta-string {
+    color: rgb(199, 228, 199);
+}
+
+.hljs-regexp,
+.hljs-template-tag {
+  color: #9A5334;
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  color: #DCDCDC;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: rgb(127, 130, 116);
+  font-style: italic;
+}
+
+.hljs-doctag {
+  color: #608B4E;
+}
+
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag {
+  color: #9B9B9B;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #BD63C5;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+  color: #7168f0;
+}
+
+.hljs-section {
+  color: gold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/*.hljs-code {
+  font-family:'Monospace';
+}*/
+
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #D7BA7D;
+}
+
+.hljs-addition {
+  background-color: #144212;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #600;
+  display: inline-block;
+  width: 100%;
+}
+
+.MarkdownSearch .SearchOutput /* when within minified, it's Invis */
+{
+    text-align: center;
+    background-color: var(--outputBgdColor);
+    padding: 10px;
+    overflow: auto;
+    max-height: 40vh;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.SearchCtrls /* full width, overlay at top */
+{
+    transition: height 300ms ease-in;
+    height: 15px;
+    text-align: right;
+}
+
+.SearchCtrls.Minify
+{
+    max-height: 15px;
+}
+
+.SearchCtrls.Minify input,
+.SearchCtrls.Minify .ClearSearch
+{    
+    width: 0px;
+    border-style: none;
+    padding: 0px;
+    opacity: 0;
+    height: 0px;
+}
+
+.SearchOutput
+{
+    text-align: center;
+    background-color: var(--outputBgdColor);
+    padding: 10px;
+    overflow: auto;
+    max-height: 40vh;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.SearchCtrls button /* lives within MarkdownCtrls -- */
+{
+    vertical-align: middle;
+    border-style: none;
+    border-width: 0px;
+}
+
+.SearchCtrls input
+{
+    width: 12em;
+    transition: width 200ms ease-in;
+    margin-left: 0px;
+}
