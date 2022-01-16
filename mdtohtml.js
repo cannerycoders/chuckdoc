@@ -40,7 +40,8 @@ function initChucKDocs()
         "[ChucK Home](https://chuck.cs.princeton.edu) | " +
         "[Floss Manual](https://en.flossmanuals.net/chuck/_full/1) | " +
         "[ccrma](https://ccrma.stanford.edu) | " +
-        "[soundlab](https://soundlab.cs.princeton.edu)";
+        "[soundlab](https://soundlab.cs.princeton.edu) | " +
+        "[These Docs](https://github.com/cannerycoders/chuckdoc)";
     snips.ckbackhome = "[ChucK Docs](/index.md)";
     snips.cklanghome = "[ChucK Language](/language/index.md)";
     snips.ckproghome = "[ChucK Programmer's Reference](/program/index.md)";

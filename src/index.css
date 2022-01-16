@@ -24,7 +24,7 @@ body
     scrollbar-width: thin; /* firefox */
     scrollbar-color: var(--thumbBgdColor) var(--scrollbarBgdColor);
     color: var(--textColor);
-    background-color: var(--backgroundColor);
+    background-color: #000; /* for online docs we override body */
     box-sizing: border-box;
 }
 
@@ -88,4 +88,14 @@ a
 .disabled
 {
     color: rgb(100,100,100);
+}
+
+.Markdown.ChucK
+{
+   background : #111212 url(images/chuckula_blood_dark.jpg) top center no-repeat !important;
+}
+
+.Markdown.ChucK.UAna
+{
+    background : #111212 url(images/upchuckula_dark.jpg) top center repeat !important;
 }
