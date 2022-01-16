@@ -26,6 +26,7 @@ body
     color: var(--textColor);
     background-color: #000; /* for online docs we override body */
     box-sizing: border-box;
+    margin: 0px;
 }
 
 /* - general styling ---------------------------------------- */
