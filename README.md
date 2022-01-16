@@ -19,7 +19,7 @@ To build html requires recent node+npm install:
 % npm init
 
 # run the conversion
-% node mdtohtml.js # (writes results to `output/`)
+% node mdtohtml.js # (writes results to `_output/`)
 
 # validate the docs
 % cd output
