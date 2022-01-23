@@ -47,7 +47,7 @@
     padding-right: 5px;
     text-align: right;
     align-items: center; /* vertical align doesn't work in flexrow */
-    background-color: rgba(0,0,0, .5);
+    background-color: rgba(0,0,0, .9);
     margin-bottom: 5px;
 }
 
