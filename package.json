@@ -27,6 +27,6 @@
   "dependencies": {
     "klaw": "^4.0.1",
     "lunr": "^2.3.9",
-    "showdown": "^1.9.1"
+    "showdown": "^2.0.3"
   }
 }
