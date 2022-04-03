@@ -265,6 +265,7 @@ function fixupStyling(html, subfile, depth)
             return `<body><div class="Markdown ${ClassMapper(subfile)}">`;
         }
         else
+        if(match == "</body>")
         {
             let navhtml = VarMap.NAVBAR.replace(/_ROOT_/g, toroot);
             let nav= `

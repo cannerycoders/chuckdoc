@@ -13,6 +13,9 @@
     
     max-width: 600px;
     min-width: 400px;
+
+    max-height: 100%; /* don't want height: 100% */
+    overflow: auto; /* primary scroller */
 }
 
 .Markdown blockquote
