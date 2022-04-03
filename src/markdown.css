@@ -11,11 +11,12 @@
     margin-left: auto;
     margin-right: auto;
     
-    max-width: 600px;
+    max-width: 640px;
     min-width: 400px;
 
     max-height: 100%; /* don't want height: 100% */
     overflow: auto; /* primary scroller */
+    box-sizing: border-box;
 }
 
 .Markdown blockquote
