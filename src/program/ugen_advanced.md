@@ -25,82 +25,77 @@ ${PROGHEADER}
 
 #### LiSa
 
-__`LiSa`__ provides basic live sampling functionality. An internal 
-buffer stores samples chucked to LiSa's input. Segments of this 
-buffer can be played back, with ramping and speed/direction control.
+__`LiSa`__ provides basic live sampling functionality. An internal buffer 
+stores samples chucked to LiSa's input. Segments of this buffer can be 
+played back, with ramping and speed/direction control.  by Dan Trueman (2007)
 
 Multiple voice facility is built in, allowing for a single LiSa 
-object to serve as a source for sample layering and granular textures.  
-by Dan Trueman (2007)
+object to serve as a source for sample layering and granular textures.
+Multi-channel LiSas can be instantiated using the following UGens.
+The outputs of these LiSas can be sent to a multichannel dac, or
+simply to other ugens, if it is desirable to process the channels
+in different ways. These multiple channels are available
+regardless of whether the dac is running > 2 chans. LiSaX's
+multi-channel output can be manually connected through .chan(n).
 
-see [LiSa Examples wiki](http://wiki.cs.princeton.edu/index.php/LiSa_examples), 
-[tutorial](http://dtrueman.mycpanel.princeton.edu/LiSa/LiSa_tutorial.html)
+| UGen     | Channels                             |
+| :------- | :----------------------------------- |
+| `LiSa`   | mono                                 |
+| `LiSa2`  | stereo                               |
+| `LiSa4`  | quad                                 |
+| `LiSa6`  | 6-channel, laptop orchestra edition\ |
+| `LiSa8`  | 8-channel                            |
+| `LiSa10` | 10-channel, for compatibility        |
+| `LiSa16` | 16-channel                           |
 
-| LiSa.functions                              | Description                                                                                                                                                                                                                                                            |
-| :------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| __`int bi(int voice, int val)`__            | For particular voice (arg 1), turn on/off bidirectional playback.                                                                                                                                                                                                      |
-| __`int bi(int val)`__                       | For particular voice (arg 1), get bidirectional playback status.                                                                                                                                                                                                       |
-| __`int bi()`__                              | Get birectional playback status.                                                                                                                                                                                                                                       |
-| __`void clear()`__                          | Clear recording buffer.                                                                                                                                                                                                                                                |
-| __`dur duration(dur val)`__                 | Set buffer size; required to allocate memory, also resets all parameter values to default.                                                                                                                                                                             |
-| __`dur duration()`__                        | Get buffer size.                                                                                                                                                                                                                                                       |
-| __`float feedback(float val)`__             | Set feedback amount when overdubbing (loop recording; how much to retain).                                                                                                                                                                                             |
-| __`float feedback()`__                      | Get feedback amount when overdubbing (loop recording; how much to retain).                                                                                                                                                                                             |
-| __`int getVoice()`__                        | Return an available voice (one that is not currently playing). Return -1 if no voice is available.                                                                                                                                                                     |
-| __`int getbi(int voice)`__                  | Turn on/off bidirectional playback (voice 0).                                                                                                                                                                                                                          |
-| __`int loop(int voice, int val)`__          | For particular voice (arg 1), turn on/off looping.                                                                                                                                                                                                                     |
-| __`int loop(int voice)`__                   | Turn on/off looping (voice 0).                                                                                                                                                                                                                                         |
-| __`int loop(int val)`__                     | For particular voice (arg 1), get looping status.                                                                                                                                                                                                                      |
-| __`int loop()`__                            | Get looping status.                                                                                                                                                                                                                                                    |
-| __`dur loopEnd(int voice, dur val)`__       | For particular voice (arg 1), set loop ending point for playback. only applicable when .loop(voice, 1).                                                                                                                                                                |
-| __`dur loopEnd(int voice)`__                | For particular voice (arg 1), get loop ending point for playback. only applicable when .loop(voice, 1).                                                                                                                                                                |
-| __`dur loopEnd(dur val)`__                  | Set loop ending point for playback (voice 0). only applicable when 1 => loop.                                                                                                                                                                                          |
-| __`dur loopEnd()`__                         | Get loop ending point for playback (voice 0). only applicable when 1 => loop.                                                                                                                                                                                          |
-| __`dur loopEndRec(dur val)`__               | Set end point in buffer for loop recording.                                                                                                                                                                                                                            |
-| __`dur loopEndRec()`__                      | Get end point in buffer for loop recording.                                                                                                                                                                                                                            |
-| __`int loopRec(int val)`__                  | Turn on/off loop recording.                                                                                                                                                                                                                                            |
-| __`int loopRec()`__                         | Get loop recording status.                                                                                                                                                                                                                                             |
-| __`dur loopStart(int voice, dur val)`__     | For particular voice (arg 1), set loop starting point for playback. only applicable when .loop(voice, 1).                                                                                                                                                              |
-| __`dur loopStart(int voice)`__              | For particular voice (arg 1), get loop starting point for playback. only applicable when .loop(voice, 1).                                                                                                                                                              |
-| __`dur loopStart(dur val)`__                | Set loop starting point for playback (voice 0). only applicable when 1 => loop.                                                                                                                                                                                        |
-| __`dur loopStart()`__                       | Get loop starting point for playback (voice 0). only applicable when 1 => loop.                                                                                                                                                                                        |
-| __`int maxVoices(int val)`__                | Set the maximum number of voices allowable; 10 by default (200 is the current hardwired internal limit).                                                                                                                                                               |
-| __`int maxVoices()`__                       | Get the maximum number of voices allowable; 10 by default (200 is the current hardwired internal limit).                                                                                                                                                               |
-| __`float pan(int voice, float val)`__       | For particular voice (arg 1), set panning value [0.0, number of channels - 1.0].                                                                                                                                                                                       |
-| __`float pan(int voice)`__                  | For particular voice (arg 1), get panning value.                                                                                                                                                                                                                       |
-| __`float pan(float val)`__                  | Set panning value [0.0, number of channels - 1.0].                                                                                                                                                                                                                     |
-| __`float pan()`__                           | Get panning value.                                                                                                                                                                                                                                                     |
-| __`int play(int voice, int toggle)`__       | For particular voice (arg 1), turn on/off sample playback                                                                                                                                                                                                              |
-| __`int play(int toggle)`__                  | Turn on/off sample playback (voice 0)                                                                                                                                                                                                                                  |
-| __`dur playPos(int voice, dur val)`__       | For particular voice (arg 1), set playback position.                                                                                                                                                                                                                   |
-| __`dur playPos(int voice)`__                | For particular voice (arg 1), get playback position.                                                                                                                                                                                                                   |
-| __`dur playPos(dur val)`__                  | Set playback position (voice 0).                                                                                                                                                                                                                                       |
-| __`dur playPos()`__                         | Get playback position (voice 0).                                                                                                                                                                                                                                       |
-| __`int playing(int val)`__                  | Get playing status.                                                                                                                                                                                                                                                    |
-| __`void rampDown(int voice, dur val)`__     | For particular voice (arg 1), turn off sample playback, with ramp                                                                                                                                                                                                      |
-| __`void rampDown(dur val)`__                | Turn off sample playback, with ramp (voice 0).                                                                                                                                                                                                                         |
-| __`void rampUp(int voice, dur val)`__       | For particular voice (arg 1), turn on sample playback, with ramp.                                                                                                                                                                                                      |
-| __`void rampUp(dur val)`__                  | Turn on sample playback, with ramp (voice 0).                                                                                                                                                                                                                          |
-| __`float rate(int voice, float val)`__      | For particular voice (arg 1), set playback rate                                                                                                                                                                                                                        |
-| __`float rate(int voice)`__                 | For particular voice (arg 1), get playback rate                                                                                                                                                                                                                        |
-| __`float rate(float val)`__                 | Set playback rate (voice 0). Note that the int/float type for this method will determine whether the rate is being set (float, for voice 0) or read (int, for voice number).                                                                                           |
-| __`float rate()`__                          | Get playback rate (voice 0).                                                                                                                                                                                                                                           |
-| __`dur recPos(dur val)`__                   | Set record position.                                                                                                                                                                                                                                                   |
-| __`dur recPos()`__                          | Get record position.                                                                                                                                                                                                                                                   |
-| __`dur recRamp(dur val)`__                  | Set ramping when recording (from 0 to loopEndRec).                                                                                                                                                                                                                     |
-| __`int record(int toggle)`__                | Turn recording on and off                                                                                                                                                                                                                                              |
-| __`int sync(int val)`__                     | Set input mode; (0) input is recorded to internal buffer, (1) input sets playback position [0,1] (phase value between loopStart and loopEnd for all active voices), (2) input sets playback position, interpreted as a time value in samples (only works with voice 0) |
-| __`int sync()`__                            | Get input mode; (0) input is recorded to internal buffer, (1) input sets playback position [0,1] (phase value between loopStart and loopEnd for all active voices), (2) input sets playback position, interpreted as a time value in samples (only works with voice 0) |
-| __`int track(int val)`__                    | Identical to sync.                                                                                                                                                                                                                                                     |
-| __`int track()`__                           | Identical to sync.                                                                                                                                                                                                                                                     |
-| __`dur value(int voice, dur val)`__         | For particular voice (arg 1), get value from the voice.                                                                                                                                                                                                                |
-| __`dur value(dur val)`__                    | Get value from voice 0.                                                                                                                                                                                                                                                |
-| __`float valueAt(float val, dur index)`__   | Set value directly in record buffer.                                                                                                                                                                                                                                   |
-| __`float valueAt(dur index)`__              | Get value directly from record buffer.                                                                                                                                                                                                                                 |
-| __`float voiceGain(int voice, float val)`__ | For particular voice (arg 1), set gain.                                                                                                                                                                                                                                |
-| __`float voiceGain(int voice)`__            | Set playback gain (voice 0).                                                                                                                                                                                                                                           |
-| __`float voicePan(int voice, float val)`__  | For particular voice (arg 1), set panning value [0.0, number of channels - 1.0].                                                                                                                                                                                       |
-| __`float voicePan(int voice)`__             | For particular voice (arg 1), get panning value.                                                                                                                                                                                                                       |
+See also: [LiSa Examples](../examples/index.md#livesamplingandgranularsynthesisusinglisa)
+
+| LiSa.methods                    | Description                                                                        |
+| :------------------------------ | :--------------------------------------------------------------------------------- |
+| `duration(dur)`                 | required -- sets max length of buffer                                              |
+| `duration()`                    | returns max length of buffer                                                       |
+| `record(1/0)`                   | turn on/off recording into buffer                                                  |
+| `getVoice() => voice (int)`     | returns first free voice number                                                    |
+| `maxVoices(int)`                | sets maximum # of allowable voices                                                 |
+| `play(voice, 1/0)`              | turn on/off play for particular voice                                              |
+| `rampUp(voice, dur)`            | turn on play for voice with ramp                                                   |
+| `rampDown(voice, dur)`          | ramp down voice and then turn off play                                             |
+| `rate(voice, float)`            | sets play rate for "voice"                                                         |
+| `playPos(voice, dur)`           | sets playback position for "voice" within buffer                                   |
+| `playPos(voice)`                | returns playback position for "voice"                                              |
+| `recordPos(dur)`                | sets record position                                                               |
+| `recordPos()`                   | gets record position                                                               |
+| `recRamp(dur)`                  | sets ramping for the edges of the record buffer                                    |
+| `loopStart(dur, voice)`         | sets loopstart point for "voice"                                                   |
+| `loopStart(voice)`              | get loopstart                                                                      |
+| `loopEnd(voice, dur)`           | sets loopend point for "voice"                                                     |
+| `loopEnd(voice)`                | gets loopend                                                                       |
+| `loop(voice, 1/0)`              | turn on/off looping for "voice"                                                    |
+| `loop(voice)`                   | get looping state                                                                  |
+| `bi(voice, 1/0)`                | turn on/off bidirectional looping for "voice"                                      |
+| `bi(voice)`                     | get bi state                                                                       |
+| `voiceGain(voice, float)`       | sets gain "voice"                                                                  |
+| `voiceGain(voice)`              | gets gain for "voice"                                                              |
+| `loopEndRec(dur)`               | set looping end point for recording                                                |
+| `loopEndRec()`                  | get ...                                                                            |
+| `feedback(float)`               | set feedback amount [0,1] for recording. 0 means no overdub.                       |
+| `feedback()`                    | get...                                                                             |
+| `clear()`                       | clear recording buffer                                                             |
+| `pan()`                         | returns pan value of voice 0                                                       |
+| `pan(float where)`              | pans voice 0 where can be [0., 7.], to place voice across LiSa's 8 outputs         |
+| `pan(int voice)`                | returns pan value of voice                                                         |
+| `pan(int voice, float where)`   | pans specified voice where can be [0., 7.], to place voice across LiSa's 8 outputs |
+| `valueAt(float val, dur where)` | used to populate LiSa from a sndbuf.                                               |
+| `valueAt(dur where) => float`   | used to retrieve samples from LiSa's internal buffer.                              |
+| `track(int mode)`               | sets the track/sync mode.  |
+
+Track modes 
+
+0. playback position is controlled internally.
+1. input is used to control playback position. Values in the range [0,1] control playback position within loop.
+    Negative inputs are negated so it is possible to use audio signals [-1, 1] to control playback position, as 
+    in waveshaping.
+2. input is used to control playback position. Input values are interpretty as a time value.
 
 #### CNoise
 

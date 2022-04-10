@@ -98,8 +98,6 @@ or perhaps:
 | GenX       | [readme-GenX.ck](special/readme-GenX.ck), [Gen10-test.sk](special/Gen10-test.ck), [Gen17-test.sk](special/Gen17-test.ck), [Gen5-test.sk](special/Gen5-test.ck), [Gen7-test.sk](special/Gen7-test.ck), [Gen9-test.sk](special/Gen9-test.ck)                                                                                                                             |
 | CurveTable | [GenX-CurveTable-test.ck](special/GenX-CurveTable-test.ck)                                                                                                                                                                                                                                                                                                             |
 | WarpTable  | [GenX-WarpTable-test.ck](special/GenX-WarpTable-test.ck)                                                                                                                                                                                                                                                                                                               |
-| LiSa       | [readme-LiSa1.ck](special/readme-LiSa1.ck), [readme-LiSa2-ck](special/readme-LiSa2.ck), [LiSa-munger1.ck](special/LiSa-munger1.ck), [LiSa-munger2.ck](special/LiSa-munger1.ck), [LiSa-munger3.ck](special/LiSa-munger3.ck), [LiSa-simplelooping.ck](special/LiSa-simplelooping.ck), [LiSa-SndBuf](special/LiSa-SndBuf.ck), [LiSa-trigger.ck](special/LiSa-trigger.ck), |
- 
  
 --------------------------------------------------------------------------------
 ## Language Features
