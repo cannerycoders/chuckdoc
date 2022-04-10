@@ -43,7 +43,7 @@ multi-channel output can be manually connected through .chan(n).
 | `LiSa`   | mono                                 |
 | `LiSa2`  | stereo                               |
 | `LiSa4`  | quad                                 |
-| `LiSa6`  | 6-channel, laptop orchestra edition\ |
+| `LiSa6`  | 6-channel, laptop orchestra edition  |
 | `LiSa8`  | 8-channel                            |
 | `LiSa10` | 10-channel, for compatibility        |
 | `LiSa16` | 16-channel                           |
