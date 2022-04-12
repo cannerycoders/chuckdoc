@@ -63,8 +63,8 @@ See also: [LiSa Examples](../examples/index.md#livesamplingandgranularsynthesisu
 | `rate(voice, float)`            | sets play rate for "voice"                                                         |
 | `playPos(voice, dur)`           | sets playback position for "voice" within buffer                                   |
 | `playPos(voice)`                | returns playback position for "voice"                                              |
-| `recordPos(dur)`                | sets record position                                                               |
-| `recordPos()`                   | gets record position                                                               |
+| `recPos(dur)`                   | sets record position                                                               |
+| `recPos()`                      | gets record position                                                               |
 | `recRamp(dur)`                  | sets ramping for the edges of the record buffer                                    |
 | `loopStart(dur, voice)`         | sets loopstart point for "voice"                                                   |
 | `loopStart(voice)`              | get loopstart                                                                      |
