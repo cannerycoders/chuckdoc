@@ -293,7 +293,7 @@ Control, how to extend ChucK unit generators, and more.
 | Clarinet                      | [clarinet.ck](stk/clarinet.ck)                                                                                                                                    |
 | Flute                         | [flute.ck](stk/flute.ck)                                                                                                                                          |
 | French Horn                   | [frenchhrn-algo2.ck](stk/frenchrn-algo2.ck)                                                                                                                       |
-| HevyMetl                      | [hevymetl-acoustic-algo3](stk/hevymetl-acoustic-algo3.ck), [hevymetl-algo3.ck](stk/hevymetl-algo3.ck), [hevymetl-trumpet-algo3.ck](stk/hevymetl-trumpet-algo3.ck) |
+| HevyMetl                      | [hevymetl-acoustic-algo3](stk/hevymetl-acoustic-algo3.ck), [hevymetl-algo3.ck](stk/hevymetl-algo3.ck), [hevymetl-trumpet-algo3.ck](stk/hevymetl-trumpet-algo3.ck), [hevymetl-dance-now](stk/hevymetl-dance-now.ck)|
 | HonkeyTonk                    | [honkeytonk-algo1.ck](stk/honkeytonk-algo1.ck)                                                                                                                    |
 | Krystal Choir                 | [krstlchr-algo7.ck](stk/krstlchr-algo7.ck)                                                                                                                        |
 | ModalBar                      | [modalbar.ck](stk/modalbar.ck), [mode-o-test.ck](stk/mode-o-test.ck), [mode-o-matic.ck](stk/mode-o-matic.ck)                                                      |
