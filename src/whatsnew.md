@@ -2,6 +2,16 @@ ${PAGEHEADER}
 
 ## ChucK What's New
 
+#### 1.4.1.2 (Work-in-progress)
+
+  - (added) nshaheed: all associative arrays now have a new method:
+        void getKeys( string[] keys );
+        Return all keys found in associative array in keys
+  - (dev) extraneous white spaces removed throughout src/core
+    ** thank you nshaheed for this soul-restoring measure **
+  - (dev) nshaheed: linux makefiles now correctly inserts Debug (-g)
+    build flag when Debug build is enabled (default builds for Release)
+
 #### 1.4.1.1 (April 2022)
 
   - (added) native support for Apple Silicon (e.g., M1) as intel/apple 
