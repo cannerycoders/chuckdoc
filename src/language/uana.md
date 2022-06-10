@@ -605,7 +605,7 @@ fft =^ Centroid centroid =^ fc;
 
 while (true)
 {
-    100::ms =&gt; now;
+    100::ms => now;
     // forces computation of both centroid and flux (and therefore fft, too)
     // an vectorBlob's fvals and cvals will be a concatenation of the feature values
     fc.upchuck() @=> UAnaBlob vectorBlob; 
@@ -654,7 +654,7 @@ fun void printer()
 
 ChucK has a number of built-in UAna classes. These classes perform many basic 
 transform functions (FFT, IFFT) and feature extraction methods (both spectral 
-and time-domain features).&nbsp;A list of built-in ChucK unit analyzers can
+and time-domain features). A list of built-in ChucK unit analyzers can
 be found [here](../program/uana.md).
 
 ## creating

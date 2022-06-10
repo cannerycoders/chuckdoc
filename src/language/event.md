@@ -225,7 +225,7 @@ fun int hi( TheEvent event )
     while( true )
     {
         // wait on event
-        event =&gt; now;
+        event => now;
         // get the data
         <<< e.value >>>;
     }
