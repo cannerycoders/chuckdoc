@@ -179,9 +179,9 @@ see [FIRConvolve.ck](../examples.chugins/FIR/FIRConvolve.ck),
 [FIRFOFTest.ck](../examples.chugins/FIR/FIRFOFTest.ck),
 [FIRGaussImpulseTests.ck](../examples.chugins/FIR/FIRGaussImpulseTests.ck),
 [FIRSincBPSweepTest.ck](../examples.chugins/FIR/FIRSincBPSweepTest.ck),
-[FIRSincExplicit.ck](../examples.chugins/FIR/FIRSincSincExplicit.ck),
-[FIRSincImplicit.ck](../examples.chugins/FIR/FIRSincSincImplicit.ck),
-[FIRSincTests.ck](../examples.chugins/FIR/FIRSincSincTests.ck),
+[FIRSincExplicit.ck](../examples.chugins/FIR/FIRSincExplicit.ck),
+[FIRSincImplicit.ck](../examples.chugins/FIR/FIRSincImplicit.ck),
+[FIRSincTests.ck](../examples.chugins/FIR/FIRSincTests.ck),
 [GreyholeDownUpDecimateDemo.ck](../examples.chugins/FIR/GreyholeDownUpDecimateDemo.ck),
 
 
