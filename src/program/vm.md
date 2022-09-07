@@ -10,10 +10,10 @@ ${PROGHEADER}
 
 ## The ChucK Compiler + Virtual Machine
 Let's start with the compiler/virtual machine, both of which run in the 
-same process.  By now, you should have built/installed ChucK 
-[guide](../build/index.md), and perhaps followed the [tutorial](../tutorial.md).  
-This guide is intended to be more complete and referential than the tutorial.  
-Additionally, see the [language specification](../language/index.md).
+same process.  By now, you should have installed ChucK, and perhaps 
+followed the [tutorial](../tutorial.md).  This guide is intended to be more 
+complete and referential than the tutorial.  Additionally, see 
+the [language specification](../language/index.md).
 
 <a id="options"></a>
 
