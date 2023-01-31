@@ -16,8 +16,8 @@ ${LANGHEADER}
 
 ## Arrays
 
-Arrays are used represent N-dimensional ordered sets of data (of the same type).  This sections
-specifies how arrays are declared and used in ChucK.  Some quick notes:
+Arrays are used represent N-dimensional ordered sets of data (of the same type).  
+This section specifies how arrays are declared and used in ChucK.  Some quick notes:
 
 * arrays can be indexed by integer (0-indexed).
 * any array can also be used as an associative map, indexed by strings.
