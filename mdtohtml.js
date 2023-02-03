@@ -48,7 +48,7 @@ function initChucKDocs()
     snips.ckproghome = "[ChucK Programmer's Reference](/program/index.md)";
 
     VarMap = {
-        "CHUCKVERS": "1.4.1.1 (numchucks/db)",
+        "CHUCKVERS": "1.4.2.0 (ChAI/db)",
         "LASTBUILT": new Date().toLocaleString(),
         "PAGEHEADER": snips.ckheader,
         "BACKHOME": "", // `<hr/><center>${snips.ckbackhome}</center>`,
