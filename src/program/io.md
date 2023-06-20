@@ -148,7 +148,7 @@ The mechanics of OscIn are:
 | __`void removeAddress(string address)`__ | Remove the IP address from the listening queue.                |
 | __`void removeAllAddresses()`__          | remove all addresses from our listening queue                  |
 
-See [OSC_recv.ck](../examples/osc/r.ck).
+See [osc/r.ck](../examples/osc/r.ck).
 
 #### OscOut
 
@@ -173,7 +173,7 @@ The mechanics of OscOut are:
 | __`OscOut start(string method)`__                        |
 | __`OscOut start(string method, string host, int port)`__ |
 
-See [OSC_send.ck](../examples/osc/s.ck).
+See [osc/s.ck](../examples/osc/s.ck).
 
 #### OscMsg
 
