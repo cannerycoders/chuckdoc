@@ -3,7 +3,7 @@ ${PAGEHEADER}
 
 *NOTE*: ChucK syntax has evolved since these papers 
 _(code examples in the papers may require modifications in order to compile)._
-See the [language spec](../language/index.md), the [ChucK tutorial](../tutorial.md)
+See the [language spec](./language/index.md), the [ChucK tutorial](./tutorial.md)
 and the [programmer's guide](./program/index.md) for the most up-to-date syntax.
 
 The main ideas, however, have remained...

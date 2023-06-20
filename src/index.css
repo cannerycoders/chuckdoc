@@ -1,33 +1,60 @@
 :root 
 {
+    --normalFont: Verdana, Geneva, Tahoma, Arial, sans-serif;
+    --normalFontSize: 12px;
     --backgroundColor: #111;
     --textColor: #ddd;
     --hrColor: #037;
-    --linkColor: #073;
     --markdownLinkColor: rgb(104, 137, 230);
-    --normalFontSize: 12px;
+    --linkColor: var(--markdownLinkColor);
     --thumbBgdColor: rgb(67, 78, 83);
     --scrollbarBgdColor: rgb(21, 24, 22);
-    --borderColor: #333333;
+    --outputBgdColor: black;
+    --borderColor: #050510;
+    --scrollbarSz: 11px;
 }
 
 body 
 {
     height: 100vh;
-    width: 80%;
-    max-width: 640px;
-    margin: auto;
-    overflow: auto;
+    width: 100%;
+    overflow: hidden; /* scroller in Markdown */
     font-family: var(--normalFont);
     font-size: var(--normalFontSize);
     scrollbar-width: thin; /* firefox */
     scrollbar-color: var(--thumbBgdColor) var(--scrollbarBgdColor);
     color: var(--textColor);
-    background-color: var(--backgroundColor);
+    background-color: #000; /* for online docs we override body */
     box-sizing: border-box;
+    margin: 0px;
 }
 
 /* - general styling ---------------------------------------- */
+a
+{
+    color: var(--linkColor);
+    text-decoration: none;
+}
+
+input,
+button
+{
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    border-width: .5px;
+}
+
+input
+{
+    font-family: var(--normalFont);
+}
+
+input:focus 
+{
+    outline: none !important;
+    border:1px solid rgb(20, 33, 151);
+    box-shadow: 0 0 5px #719ECE;
+}
 hr
 {
     border-style: solid;
@@ -53,182 +80,28 @@ hr
     border: 3px solid var(--scrollbarBgdColor);
 }
 
-a
+::-webkit-scrollbar-corner 
 {
-    color: var(--linkColor);
-    text-decoration: none;
+    background: rgba(0,0,0,0);
 }
 
 /* --------------------------------------------------- */
-.Markdown
+.Invis
 {
-    position: relative;
+    display: none; /* occupies no space */
+}
 
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #444;
-    
-    max-width: 600px;
-    min-width: 400px;
+.disabled
+{
+    color: rgb(100,100,100);
 }
 
 .Markdown.ChucK
 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   background : #111212 url(images/chuckula_blood_dark.jpg) top center no-repeat !important;
 }
 
-.Markdown h1 a,
-.Markdown h2 a,
-.Markdown h3 a
-{
-    color: var(--textColor);
-}
-
-.Markdown a
-{
-    color: var(--markdownLinkColor);
-}
-
-.Markdown hr
-{
-    width: 60px;
-}
-
-.Markdown p
-{
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-.Markdown .hcentered
-{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.Markdown pre,
-.Markdown table
-{
-    background-color: #020202;
-    padding: 10px;
-    padding-left: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    border-radius: 2px;
-    border-style: solid;
-    border-width: thin;
-    border-color: var(--borderColor);
-    overflow: auto;
-    box-shadow: 0px 0px 5px #222;
-    min-width: 450px;
-    max-width: 640px;
-}
-
-.Markdown table,
-.Markdown th,
-.Markdown td
-{
-    border: 1px solid rgb(26, 26, 26);
-    padding: 5px;
-}
-
-.Markdown th
-{
-    background-color: #080812;
-}
-
-.Markdown.ChucK p.ChucK
-{
-    text-align: justify;
-}
-
-.Markdown.ChucK .PageLogo
-{
-    height: 32px;
-    position: absolute;
-    margin: 20px;
-    top: 0px;
-    right: 0px;
-}
-
-.Markdown.ChucK
-{
-    background : #111212 url(images/chuckula_blood_dark.jpg) top center no-repeat;
-}
-
-.Markdown.ChucK.UAna,
 .Markdown.ChucK.UAna
 {
-    /* we repeat the upchuck since it's a short image */
-    background : #111212 url(images/upchuckula_dark.jpg) top center repeat;
-}
-
-/* tables in Language are used for the navbar */
-.Markdown.ChucK.Program table
-{
-    border: 1px solid #123;
-    padding: 5px;
-    box-shadow: 0px 0px 5px #222;
-}
-
-/* first column */
-.Markdown.ChucK.Program td:nth-child(1) 
-{
-    width: 250px;
-    color:rgb(104, 137, 230);
-}
-
-.Markdown.ChucK.Examples table
-{
-    width: 500px;
-}
-
-.Markdown.ChucK.Examples td:nth-child(1) 
-{
-    width: 250px;
-}
-
-.Markdown.ChucK hr
-{
-    width: 100%;
-    border-width: .5px;
-    border-style: solid;
-    color:rgb(43, 58, 100);
-}
-
-.Markdown.ChucK th
-{
-    font-weight: normal;
-}
-
-.Markdown.ChucK th,
-.Markdown.ChucK td
-{
-    border-style: none;
-    padding: 5px;
-}
-
-code.language-ck
-{
-    color: #f0b153;
-}
-
-code.language-desc
-{
-    color: rgb(101, 151, 101);
-}
-
-code.language-ckerr
-{
-    color: red;
-}
-
-
-code.language-bash,
-code.language-sh
-{
-    color: #1ee1e1;
+    background : #111212 url(images/upchuckula_dark.jpg) top center repeat !important;
 }

@@ -44,6 +44,8 @@ sequences of data, also providing capabilities for stack and map data structures
 | __`void reset()`__          | Reset array to original state; clears the array and sets capacity to 8.                                                                                                                                        |
 | __`int size()`__            | Return the number of elements in the array.                                                                                                                                                                    |
 | __`int size(int newSize)`__ | Set the size of the array. If the new size is less than the current size, elements will be deleted from the end; if the new size is larger than the current size, 0 or null elements will be added to the end. |
+| __`void getKeys(string keys[])`__ | Fills keys with all of the keys in the array. | 
+| __`void zero()`__           | Zeros out the array while keeping the size unchanged. | 
 |                             |
 
 see: [array_argument.ck](../examples/array/array_argument.ck),
@@ -54,6 +56,8 @@ see: [array_argument.ck](../examples/array/array_argument.ck),
 [array_resize.ck](../examples/array/array_resize.ck),
 [array_storage.ck](../examples/array/array_storage.ck),
 [array_sub_assign.ck](../examples/array/array_sub_assign.ck)
+[array_associative.ck](../examples/array/array_associative.ck)
+[array_zero.ck](../examples/array/array_zero.ck)
 
 ## String
 
@@ -190,6 +194,8 @@ while( true )
 | __`float log2(float x)`__                        | computes the logarithm of x to base 2                                                                                                                                                                                                       |
 | __`float log(float x)`__                         | computes the natural logarithm of x                                                                                                                                                                                                         |
 | __`float mag(polar value)`__                     | return the magnitude of a polar value                                                                                                                                                                                                       |
+| __`float map(float value, float x1, float x2, float y1, float y2)`__ | maps a number in one range to a second range. Unclamped. |
+| __`float map2(float value, float x1, float x2, float y1, float y2)`__ | maps a number in one range to a second range. Clamped. |
 | __`float max(float x, float y)`__                | return greater of two values                                                                                                                                                                                                                |
 | __`float min(float x, float y)`__                | return lesser of two values                                                                                                                                                                                                                 |
 | __`float mtof(float value)`__                    | converts a MIDI note number to frequency (Hz) note the input value is of type 'float' (supports fractional note number)                                                                                                                     |

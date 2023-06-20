@@ -2,6 +2,160 @@ ${PAGEHEADER}
 
 ## ChucK What's New
 
+#### 1.4.2.0 (Jan 2023)
+
+(NOTE) chuck-1.4.2.0 marks a beginning (in BETA) of ChAI => ChucK for AI 
+-- a set of functionalities for interactive machine learning and artful, 
+humanistic design of music and artificial intelligence; it coincides with 
+the new "Music and AI" course at Stanford University, designed and taught 
+by Ge Wang with Ph.D. candidate Yikai Li. _ChAI (Beta) additions are 
+listed at the end_
+
+- (added) MFCC unit analyzer (thanks Yikai Li)
+    |- A unit analyzer that computes Mel-frequency Cepstral Coefficients
+        (MFCCs), and outputs a vector of coefficients.
+    |- (inheritance) MFCC -> UAna -> UGen -> Object
+- (added) examples: analysis/features/mfcc.ck
+- (added) all associative arrays now have a new method [thanks nshaheed]
+    void getKeys( string[] keys );
+    Return all keys found in associative array in keys
+- (added) Machine.realtime(): "return true if the shred is in realtime 
+    mode, false if it's in silent mode (i.e. --silent is enabled)"
+    -- thanks nshaheed --
+- (added) Machine.silent(): "return false if the shred is in realtime 
+    mode, true if it's in silent mode (i.e. --silent is enabled)"
+    -- thanks nshaheed --
+- (fixed) .help() now more accurately prints ("unit analyzer")
+for UAna types
+- (fixed) multi-variable array declaration; the following should
+now work:
+    int x[1], y[2];
+    int x, y[3];
+- (fixed) resolved an issue with multi-dimensional arrays pre-maturely
+releasing internal type data structure -- e.g., causing an assertion 
+failure in the second function call
+    fun void test()
+    {
+        [ [1,2,3], [1,2,3] ] @=> int arr[][];
+    }
+    test();
+    test();
+- (fixed) internal array storage now (more) correctly differentiate
+between int and float, on systems where the two are the same size
+(e.g., both 32-bit or both 64-bit)
+- (fixed) command line chuck: when opening default input audio device
+    (e.g., Microphone), check for mono devices (the case on some MacOS
+    systems) now happens earlier, before searching other 2-channel input
+    audio devices; this preempts chuck using virtual audio input devices
+    such as ZoomAudioDevice as the input device
+- (dev) added test examples in 01-Basic related to multi-var array
+declarations
+- (dev) extraneous white spaces removed throughout src/core
+** thank you nshaheed for this soul-restoring measure **
+- (dev) all tabs replaced with 4 spaces, now consistent across project
+** thank you nshaheed for this soul-restoring measure **
+- (dev) nshaheed: linux makefiles now correctly inserts Debug (-g)
+build flag when Debug build is enabled (default builds for Release)
+
+
+_(BETA) ChAI-related additions: please note this is in Beta, meaning that 
+APIs may change in the near future._
+
+- (added) SVM object (thanks Yikai Li)
+    |- a support vector machine (SVM) utility trains a model and 
+        predicts output based on new input
+    |- (inheritance) SVM -> Object
+    |- methods:
+        int predict( float[] x, float[] y );
+            Predict the output 'y' given the input 'x'.
+        int train( float[][] x, float[][] y );
+            Train the SVM model with the given samples 'x' and 'y'.
+- (added) KNN object (thanks Yikai Li)
+    |- A k-nearest neighbor (KNN) utility that predicts the output of 
+        a given input based on the training data
+    |- (inheritance) KNN -> Object
+    |- methods:
+        int predict( int k, float[] x, float[] prob );
+            Predict the output probabilities (in 'prob') given new input
+            'x' based on 'k' nearing neighbors.
+        int train( float[][] x, int[] y );
+            Train the KNN model with the given samples 'x' and 
+        corresponding labels 'y'.
+- (added) HMM object (thanks Yikai Li)
+    |- A hidden markov model (HMM) utility that generates a sequence 
+        of observations based on the training data
+    |- (inheritance) SVM -> Object
+    |- methods:
+        int load( float[] initiailDistribution,
+                    float[][] transitionMatrix, 
+                    float[][] emissionMatrix );
+            Initialize the HMM model with the given initial state 
+            distribution, transition matrix, and emission matrix.
+        int train( int numStates, int numEmissions,
+            int[] observations );
+        Train the HMM model with the given observations.
+        int generate( int length, int[] output );
+            Generate a sequence of observations of the given length.
+
+_(BETA) end CHAI additions_
+
+
+
+---
+
+#### 1.4.1.1 (May 2022)
+
+  - (added) native support for Apple Silicon (e.g., M1) as intel/apple 
+    universal binary; *significant* performance throughput observed
+    running chuck natively on Apple Silicon
+  - (added) array.popOut( int index )
+    removes an array element by index [thanks chamington and nshaheed]
+  - (modified) building from source, on MacOS command line:
+        > make mac (compile for current architecture: arm64/x86_64)
+        > make mac-ub (compile universal binary: arm64/x86_64)
+        > lipo -archs ./chuck (checks architectures)
+        > ./chuck --about (prints out compiled platform...
+          ...and if compiled as universal binary):
+          ---
+          chuck version: 1.4.1.1 (numchucks)
+          macOS : 64-bit (universal binary)
+          ---
+        > make osx (deprecated; use 'make mac' or 'make mac-ub')
+  - (added) Math.equal( float x, float y )
+    returns whether two floats are considered equivalent
+  - (added) OscOut.send() error reporting now includes the intended
+    recipient (hostname:port)
+  - (added) examples/hid/gametra.ck
+    boilerplate gametrak code
+  - (moved) examples/osc/1-send-recv/
+    moved s.ck and r.ck (sender and receiver) examples here
+  - (added) examples/osc/2-multi-msg/
+    examples for interleaving two OSC message types at different rates
+  - (added) examples/osc/3-one2many/
+    examples showing one sender to many receivers
+  - (added) examples/osc/4-multicast/
+    examples showing one sender using multicast to broadcast
+  - (fixed) fixed Lisa-load.ck to correct load sound file [thanks nshaheed]
+  - (fixed) CK_STDCERR now flushes on all output
+  - (fixed) error message display for MidiFileIn (STK)
+  - (fixed) array literal assignment now works as expected when
+    common ancestor type is child type of the RHS type; [thanks nshaheed]
+    --- for example ---
+    [ new SinOsc ] @=> Osc arr[]; // previously this results in a
+                                  // incompatible type error, although
+                                  // Osc is a superclass SinOsc
+    -------------------
+  - (continuous integration) --  updated to use 'make mac'
+  - (test) -- modified 01-Basic/86.ck; disabled 87.ck due to 
+    Math.isnan() behaving differently on Apple Silicon;
+    modified 03-Modules/std01.ck to handled floating point equivalence
+    differently; also prompted adding Math.equal(); modified
+    05-Global/86.ck to disable Math.isnan()
+  - (updated, internal) integer types update for smoother Windows 64 bit
+  - (noted) synchronization point for Chunity version x.x.x
+  - (added) added to VERSIONS (this file) release dates since initial
+    release in 2004
+
 ---
 
 #### 1.4.1.0 (June 2021)

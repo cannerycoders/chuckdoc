@@ -65,7 +65,7 @@ SinOsc b => Gain g => BiQuad f => dac;
 There are many other well-defined uses of the ChucK operator, depending on 
 the context.
 
-### `^=` (upchuck)
+### `=^` (upchuck)
 
 The `upchuck` operator is used in Unit Analysis to describe the connections 
 between UAnae.
@@ -81,7 +81,7 @@ the output of the analysis (which is not audio data) is routed to
 IFF via `=^`.  Finally the output of IFFT _is_ audio data and thus
 can be connected to `dac`;
 
-### `<=` (unchuck)
+### `=<` (unchuck)
 
 The `unchuck` operator is used to cancel the effects of a previous
 `chuck` operation.

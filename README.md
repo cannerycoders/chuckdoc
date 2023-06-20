@@ -5,8 +5,9 @@ documentation including standard `chugins` and `classes`.  As of 6/23/21, this i
 and complete set of ChucK docs that I've been able to find. The updates are the result of ample code spelunking
 and will remain a work-in-progress.
 
-You can view the docs directly on github [here](src/index.md) or you can convert them to html for 
-other applications and improved styling.
+You can view the <i>searchable</i> docs live [here](https://cannerycoders.com/docs/chuck/).
+For a non-searchable native-github view [click here](src/index.md). You can also convert these
+docs to html for other applications and/or custom styling.
 
 To build html requires recent node+npm install:
 
@@ -19,11 +20,13 @@ To build html requires recent node+npm install:
 % npm init
 
 # run the conversion
-% node mdtohtml.js # (writes results to `output/`)
+% node mdtohtml.js # (writes results to `_output/`)
 
 # validate the docs
-% cd output
+% cd _output
 # launch your favorite browser on index.html (via `open` on mac, `explorer on windows`)
+# note: script-loading for search requires that you view your browsers in a server-like
+#  environment.
 ```
 
 Enjoy!

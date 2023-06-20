@@ -10,10 +10,10 @@ ${PROGHEADER}
 
 ## The ChucK Compiler + Virtual Machine
 Let's start with the compiler/virtual machine, both of which run in the 
-same process.  By now, you should have built/installed ChucK 
-[guide](../build/index.md), and perhaps followed the [tutorial](../tutorial.md).  
-This guide is intended to be more complete and referential than the tutorial.  
-Additionally, see the [language specification](../language/index.md).
+same process.  By now, you should have installed ChucK, and perhaps 
+followed the [tutorial](../tutorial.md).  This guide is intended to be more 
+complete and referential than the tutorial.  Additionally, see 
+the [language specification](../language/index.md).
 
 <a id="options"></a>
 
@@ -24,13 +24,16 @@ Additionally, see the [language specification](../language/index.md).
 ```shell
 chuck --[options|commands] [+-=^] file1 file2 file3 ...
 
-[options] = halt|loop|audio|silent|dump|nodump|server|about|probe|
-            channels:<N>|out:<N>|in:<N>|dac:<N>|adc:<N>|
-            srate:<N>|bufsize:<N>|bufnum:<N>|shell|empty|
-            remote:<hostname>|port:<N>|verbose:<N>|level:<N>|
-            blocking|callback|deprecate:{stop|warn|ignore}|
-            chugin-load:{auto|off}|chugin-path:<path>|chugin:<name>
+[options] = driver:<drivername>|
+    channels:<N>|out:<N>|in:<N>|dac:<N>|adc:<N>|
+    halt|loop|audio|silent|dump|nodump|server|about|probe|
+    srate:<N>|bufsize:<N>|bufnum:<N>|shell|empty|
+    remote:<hostname>|port:<N>|verbose:<N>|level:<N>|
+    blocking|callback|deprecate:{stop|warn|ignore}|
+    chugin-load:{auto|off}|chugin-path:<path>|chugin:<name>
+
 [commands] = add|remove|replace|remove.all|status|time|kill
+
 [+-=^] = shortcuts for add, remove, replace, status
 ```
 

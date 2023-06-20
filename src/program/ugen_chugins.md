@@ -179,9 +179,9 @@ see [FIRConvolve.ck](../examples.chugins/FIR/FIRConvolve.ck),
 [FIRFOFTest.ck](../examples.chugins/FIR/FIRFOFTest.ck),
 [FIRGaussImpulseTests.ck](../examples.chugins/FIR/FIRGaussImpulseTests.ck),
 [FIRSincBPSweepTest.ck](../examples.chugins/FIR/FIRSincBPSweepTest.ck),
-[FIRSincExplicit.ck](../examples.chugins/FIR/FIRSincSincExplicit.ck),
-[FIRSincImplicit.ck](../examples.chugins/FIR/FIRSincSincImplicit.ck),
-[FIRSincTests.ck](../examples.chugins/FIR/FIRSincSincTests.ck),
+[FIRSincExplicit.ck](../examples.chugins/FIR/FIRSincExplicit.ck),
+[FIRSincImplicit.ck](../examples.chugins/FIR/FIRSincImplicit.ck),
+[FIRSincTests.ck](../examples.chugins/FIR/FIRSincTests.ck),
 [GreyholeDownUpDecimateDemo.ck](../examples.chugins/FIR/GreyholeDownUpDecimateDemo.ck),
 
 
@@ -249,7 +249,7 @@ version by Olaf Mtthes (olaf.matthes at gmx.de).
 | GVerb.functions                           | Description                                     |
 | :---------------------------------------- | :---------------------------------------------- |
 | __`float roomsize(), roomsize(float)`__   | get/set room size [1.0 - 300.0], default 30.0   |
-| __`dur revtime(), revtime(dur)`__         | get/set revert time dur, default .5:second      |
+| __`dur revtime(), revtime(dur)`__         | get/set revert time dur, default 5::second      |
 | __`float damping(), damping(float)`__     | get/set damping [0.0 - 1.0], default 0.0        |
 | __`float spread(), spread(float)`__       | (private) get/set spread default 15.0           |
 | __`float bandwidth(), bandwidth(float)`__ | get/set inputbandwidth [0.0 - 1.0], default 0.5 |
@@ -479,8 +479,8 @@ __`Sigmund`__ sinusoidal analysis and pitch tracking. By Miller Puckette, Ron Ma
 | __`float minpower(), minpower(float)`__ | get/set minimum dB level to report a pitch. Signals quieter than this will be assumed to be crosstalk and ignored. default: 50                                                                                              |
 | __`float freq()`__                      | get reported frequency of input signal                                                                                                                                                                                      |
 | __`float env()`__                       | get reported RMS value (in dB) of input signal                                                                                                                                                                              |
-| __`int peak(), peak(int)`__             | get/set report freq of nth sinusoundal peak sorting depends on parameter "dotracks"                                                                                                                                         |
-| __`int amp(), amp((int)`__              | report amplitude of nth sinusoundal peak sorting depends on parameter "dotracks"                                                                                                                                            |
+| __`float peak(int)`__                   | report freq of nth sinusoundal peak sorting depends on parameter "dotracks"                                                                                                                                         |
+| __`float amp(int)`__                    | report amplitude of nth sinusoundal peak sorting depends on parameter "dotracks"                                                                                                                                            |
 | __`int tracks(), tracks(int)`__         | toggle (0 or 1) whether peak and amp are sorted in order of amplitude or organized into tracks                                                                                                                              |
 | __`void clear()`__                      | clear buffers and reset                                                                                                                                                                                                     |
 | __`float param1(), param1(float)`__     | mysterious settings #1                                                                                                                                                                                                      |

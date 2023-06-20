@@ -98,8 +98,6 @@ or perhaps:
 | GenX       | [readme-GenX.ck](special/readme-GenX.ck), [Gen10-test.sk](special/Gen10-test.ck), [Gen17-test.sk](special/Gen17-test.ck), [Gen5-test.sk](special/Gen5-test.ck), [Gen7-test.sk](special/Gen7-test.ck), [Gen9-test.sk](special/Gen9-test.ck)                                                                                                                             |
 | CurveTable | [GenX-CurveTable-test.ck](special/GenX-CurveTable-test.ck)                                                                                                                                                                                                                                                                                                             |
 | WarpTable  | [GenX-WarpTable-test.ck](special/GenX-WarpTable-test.ck)                                                                                                                                                                                                                                                                                                               |
-| LiSa       | [readme-LiSa1.ck](special/readme-LiSa1.ck), [readme-LiSa2-ck](special/readme-LiSa2.ck), [LiSa-munger1.ck](special/LiSa-munger1.ck), [LiSa-munger2.ck](special/LiSa-munger1.ck), [LiSa-munger3.ck](special/LiSa-munger3.ck), [LiSa-simplelooping.ck](special/LiSa-simplelooping.ck), [LiSa-SndBuf](special/LiSa-SndBuf.ck), [LiSa-trigger.ck](special/LiSa-trigger.ck), |
- 
  
 --------------------------------------------------------------------------------
 ## Language Features
@@ -185,7 +183,7 @@ Control, how to extend ChucK unit generators, and more.
 | chugraph2                     | [chugraph2.ck](extend/chugraph2.ck)   |
 | chugraph2a                    | [chugraph2a.ck](extend/chugraph2a.ck) |
 | chugen (rhymes with 'ugen')   | [chugen.ck](extend/chugen.ck)         |
-| chugin (rhymes with 'plugin') | [chugen.ck](extend/chugen.ck)         |
+| chugin (rhymes with 'plugin') |                                       |
 
 
 ### Events
@@ -295,7 +293,7 @@ Control, how to extend ChucK unit generators, and more.
 | Clarinet                      | [clarinet.ck](stk/clarinet.ck)                                                                                                                                    |
 | Flute                         | [flute.ck](stk/flute.ck)                                                                                                                                          |
 | French Horn                   | [frenchhrn-algo2.ck](stk/frenchrn-algo2.ck)                                                                                                                       |
-| HevyMetl                      | [hevymetl-acoustic-algo3](stk/hevymetl-acoustic-algo3.ck), [hevymetl-algo3.ck](stk/hevymetl-algo3.ck), [hevymetl-trumpet-algo3.ck](stk/hevymetl-trumpet-algo3.ck) |
+| HevyMetl                      | [hevymetl-acoustic-algo3](stk/hevymetl-acoustic-algo3.ck), [hevymetl-algo3.ck](stk/hevymetl-algo3.ck), [hevymetl-trumpet-algo3.ck](stk/hevymetl-trumpet-algo3.ck), [hevymetl-dance-now](stk/hevymetl-dance-now.ck)|
 | HonkeyTonk                    | [honkeytonk-algo1.ck](stk/honkeytonk-algo1.ck)                                                                                                                    |
 | Krystal Choir                 | [krstlchr-algo7.ck](stk/krstlchr-algo7.ck)                                                                                                                        |
 | ModalBar                      | [modalbar.ck](stk/modalbar.ck), [mode-o-test.ck](stk/mode-o-test.ck), [mode-o-matic.ck](stk/mode-o-matic.ck)                                                      |

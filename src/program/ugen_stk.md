@@ -32,7 +32,7 @@ __`StkInstrument`__ Base class for STK instruments.
 | StkInstrument.functions                           | Description                                                                         |
 | :------------------------------------------------ | :---------------------------------------------------------------------------------- |
 | __`void noteOn(float velocity)`__                 | trigger note on                                                                     |
-| __`void noteOff(loat velocity)`__                 | trigger note off                                                                    |
+| __`void noteOff(float velocity)`__                 | trigger note off                                                                    |
 | __`float freq(), freq(float v)`__                 | set/get frequency (Hz)                                                              |
 | __`void controlChange(int number, float value)`__ | assert control change - numbers are instrument specific, value range: [0.0 - 128.0] |
 
@@ -77,7 +77,7 @@ Modified for Stk 4.0 by Gary Scavone.
 | __`void stopBowing(float)`__                                  | set stop bowing [0.0 - 1.0]                                                         |
 | _inherited from StkInstrument_:                               |
 | __`void noteOn(float velocity)`__                             | trigger note on                                                                     |
-| __`void noteOff(loat velocity)`__                             | trigger note off                                                                    |
+| __`void noteOff(float velocity)`__                             | trigger note off                                                                    |
 | __`float freq(), freq(float v)`__                             | set/get frequency (Hz)                                                              |
 | __`void controlChange(int number, float value)`__             | assert control change - numbers are instrument specific, value range: [0.0 - 128.0] |
 
@@ -111,7 +111,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`void stopBlowing(float)`__                     | set stop blowing [0.0 - 1.0]                                                        |
 | _inherited from StkInstrument_:                   |
 | __`void noteOn(float velocity)`__                 | trigger note on                                                                     |
-| __`void noteOff(loat velocity)`__                 | trigger note off                                                                    |
+| __`void noteOff(float velocity)`__                 | trigger note off                                                                    |
 | __`float freq(), freq(float v)`__                 | set/get frequency (Hz)                                                              |
 | __`void controlChange(int number, float value)`__ | assert control change - numbers are instrument specific, value range: [0.0 - 128.0] |
 
@@ -154,7 +154,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`float rate(), rate(float)`__                   | get/set rate of attack (sec)                                                        |
 | _inherited from StkInstrument_:                   |
 | __`void noteOn(float velocity)`__                 | trigger note on                                                                     |
-| __`void noteOff(loat velocity)`__                 | trigger note off                                                                    |
+| __`void noteOff(float velocity)`__                 | trigger note off                                                                    |
 | __`float freq(), freq(float v)`__                 | set/get frequency (Hz)                                                              |
 | __`void controlChange(int number, float value)`__ | assert control change - numbers are instrument specific, value range: [0.0 - 128.0] |
 
@@ -188,7 +188,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`void stopBowing(float)`__                  | set stop bowing [0.0 - 1.0]      |
 | _inherited from StkInstrument_:               |
 | __`void noteOn(float velocity)`__             | trigger note on                  |
-| __`void noteOff(loat velocity)`__             | trigger note off                 |
+| __`void noteOff(float velocity)`__             | trigger note off                 |
 | __`float freq(), freq(float v)`__             | set/get frequency (Hz)           |
 
 #### Brass
@@ -222,7 +222,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`float rate(), rate(float)`__               | get/set rate of attack (sec)     |
 | _inherited from StkInstrument_:               |                                  |
 | __`void noteOn(float velocity)`__             | trigger note on                  |
-| __`void noteOff(loat velocity)`__             | trigger note off                 |
+| __`void noteOff(float velocity)`__             | trigger note off                 |
 | __`float freq(), freq(float v)`__             | set/get frequency (Hz)           |
 
 
@@ -258,7 +258,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`float rate(), rate(float)`__               | rate of attack (sec)             |
 | _inherited from StkInstrument_:               |                                  |
 | __`void noteOn(float velocity)`__             | trigger note on                  |
-| __`void noteOff(loat velocity)`__             | trigger note off                 |
+| __`void noteOff(float velocity)`__             | trigger note off                 |
 | __`float freq(), freq(float v)`__             | set/get frequency (Hz)           |
 
 
@@ -296,7 +296,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`float rate(float)`__                           | rate of attack (sec)                     |
 | _inherited from StkInstrument_:                   |                                          |
 | __`void noteOn(float velocity)`__                 | trigger note on                          |
-| __`void noteOff(loat velocity)`__                 | trigger note off                         |
+| __`void noteOff(float velocity)`__                 | trigger note off                         |
 | __`float freq(), freq(float v)`__                 | set/get frequency (Hz)                   |
 
 
@@ -333,7 +333,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`void pluck(float)`__                           | pluck instrument [0.0 - 1.0]        |
 | _inherited from StkInstrument_:                   |                                     |
 | __`void noteOn(float velocity)`__                 | trigger note on                     |
-| __`void noteOff(loat velocity)`__                 | trigger note off                    |
+| __`void noteOff(float velocity)`__                 | trigger note off                    |
 | __`float freq(), freq(float v)`__                 | set/get frequency (Hz)              |
 
 see [mand-o-matic.ck](../examples/stk/mand-o-matic.ck)
@@ -383,7 +383,7 @@ by Perry R. Cook and Gary P. Scavone, 1995 - 2002.
 | __`float modeGain(), modeGain(float)`__             | get/set selected mode gain [0.0 - 1.0]   |
 | _inherited from StkInstrument_:                     |                                          |
 | __`void noteOn(float velocity)`__                   | trigger note on                          |
-| __`void noteOff(loat velocity)`__                   | trigger note off                         |
+| __`void noteOff(float velocity)`__                   | trigger note off                         |
 | __`float freq(), freq(float v)`__                   | set/get frequency (Hz)                   |
 
  see [mod-o-matic.ck](../examples/stk/mode-o-matic.ck) 
